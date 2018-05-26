@@ -1,7 +1,18 @@
-<table>
-	<#list projects as project>
-	<tr>
-		<th>${project.name}</th>
-	</tr>
-	</#list>
-</table>
+<div class="container">
+	<table class="table table-bordered">
+		<#list projects as project>
+		<tr data-url="${project.name}/manifest.html">
+			<th>${project.name}</th>
+			<td>
+				<p>项目主页：<a href="${project.home}" target="_blank">${project.home}</a></p>
+				<p>${project.description}</p>
+			</td>
+			<td>
+				<#list project.tags as tag>
+					${tag}
+				</#list>
+			</td>
+		</tr>
+		</#list>
+	</table>
+</div>

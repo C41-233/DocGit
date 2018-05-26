@@ -1,9 +1,11 @@
-package c41.docgit.generator;
+package c41.docgit.generator.template;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.HashMap;
+
+import org.apache.commons.io.FileUtils;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -41,10 +43,20 @@ public class TemplateGenerator {
 		return writer.toString();
 	}
 	
-	public String generateHtml(File input, Object arguments) throws IOException, TemplateException {
-		String body = generate(input, arguments);
+	public String generateHtml(File input, HtmlConfig config) throws IOException, TemplateException {
+		String body = generate(input, config.arguments);
 		HashMap<String, Object> maps = new HashMap<>();
 		maps.put("body", body);
+		
+		if(config.cssFile != null) {
+			String text = FileUtils.readFileToString(config.cssFile, "utf-8");
+			maps.put("css", text);
+		}
+
+		if(config.jsFile != null) {
+			String text = FileUtils.readFileToString(config.jsFile, "utf-8");
+			maps.put("js", text);
+		}
 		
 		return generate(TemplateFile.MAIN_TEMPLATE_HTML, maps);
 	}
