@@ -24,4 +24,8 @@ public class MajorGroup {
 		return versions;
 	}
 	
+	public int getVersionCount() {
+		return versions.size();
+	}
+	
 }

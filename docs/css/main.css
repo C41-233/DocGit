@@ -1,0 +1,21 @@
+[data-url]{
+	cursor:			pointer;
+}
+[data-url]:hover{
+	background-color: #f5f5f5;
+}
+th{
+	white-space:	nowrap;
+}
+
+header{
+	text-align: center;
+	color:	white;
+}
+header h1{
+	font-size: 56px;
+	text-shadow: -5px 5px 0 rgba(0,0,0,.1);
+}
+header p{
+	font-size: 21px;
+}

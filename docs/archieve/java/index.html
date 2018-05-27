@@ -1,49 +1,48 @@
 <html>
 
 <head>
+	<meta charset="utf-8" />
+	<title></title>
 	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/main.css" rel="stylesheet">
 	<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-			<style type="text/css">
-		tr{
-	cursor:			pointer;
-}
-
-tr:hover{
-	background-color: #f5f5f5;
-}
-
-th{
-	white-space:	nowrap;
-}
-		</style>
-		<script type="text/javascript">
-		$(function(){
-	$("tr").click(function(e){
-		if(e.target.nodeName.toLowerCase() == 'a'){
-			return
-		}
-		var url = $(this).data("url")
-		if(url){
-			location.href = url
-		}
-	})
-})
-		</script>
+	<script src="/javascript/main.js"></script>
 </head>
 
 <body>
+	<style type="text/css">
+	header{
+		background-color: #0099cc;
+	}
+	table tr>th.project-name{
+		width:	20%;
+		padding-left:	15px;
+		padding-right:	15px;
+	}
+	td{
+		color: #777;
+	}
+	#body{
+		margin-top:	30px;
+	}
+</style>
+
+<header>
 	<div class="container">
+		<h1>DocGit for java</h1>
+	</div>
+</header>
+
+<div class="container" id="body">
+	<ol class="breadcrumb">
+	  <li><a href="javascript:void(0)">docgit</a></li>
+	  <li class="active">java</li>
+	</ol>
 	<table class="table table-bordered">
-				<tr data-url="7-zip-jbinding/index.html">
-			<th>7-zip-jbinding</th>
-			<td>
-				<p>项目主页：<a href="http://sevenzipjbind.sourceforge.net/" target="_blank">http://sevenzipjbind.sourceforge.net/</a></p>
-				<p>Native (JNI) cross-platform library to extract (password protected, multi-part) 7z Zip Rar Tar Split Lzma Iso HFS GZip Cpio BZip2 Z Arj Chm Lhz Cab Nsis Deb Rpm Wim Udf archives and create 7z, Zip, Tar, GZip & BZip2 from Java.</p>
-			</td>
-			<td>
-					7zip
-			</td>
+		<tr data-url="7-zip-jbinding">
+			<th class="project-name">7-zip-jbinding</th>
+			<td>Native (JNI) cross-platform library to extract (password protected, multi-part) 7z Zip Rar Tar Split Lzma Iso HFS GZip Cpio BZip2 Z Arj Chm Lhz Cab Nsis Deb Rpm Wim Udf archives and create 7z, Zip, Tar, GZip & BZip2 from Java.</td>
 		</tr>
 	</table>
 </div>

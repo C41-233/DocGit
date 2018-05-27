@@ -8,5 +8,6 @@ public class HtmlConfig {
 	public File cssFile;
 	public File jsFile;
 	public final HashMap<String, Object> arguments = new HashMap<>();
+	public String title;
 	
 }

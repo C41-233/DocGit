@@ -1,9 +1,51 @@
-<div class="container">
+<style type="text/css">
+	header{
+		background-color: #27ae60;
+	}
+	#tags{
+		text-align:	left;
+		font-size:	12px;
+	}
+	#menu{
+		text-align:	center;
+	}
+	.home, .home:hover, .home:focus{
+		color:	#2cc36b;
+		text-decoration: none;
+	}
+	.home:hover{
+		color:	#295;
+	}
+</style>
+
+<header>
+	<div class="container">
+		<h1>${project}</h1>
+		<p>${description}</p>
+		<p id="tags"><#list tags as tag><span class="badge">${tag}</#list></span></p>
+	</div>
+</header>
+<div class="container" id="menu">
+	<ul class="list-inline">
+		<li><span class="glyphicon glyphicon-home"></span> <a href="${home}" target="_blank" class="home">项目主页</a></li>
+	</ul>
+</div>
+<div class="container" id="body">
+	<ol class="breadcrumb">
+	  <li><a href="javascript:void(0)">docgit</a></li>
+	  <li><a href="/archieve/${category}">${category}</a></li>
+	  <li class="active">${project}</li>
+	</ol>
 	<table class="table table-bordered">
 	<#list groups as group>
 		<tr>
-			<th>${group.name}</th>
+			<th rowspan="${group.versionCount+1}">${group.name}</th>
 		</tr>
+		<#list group.versions as version>
+			<tr>
+				<td data-url="/doc/${category}/${project}/${version}" data-target="_blank">${version}</td>
+			</tr>
+		</#list>
 	</#list>
 	</table>
 </div>

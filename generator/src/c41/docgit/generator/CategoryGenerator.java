@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -15,8 +13,8 @@ import org.dom4j.io.SAXReader;
 import c41.docgit.generator.template.HtmlConfig;
 import c41.docgit.generator.template.TemplateFile;
 import c41.docgit.generator.template.TemplateGenerator;
-import c41.docgit.generator.vo.Project;
 import c41.docgit.generator.vo.MajorGroup;
+import c41.docgit.generator.vo.Project;
 import freemarker.template.TemplateException;
 
 public class CategoryGenerator {
@@ -24,13 +22,15 @@ public class CategoryGenerator {
 	private final String name;
 	private final File categoryInputFolder;
 	private final File categoryOutputFolder;
+	private final File docFolder;
 	
 	private final ArrayList<Project> projects = new ArrayList<>();
 	
-	public CategoryGenerator(String name, File inputFolder, File outputFolder) {
+	public CategoryGenerator(String name, File inputFolder, File outputFolder, File docFolder) {
 		this.name = name;
 		this.categoryInputFolder = inputFolder;
 		this.categoryOutputFolder = outputFolder;
+		this.docFolder = docFolder;
 	}
 	
 	public void Run() throws IOException, TemplateException, DocumentException {
@@ -79,8 +79,25 @@ public class CategoryGenerator {
 			majors.put(name, group);
 		}
 		
+		File projectDocFolder = new File(docFolder, projectName);
+		for(File versionFolder : projectDocFolder.listFiles(File::isDirectory)) {
+			String version = versionFolder.getName();
+			for(String major : majors.keySet()) {
+				if(version.startsWith(major)) {
+					majors.get(major).addVersion(version);
+					break;
+				}
+			}
+		}
+		
 		HtmlConfig config = new HtmlConfig();
 		config.arguments.put("groups", majors.values().toArray());
+		config.arguments.put("home", project.getHome());
+		config.arguments.put("category", name);
+		config.arguments.put("project", projectName);
+		config.arguments.put("description", project.getDescription());
+		config.arguments.put("tags", project.getTags());
+		config.title = projectName;
 		
 		File indexFile = new File(outputFolder, "index.html");
 		TemplateGenerator.getInstance().generateHtml(TemplateFile.PROJECT_INDEX_HTML, indexFile, config);
@@ -90,9 +107,8 @@ public class CategoryGenerator {
 		File outputIndexHtml = new File(categoryOutputFolder, "index.html");
 		
 		HtmlConfig htmlConfig = new HtmlConfig();
+		htmlConfig.arguments.put("category", name);
 		htmlConfig.arguments.put("projects", projects);
-		htmlConfig.cssFile = TemplateFile.CATEGORY_INLINE_CSS;
-		htmlConfig.jsFile = TemplateFile.CATEGORY_INLINE_JS;
 		
 		TemplateGenerator.getInstance().generateHtml(TemplateFile.CATEGORY_INDEX_HTML, outputIndexHtml, htmlConfig);
 	}

@@ -41,18 +41,18 @@ public class Main {
 	private static void buildConfig() {
 		TemplateFile.MAIN_TEMPLATE_HTML = new File(TemplateFile.TEMPLATE_FOLDER, "main.template.html");
 		TemplateFile.CATEGORY_INDEX_HTML = new File(TemplateFile.TEMPLATE_FOLDER, "category.html");
-		TemplateFile.CATEGORY_INLINE_CSS = new File(TemplateFile.TEMPLATE_FOLDER, "category.css");
-		TemplateFile.CATEGORY_INLINE_JS = new File(TemplateFile.TEMPLATE_FOLDER, "category.js");
 		TemplateFile.PROJECT_INDEX_HTML = new File(TemplateFile.TEMPLATE_FOLDER, "project.html");
 	}
 	
 	private static void generate(File templateFolder, File outputFolder, File dataFolder) throws IOException, TemplateException, DocumentException {
-		for(File categoryFolder : dataFolder.listFiles(f -> f.isDirectory())) {
+		File docFolder = new File(outputFolder.getParentFile(), "doc");
+		for(File categoryFolder : dataFolder.listFiles(File::isDirectory)) {
 			String category = categoryFolder.getName();
 			System.out.println("generate category: " + category);
 			File outputCategoryFolder = new File(outputFolder, category);
 			outputCategoryFolder.mkdir();
-			CategoryGenerator generator = new CategoryGenerator(category, categoryFolder, outputCategoryFolder);
+			File categoryDocFolder = new File(docFolder, category);
+			CategoryGenerator generator = new CategoryGenerator(category, categoryFolder, outputCategoryFolder, categoryDocFolder);
 			generator.Run();
 		}
 	}

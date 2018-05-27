@@ -1,17 +1,36 @@
-<div class="container">
+<style type="text/css">
+	header{
+		background-color: #0099cc;
+	}
+	table tr>th.project-name{
+		width:	20%;
+		padding-left:	15px;
+		padding-right:	15px;
+	}
+	td{
+		color: #777;
+	}
+	#body{
+		margin-top:	30px;
+	}
+</style>
+
+<header>
+	<div class="container">
+		<h1>DocGit for ${category}</h1>
+	</div>
+</header>
+
+<div class="container" id="body">
+	<ol class="breadcrumb">
+	  <li><a href="javascript:void(0)">docgit</a></li>
+	  <li class="active">${category}</li>
+	</ol>
 	<table class="table table-bordered">
 		<#list projects as project>
-		<tr data-url="${project.name}/index.html">
-			<th>${project.name}</th>
-			<td>
-				<p>项目主页：<a href="${project.home}" target="_blank">${project.home}</a></p>
-				<p>${project.description}</p>
-			</td>
-			<td>
-				<#list project.tags as tag>
-					${tag}
-				</#list>
-			</td>
+		<tr data-url="${project.name}">
+			<th class="project-name">${project.name}</th>
+			<td>${project.description}</td>
 		</tr>
 		</#list>
 	</table>

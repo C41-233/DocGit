@@ -45,7 +45,9 @@ public class TemplateGenerator {
 	
 	public void generateHtml(File input, File output, HtmlConfig config) throws IOException, TemplateException {
 		String body = generate(input, config.arguments);
+		
 		HashMap<String, Object> maps = new HashMap<>();
+		maps.put("title", config.title);
 		maps.put("body", body);
 		
 		if(config.cssFile != null) {
