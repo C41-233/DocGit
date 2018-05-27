@@ -1,0 +1,13 @@
+<project>
+	<home>http://poi.apache.org/</home>
+	<description>
+		The Apache POI Project's mission is to create and maintain Java APIs for manipulating various file formats based upon the Office Open XML standards (OOXML) and Microsoft's OLE 2 Compound Document format (OLE2).
+	</description>
+	<tags>
+		<tag>office</tag>
+	</tags>
+	<majors>
+		<major>3</major>
+	</majors>
+</project>
+

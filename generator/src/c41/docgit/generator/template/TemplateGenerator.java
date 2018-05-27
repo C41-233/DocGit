@@ -7,8 +7,6 @@ import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 import c41.docgit.generator.method.Path;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
