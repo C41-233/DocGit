@@ -79,6 +79,11 @@ public class CategoryGenerator {
 			majors.put(name, group);
 		}
 		
+		Element latestElement = majorsElement.element("latest");
+		if(latestElement != null) {
+			project.setLatest(latestElement.getTextTrim());
+		}
+		
 		File projectDocFolder = new File(docFolder, projectName);
 		for(File versionFolder : projectDocFolder.listFiles(File::isDirectory)) {
 			String version = versionFolder.getName();
@@ -92,6 +97,7 @@ public class CategoryGenerator {
 		
 		HtmlConfig config = new HtmlConfig();
 		config.arguments.put("groups", majors.values().toArray());
+		config.arguments.put("latest", project.getLatest());
 		config.arguments.put("home", project.getHome());
 		config.arguments.put("category", name);
 		config.arguments.put("project", projectName);

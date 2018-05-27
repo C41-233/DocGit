@@ -16,6 +16,9 @@
 	.home:hover{
 		color:	#295;
 	}
+	.no-link{
+		color:	gray;
+	}
 </style>
 
 <header>
@@ -38,9 +41,18 @@
 	</ol>
 	<h3>Documentation</h3>
 	<table class="table table-bordered">
+	<#if latest??>
+		<tr>
+			<th colspan="2" data-url="${latest}" data-target="_blank" class="text-center">Latest</th>
+		</tr>
+	</#if>
 	<#list groups as group>
 		<tr>
-			<th rowspan="${group.versionCount+1}">${group.name}</th>
+			<#if group.versionCount gt 0>
+				<th rowspan="${group.versionCount+1}">${group.name}</th>
+			<#else>
+				<th colspan="2" class="no-link">${group.name}</th>
+			</#if>
 		</tr>
 		<#list group.versions as version>
 			<tr>
