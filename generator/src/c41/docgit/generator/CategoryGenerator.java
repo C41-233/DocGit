@@ -3,6 +3,7 @@ package c41.docgit.generator;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 import org.dom4j.Document;
@@ -87,6 +88,9 @@ public class CategoryGenerator {
 				Version version = new Version();
 				version.setName(minorElement.attributeValue("name"));
 				version.setUrl(minorElement.attributeValue("document"));
+				if(minorElement.element("cache-document") != null) {
+					version.setUrl("/DocGit/doc/" + categoryName + "/" + projectName + "/" + version.getName());
+				}
 				
 				group.addVersion(version);
 			}
@@ -100,7 +104,9 @@ public class CategoryGenerator {
 		}
 		
 		HtmlConfig config = new HtmlConfig();
-		config.arguments.put("groups", majors.values().toArray());
+		MajorGroup[] majorGroup = majors.values().toArray(new MajorGroup[majors.size()]);
+		Arrays.sort(majorGroup, (m1, m2)->m2.getName().compareTo(m1.getName()));
+		config.arguments.put("groups", majorGroup);
 		config.arguments.put("latest", project.getLatest());
 		config.arguments.put("home", project.getHome());
 		config.arguments.put("category", categoryName);

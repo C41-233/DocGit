@@ -1,0 +1,21 @@
+<project>
+	<home>http://asm.ow2.io/</home>
+	<description>
+		ASM is an all purpose Java bytecode manipulation and analysis framework. It can be used to modify existing classes or to dynamically generate classes, directly in binary form. 
+	</description>
+	<tags>
+		<tag>class</tag>
+	</tags>
+	<majors>
+		<latest document="http://asm.ow2.io/javadoc/overview-summary.html"></latest>
+		<major name="6.1">
+			<version name="6.1.1"></version>
+		</major>
+		<major name="5.0">
+			<version name="5.0.alpha">
+				<cache-document/>
+			</version>
+		</major>
+	</majors>
+</project>
+
