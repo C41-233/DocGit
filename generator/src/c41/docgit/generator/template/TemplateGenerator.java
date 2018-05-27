@@ -43,7 +43,7 @@ public class TemplateGenerator {
 		return writer.toString();
 	}
 	
-	public String generateHtml(File input, HtmlConfig config) throws IOException, TemplateException {
+	public void generateHtml(File input, File output, HtmlConfig config) throws IOException, TemplateException {
 		String body = generate(input, config.arguments);
 		HashMap<String, Object> maps = new HashMap<>();
 		maps.put("body", body);
@@ -58,7 +58,8 @@ public class TemplateGenerator {
 			maps.put("js", text);
 		}
 		
-		return generate(TemplateFile.MAIN_TEMPLATE_HTML, maps);
+		String result = generate(TemplateFile.MAIN_TEMPLATE_HTML, maps);
+		FileUtils.write(output, result, "utf-8");
 	}
 	
 }

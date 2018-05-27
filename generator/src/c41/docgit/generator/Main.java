@@ -43,6 +43,7 @@ public class Main {
 		TemplateFile.CATEGORY_INDEX_HTML = new File(TemplateFile.TEMPLATE_FOLDER, "category.html");
 		TemplateFile.CATEGORY_INLINE_CSS = new File(TemplateFile.TEMPLATE_FOLDER, "category.css");
 		TemplateFile.CATEGORY_INLINE_JS = new File(TemplateFile.TEMPLATE_FOLDER, "category.js");
+		TemplateFile.PROJECT_INDEX_HTML = new File(TemplateFile.TEMPLATE_FOLDER, "project.html");
 	}
 	
 	private static void generate(File templateFolder, File outputFolder, File dataFolder) throws IOException, TemplateException, DocumentException {
