@@ -51,12 +51,20 @@
 			<#if group.versionCount gt 0>
 				<th rowspan="${group.versionCount+1}">${group.name}</th>
 			<#else>
+				<#if group.url??>
+				<th colspan="2" data-url="${group.url}" data-target="_blank">${group.name}</th>
+				<#else>
 				<th colspan="2" class="no-link">${group.name}</th>
+				</#if>
 			</#if>
 		</tr>
 		<#list group.versions as version>
 			<tr>
-				<td data-url="${path('/doc/',category,'/',project,'/',version)}" data-target="_blank">${version}</td>
+				<#if version.url??>
+					<td data-url="${version.url}" data-target="_blank">${version.name}</td>
+				<#else>
+					<td class="no-link">${version.name}</td>
+				</#if>
 			</tr>
 		</#list>
 	</#list>

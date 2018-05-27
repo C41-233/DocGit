@@ -15,11 +15,12 @@ import c41.docgit.generator.template.TemplateFile;
 import c41.docgit.generator.template.TemplateGenerator;
 import c41.docgit.generator.vo.MajorGroup;
 import c41.docgit.generator.vo.Project;
+import c41.docgit.generator.vo.Version;
 import freemarker.template.TemplateException;
 
 public class CategoryGenerator {
 
-	private final String name;
+	private final String categoryName;
 	private final File categoryInputFolder;
 	private final File categoryOutputFolder;
 	private final File docFolder;
@@ -27,7 +28,7 @@ public class CategoryGenerator {
 	private final ArrayList<Project> projects = new ArrayList<>();
 	
 	public CategoryGenerator(String name, File inputFolder, File outputFolder, File docFolder) {
-		this.name = name;
+		this.categoryName = name;
 		this.categoryInputFolder = inputFolder;
 		this.categoryOutputFolder = outputFolder;
 		this.docFolder = docFolder;
@@ -36,7 +37,7 @@ public class CategoryGenerator {
 	public void Run() throws IOException, TemplateException, DocumentException {
 		for(File projectFolder : categoryInputFolder.listFiles(f -> f.isDirectory())) {
 			String projectName = projectFolder.getName();
-			System.out.println("generate project: " + this.name + "/" + projectName);
+			System.out.println("generate project: " + this.categoryName + "/" + projectName);
 			File outputFolder = new File(categoryOutputFolder, projectName);
 			outputFolder.mkdir();
 			generateProject(projectName, projectFolder, outputFolder);
@@ -73,33 +74,36 @@ public class CategoryGenerator {
 		Element majorsElement = rootElement.element("majors");
 		for(Object majorObject : majorsElement.elements("major")) {
 			MajorGroup group = new MajorGroup();
-			Element majorElment = (Element) majorObject;
-			String name = majorElment.getTextTrim();
+			Element majorElement = (Element) majorObject;
+			String name = majorElement.attributeValue("name");
 			group.setName(name);
+			String majorDocument = majorElement.attributeValue("document");
+			if(majorDocument != null) {
+				group.setUrl(majorDocument);
+			}
+			
+			for(Object minorObject : majorElement.elements("version")) {
+				Element minorElement = (Element) minorObject;
+				Version version = new Version();
+				version.setName(minorElement.attributeValue("name"));
+				version.setUrl(minorElement.attributeValue("document"));
+				
+				group.addVersion(version);
+			}
+			
 			majors.put(name, group);
 		}
 		
 		Element latestElement = majorsElement.element("latest");
 		if(latestElement != null) {
-			project.setLatest(latestElement.getTextTrim());
-		}
-		
-		File projectDocFolder = new File(docFolder, projectName);
-		for(File versionFolder : projectDocFolder.listFiles(File::isDirectory)) {
-			String version = versionFolder.getName();
-			for(String major : majors.keySet()) {
-				if(version.startsWith(major)) {
-					majors.get(major).addVersion(version);
-					break;
-				}
-			}
+			project.setLatest(latestElement.attributeValue("document"));
 		}
 		
 		HtmlConfig config = new HtmlConfig();
 		config.arguments.put("groups", majors.values().toArray());
 		config.arguments.put("latest", project.getLatest());
 		config.arguments.put("home", project.getHome());
-		config.arguments.put("category", name);
+		config.arguments.put("category", categoryName);
 		config.arguments.put("project", projectName);
 		config.arguments.put("description", project.getDescription());
 		config.arguments.put("tags", project.getTags());
@@ -113,7 +117,7 @@ public class CategoryGenerator {
 		File outputIndexHtml = new File(categoryOutputFolder, "index.html");
 		
 		HtmlConfig htmlConfig = new HtmlConfig();
-		htmlConfig.arguments.put("category", name);
+		htmlConfig.arguments.put("category", categoryName);
 		htmlConfig.arguments.put("projects", projects);
 		
 		TemplateGenerator.getInstance().generateHtml(TemplateFile.CATEGORY_INDEX_HTML, outputIndexHtml, htmlConfig);

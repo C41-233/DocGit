@@ -7,8 +7,8 @@
 		<tag>7zip</tag>
 	</tags>
 	<majors>
-		<latest>http://sevenzipjbind.sourceforge.net/javadoc/index.html</latest>
-		<major>9.20</major>
+		<latest document="http://sevenzipjbind.sourceforge.net/javadoc/index.html"></latest>
+		<major name="9.20"></major>
 	</majors>
 </project>
 
