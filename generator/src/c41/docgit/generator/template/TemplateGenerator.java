@@ -7,6 +7,9 @@ import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
+import c41.docgit.generator.method.Path;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -31,6 +34,7 @@ public class TemplateGenerator {
 		configuration.setDefaultEncoding("utf8");
 		configuration.setLogTemplateExceptions(false);
 		configuration.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
+		configuration.setSharedVariable("path", new Path());
 	}
 	
 	public String generate(File input, Object arguments) throws IOException, TemplateException {
