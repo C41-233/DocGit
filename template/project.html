@@ -43,7 +43,7 @@
 		</tr>
 		<#list group.versions as version>
 			<tr>
-				<td data-url="/doc/${category}/${project}/${version}" data-target="_blank">${version}</td>
+				<td data-url="${path('/doc/',category,'/',project,'/',version)}" data-target="_blank">${version}</td>
 			</tr>
 		</#list>
 	</#list>
