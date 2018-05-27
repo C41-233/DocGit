@@ -123,6 +123,7 @@ public class CategoryGenerator {
 		File outputIndexHtml = new File(categoryOutputFolder, "index.html");
 		
 		HtmlConfig htmlConfig = new HtmlConfig();
+		htmlConfig.title = "docgit for " + categoryName;
 		htmlConfig.arguments.put("category", categoryName);
 		htmlConfig.arguments.put("projects", projects);
 		

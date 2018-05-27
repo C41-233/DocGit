@@ -1,0 +1,22 @@
+<project>
+	<home>http://www.oracle.com/technetwork/java/javase/overview/index.html</home>
+	<description>
+		Java标准库。
+	</description>
+	<tags>
+		<tag>java</tag>
+	</tags>
+	<majors>
+		<major name="9" document="https://docs.oracle.com/javase/9/docs/api/index.html?overview-summary.html">
+		</major>
+		<major name="8" document="https://docs.oracle.com/javase/8/docs/api/">
+		</major>
+		<major name="7" document="https://docs.oracle.com/javase/7/docs/api/">
+		</major>
+		<major name="6">
+			<version name="English" document="https://docs.oracle.com/javase/6/docs/api/"></version>
+			<version name="中文" document="http://tool.oschina.net/apidocs/apidoc?api=jdk-zh"></version>
+		</major>
+	</majors>
+</project>
+
