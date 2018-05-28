@@ -1,0 +1,18 @@
+<project>
+	<home>https://github.com/cglib/cglib/wiki</home>
+	<description>
+		cglib is a powerful, high performance and quality Code Generation Library, It is used to extend JAVA classes and implements interfaces at runtime. 
+	</description>
+	<tags>
+		<tag>class</tag>
+	</tags>
+	<majors>
+		<major name="2.0">
+			<version name="2.0.beta2" document="http://cglib.sourceforge.net/apidocs/index.html"></version>
+		</major>
+		<major name="3.2">
+			<version name="3.2.6"></version>
+		</major>
+	</majors>
+</project>
+
