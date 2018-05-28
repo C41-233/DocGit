@@ -19,7 +19,6 @@ public class MajorGroup {
 	
 	public void addVersion(Version version) {
 		this.versions.add(version);
-		versions.sort((v1, v2)->v1.getName().compareTo(v2.getName()));
 	}
 	
 	public Iterable<Version> getVersions(){

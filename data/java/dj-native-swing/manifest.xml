@@ -1,0 +1,17 @@
+<project>
+	<home>http://djproject.sourceforge.net/ns/</home>
+	<description>
+		The NativeSwing library allows an easy integration of some native components into Swing applications, and provides some native utilities to enhance Swing's APIs. It is composed of a framework library, and an SWT-based implementation that provides many rich components.
+	</description>
+	<tags>
+		<tag>gui</tag>
+	</tags>
+	<majors>
+		<latest document="http://djproject.sourceforge.net/ns/documentation/javadoc/index.html"></latest>
+		<major name="1.0">
+			<version name="1.0.3"></version>
+			<version name="1.0.2"></version>
+		</major>
+	</majors>
+</project>
+

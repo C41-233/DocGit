@@ -45,14 +45,12 @@ public class Main {
 	}
 	
 	private static void generate(File templateFolder, File outputFolder, File dataFolder) throws IOException, TemplateException, DocumentException {
-		File docFolder = new File(outputFolder.getParentFile(), "doc");
 		for(File categoryFolder : dataFolder.listFiles(File::isDirectory)) {
 			String category = categoryFolder.getName();
 			System.out.println("generate category: " + category);
 			File outputCategoryFolder = new File(outputFolder, category);
 			outputCategoryFolder.mkdir();
-			File categoryDocFolder = new File(docFolder, category);
-			CategoryGenerator generator = new CategoryGenerator(category, categoryFolder, outputCategoryFolder, categoryDocFolder);
+			CategoryGenerator generator = new CategoryGenerator(category, categoryFolder, outputCategoryFolder);
 			generator.Run();
 		}
 	}

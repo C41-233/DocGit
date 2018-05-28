@@ -3,8 +3,7 @@ package c41.docgit.generator;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.List;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -24,15 +23,13 @@ public class CategoryGenerator {
 	private final String categoryName;
 	private final File categoryInputFolder;
 	private final File categoryOutputFolder;
-	private final File docFolder;
 	
 	private final ArrayList<Project> projects = new ArrayList<>();
 	
-	public CategoryGenerator(String name, File inputFolder, File outputFolder, File docFolder) {
+	public CategoryGenerator(String name, File inputFolder, File outputFolder) {
 		this.categoryName = name;
 		this.categoryInputFolder = inputFolder;
 		this.categoryOutputFolder = outputFolder;
-		this.docFolder = docFolder;
 	}
 	
 	public void Run() throws IOException, TemplateException, DocumentException {
@@ -70,7 +67,7 @@ public class CategoryGenerator {
 		
 		projects.add(project);
 
-		HashMap<String, MajorGroup> majors = new HashMap<>();
+		List<MajorGroup> majors = new ArrayList<>();
 		
 		Element majorsElement = rootElement.element("majors");
 		for(Object majorObject : majorsElement.elements("major")) {
@@ -95,7 +92,7 @@ public class CategoryGenerator {
 				group.addVersion(version);
 			}
 			
-			majors.put(name, group);
+			majors.add(group);
 		}
 		
 		Element latestElement = majorsElement.element("latest");
@@ -104,9 +101,7 @@ public class CategoryGenerator {
 		}
 		
 		HtmlConfig config = new HtmlConfig();
-		MajorGroup[] majorGroup = majors.values().toArray(new MajorGroup[majors.size()]);
-		Arrays.sort(majorGroup, (m1, m2)->m2.getName().compareTo(m1.getName()));
-		config.arguments.put("groups", majorGroup);
+		config.arguments.put("groups", majors);
 		config.arguments.put("latest", project.getLatest());
 		config.arguments.put("home", project.getHome());
 		config.arguments.put("category", categoryName);
