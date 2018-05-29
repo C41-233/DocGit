@@ -9,10 +9,14 @@
 	}
 	.project-name{
 		font-weight:	bold;
+		padding-top:    2px;
+		padding-bottom: 2px;
 	}
 	.project-text{
 		color: #777;
 		font-family:	consolas;
+		padding-top:    2px;
+		padding-bottom: 2px;
 	}
 	#body{
 		margin-top:	30px;
@@ -49,7 +53,10 @@
 	<#list projects as project>
 		<div class="row" data-url="${project.name}">
 			<div class="project-name col-lg-3">${project.name}</div>
-			<div class="project-text col-lg-9">${project.description}</div>
+			<div class="project-text col-lg-9">
+				<div>${project.description}</div>
+				<div class="text-right"><#list project.tags as tag><span class="badge">${tag}</span></#list></div>
+			</div>
 		</div>
 	</#list>
 </div>
