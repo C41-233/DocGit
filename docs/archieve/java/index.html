@@ -2,6 +2,7 @@
 
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>docgit for java</title>
 	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/DocGit/css/main.css" rel="stylesheet">
@@ -15,17 +16,36 @@
 	header{
 		background-color: #0099cc;
 	}
-	table tr>th.project-name{
-		width:	20%;
-		padding-left:	15px;
-		padding-right:	15px;
+	.row{
+		border:	1px solid #ecf0f1;
+		margin-left: 0;
+		margin-right: 0;
 	}
-	td{
+	.project-name{
+		font-weight:	bold;
+	}
+	.project-text{
 		color: #777;
 		font-family:	consolas;
 	}
 	#body{
 		margin-top:	30px;
+		margin-bottom:	15px;
+	}
+	@media(min-width: 1200px){
+		.project-name{
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		.project-name, .project-text{
+			padding-top:	5px;
+			padding-bottom: 5px;
+		}
+	}
+	@media(max-width: 768px){
+		.project-name{
+			font-size:	1.2em;
+		}
 	}
 </style>
 
@@ -40,44 +60,42 @@
 	  <li><a href="javascript:void(0)">docgit</a></li>
 	  <li class="active">java</li>
 	</ol>
-	<table class="table table-bordered">
-		<tr data-url="7-zip-jbinding">
-			<th class="project-name">7-zip-jbinding</th>
-			<td>Native (JNI) cross-platform library to extract (password protected, multi-part) 7z Zip Rar Tar Split Lzma Iso HFS GZip Cpio BZip2 Z Arj Chm Lhz Cab Nsis Deb Rpm Wim Udf archives and create 7z, Zip, Tar, GZip & BZip2 from Java.</td>
-		</tr>
-		<tr data-url="ant">
-			<th class="project-name">ant</th>
-			<td>Apache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other.</td>
-		</tr>
-		<tr data-url="apache-poi">
-			<th class="project-name">apache-poi</th>
-			<td>The Apache POI Project's mission is to create and maintain Java APIs for manipulating various file formats based upon the Office Open XML standards (OOXML) and Microsoft's OLE 2 Compound Document format (OLE2).</td>
-		</tr>
-		<tr data-url="asm">
-			<th class="project-name">asm</th>
-			<td>ASM is an all purpose Java bytecode manipulation and analysis framework. It can be used to modify existing classes or to dynamically generate classes, directly in binary form.</td>
-		</tr>
-		<tr data-url="cglib">
-			<th class="project-name">cglib</th>
-			<td>cglib is a powerful, high performance and quality Code Generation Library, It is used to extend JAVA classes and implements interfaces at runtime.</td>
-		</tr>
-		<tr data-url="commons-logging">
-			<th class="project-name">commons-logging</th>
-			<td>提供的是一个Java的日志接口，同时兼顾轻量级和不依赖于具体的日志实现工具。它提供给中间件/日志工具开发者一个简单的日志操作抽象，允许程序开发人员使用不同的具体日志实现工具。</td>
-		</tr>
-		<tr data-url="dj-native-swing">
-			<th class="project-name">dj-native-swing</th>
-			<td>The NativeSwing library allows an easy integration of some native components into Swing applications, and provides some native utilities to enhance Swing's APIs. It is composed of a framework library, and an SWT-based implementation that provides many rich components.</td>
-		</tr>
-		<tr data-url="dom4j">
-			<th class="project-name">dom4j</th>
-			<td>XML解析。</td>
-		</tr>
-		<tr data-url="jdk">
-			<th class="project-name">jdk</th>
-			<td>Java标准库。</td>
-		</tr>
-	</table>
+		<div class="row" data-url="7-zip-jbinding">
+			<div class="project-name col-lg-3">7-zip-jbinding</div>
+			<div class="project-text col-lg-9">Native (JNI) cross-platform library to extract (password protected, multi-part) 7z Zip Rar Tar Split Lzma Iso HFS GZip Cpio BZip2 Z Arj Chm Lhz Cab Nsis Deb Rpm Wim Udf archives and create 7z, Zip, Tar, GZip & BZip2 from Java.</div>
+		</div>
+		<div class="row" data-url="ant">
+			<div class="project-name col-lg-3">ant</div>
+			<div class="project-text col-lg-9">Apache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other.</div>
+		</div>
+		<div class="row" data-url="apache-poi">
+			<div class="project-name col-lg-3">apache-poi</div>
+			<div class="project-text col-lg-9">The Apache POI Project's mission is to create and maintain Java APIs for manipulating various file formats based upon the Office Open XML standards (OOXML) and Microsoft's OLE 2 Compound Document format (OLE2).</div>
+		</div>
+		<div class="row" data-url="asm">
+			<div class="project-name col-lg-3">asm</div>
+			<div class="project-text col-lg-9">ASM is an all purpose Java bytecode manipulation and analysis framework. It can be used to modify existing classes or to dynamically generate classes, directly in binary form.</div>
+		</div>
+		<div class="row" data-url="cglib">
+			<div class="project-name col-lg-3">cglib</div>
+			<div class="project-text col-lg-9">cglib is a powerful, high performance and quality Code Generation Library, It is used to extend JAVA classes and implements interfaces at runtime.</div>
+		</div>
+		<div class="row" data-url="commons-logging">
+			<div class="project-name col-lg-3">commons-logging</div>
+			<div class="project-text col-lg-9">提供的是一个Java的日志接口，同时兼顾轻量级和不依赖于具体的日志实现工具。它提供给中间件/日志工具开发者一个简单的日志操作抽象，允许程序开发人员使用不同的具体日志实现工具。</div>
+		</div>
+		<div class="row" data-url="dj-native-swing">
+			<div class="project-name col-lg-3">dj-native-swing</div>
+			<div class="project-text col-lg-9">The NativeSwing library allows an easy integration of some native components into Swing applications, and provides some native utilities to enhance Swing's APIs. It is composed of a framework library, and an SWT-based implementation that provides many rich components.</div>
+		</div>
+		<div class="row" data-url="dom4j">
+			<div class="project-name col-lg-3">dom4j</div>
+			<div class="project-text col-lg-9">XML解析。</div>
+		</div>
+		<div class="row" data-url="jdk">
+			<div class="project-name col-lg-3">jdk</div>
+			<div class="project-text col-lg-9">Java标准库。</div>
+		</div>
 </div>
 </body>
 

@@ -2,17 +2,36 @@
 	header{
 		background-color: #0099cc;
 	}
-	table tr>th.project-name{
-		width:	20%;
-		padding-left:	15px;
-		padding-right:	15px;
+	.row{
+		border:	1px solid #ecf0f1;
+		margin-left: 0;
+		margin-right: 0;
 	}
-	td{
+	.project-name{
+		font-weight:	bold;
+	}
+	.project-text{
 		color: #777;
 		font-family:	consolas;
 	}
 	#body{
 		margin-top:	30px;
+		margin-bottom:	15px;
+	}
+	@media(min-width: 1200px){
+		.project-name{
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		.project-name, .project-text{
+			padding-top:	5px;
+			padding-bottom: 5px;
+		}
+	}
+	@media(max-width: 768px){
+		.project-name{
+			font-size:	1.2em;
+		}
 	}
 </style>
 
@@ -27,12 +46,10 @@
 	  <li><a href="javascript:void(0)">docgit</a></li>
 	  <li class="active">${category}</li>
 	</ol>
-	<table class="table table-bordered">
-		<#list projects as project>
-		<tr data-url="${project.name}">
-			<th class="project-name">${project.name}</th>
-			<td>${project.description}</td>
-		</tr>
-		</#list>
-	</table>
+	<#list projects as project>
+		<div class="row" data-url="${project.name}">
+			<div class="project-name col-lg-3">${project.name}</div>
+			<div class="project-text col-lg-9">${project.description}</div>
+		</div>
+	</#list>
 </div>
