@@ -1,0 +1,30 @@
+<project>
+	<home>http://hibernate.org/orm/</home>
+	<description>
+		Hibernate ORM enables developers to more easily write applications whose data outlives the application process. As an Object/Relational Mapping (ORM) framework, Hibernate is concerned with data persistence as it applies to relational databases (via JDBC). 
+	</description>
+	<tags>
+		<tag>orm</tag>
+	</tags>
+	<majors>
+		<major name="5.3">
+			<version name="5.3.1.final" document="http://docs.jboss.org/hibernate/orm/5.3/javadocs/"></version>
+		</major>
+		<major name="5.2">
+			<version name="5.2.17.final" document="http://docs.jboss.org/hibernate/orm/5.2/javadocs/"></version>
+		</major>
+		<major name="5.1">
+			<version name="5.1.14.final" document="http://docs.jboss.org/hibernate/orm/5.1/javadocs/"></version>
+		</major>
+		<major name="5.0">
+			<version name="5.0.12.final" document="http://docs.jboss.org/hibernate/orm/5.0/javadocs/"></version>
+		</major>
+		<major name="4.3">
+			<version name="4.3.11.final" document="http://docs.jboss.org/hibernate/orm/4.3/javadocs/"></version>
+		</major>
+		<major name="4.2">
+			<version name="4.2.21.final" document="http://docs.jboss.org/hibernate/orm/4.2/javadocs/"></version>
+		</major>
+	</majors>
+</project>
+

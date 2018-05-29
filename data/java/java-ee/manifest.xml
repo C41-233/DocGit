@@ -1,0 +1,20 @@
+<project>
+	<home>http://www.oracle.com/technetwork/java/javaee/overview/index.html</home>
+	<description>
+		Java Platform, Enterprise Edition (Java EE) is the standard in community-driven enterprise software. 
+	</description>
+	<tags>
+		<tag>web</tag>
+	</tags>
+	<majors>
+		<major name="8" document="https://docs.oracle.com/javaee/8/api/">
+		</major>
+		<major name="7" document="https://docs.oracle.com/javaee/7/api/">
+		</major>
+		<major name="6" document="https://docs.oracle.com/javaee/6/api/">
+		</major>
+		<major name="5" document="https://docs.oracle.com/javaee/5/api/">
+		</major>
+	</majors>
+</project>
+
