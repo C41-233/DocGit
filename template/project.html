@@ -39,34 +39,36 @@
 	  <li><a href="${path('/archieve/',category)}">${category}</a></li>
 	  <li class="active">${project}</li>
 	</ol>
-	<h3>Documentation</h3>
-	<table class="table table-bordered">
-	<#if latest??>
-		<tr>
-			<th colspan="2" data-url="${latest}" data-target="_blank" class="text-center">Latest</th>
-		</tr>
-	</#if>
-	<#list groups as group>
-		<tr>
-			<#if group.versionCount gt 0>
-				<th rowspan="${group.versionCount+1}">${group.name}</th>
-			<#else>
-				<#if group.url??>
-				<th colspan="2" data-url="${group.url}" data-target="_blank">${group.name}</th>
-				<#else>
-				<th colspan="2" class="no-link">${group.name}</th>
-				</#if>
-			</#if>
-		</tr>
-		<#list group.versions as version>
+	<#if body>
+		<h3>Documentation</h3>
+		<table class="table table-bordered">
+		<#if latest??>
 			<tr>
-				<#if version.url??>
-					<td data-url="${version.url}" data-target="_blank">${version.name}</td>
+				<th colspan="2" data-url="${latest}" data-target="_blank" class="text-center">Latest</th>
+			</tr>
+		</#if>
+		<#list groups as group>
+			<tr>
+				<#if group.versionCount gt 0>
+					<th rowspan="${group.versionCount+1}">${group.name}</th>
 				<#else>
-					<td class="no-link">${version.name}</td>
+					<#if group.url??>
+					<th colspan="2" data-url="${group.url}" data-target="_blank">${group.name}</th>
+					<#else>
+					<th colspan="2" class="no-link">${group.name}</th>
+					</#if>
 				</#if>
 			</tr>
+			<#list group.versions as version>
+				<tr>
+					<#if version.url??>
+						<td data-url="${version.url}" data-target="_blank">${version.name}</td>
+					<#else>
+						<td class="no-link">${version.name}</td>
+					</#if>
+				</tr>
+			</#list>
 		</#list>
-	</#list>
-	</table>
+		</table>
+	</#if>
 </div>

@@ -70,39 +70,41 @@ public class CategoryGenerator {
 		List<MajorGroup> majors = new ArrayList<>();
 		
 		Element majorsElement = rootElement.element("majors");
-		for(Object majorObject : majorsElement.elements("major")) {
-			MajorGroup group = new MajorGroup();
-			Element majorElement = (Element) majorObject;
-			String name = majorElement.attributeValue("name");
-			group.setName(name);
-			String majorDocument = majorElement.attributeValue("document");
-			if(majorDocument != null) {
-				group.setUrl(majorDocument);
-			}
-			
-			for(Object minorObject : majorElement.elements("version")) {
-				Element minorElement = (Element) minorObject;
-				Version version = new Version();
-				version.setName(minorElement.attributeValue("name"));
-				version.setUrl(minorElement.attributeValue("document"));
-				if(minorElement.element("cache-document") != null) {
-					version.setUrl("/DocGit/doc/" + categoryName + "/" + projectName + "/" + version.getName());
+		if(majorsElement != null) {
+			for(Object majorObject : majorsElement.elements("major")) {
+				MajorGroup group = new MajorGroup();
+				Element majorElement = (Element) majorObject;
+				String name = majorElement.attributeValue("name");
+				group.setName(name);
+				String majorDocument = majorElement.attributeValue("document");
+				if(majorDocument != null) {
+					group.setUrl(majorDocument);
 				}
 				
-				group.addVersion(version);
+				for(Object minorObject : majorElement.elements("version")) {
+					Element minorElement = (Element) minorObject;
+					Version version = new Version();
+					version.setName(minorElement.attributeValue("name"));
+					version.setUrl(minorElement.attributeValue("document"));
+					if(minorElement.element("cache-document") != null) {
+						version.setUrl("/DocGit/doc/" + categoryName + "/" + projectName + "/" + version.getName());
+					}
+					
+					group.addVersion(version);
+				}
+				
+				majors.add(group);
 			}
-			
-			majors.add(group);
-		}
-		
-		Element latestElement = majorsElement.element("latest");
-		if(latestElement != null) {
-			project.setLatest(latestElement.attributeValue("document"));
+			Element latestElement = majorsElement.element("latest");
+			if(latestElement != null) {
+				project.setLatest(latestElement.attributeValue("document"));
+			}
 		}
 		
 		HtmlConfig config = new HtmlConfig();
 		config.arguments.put("groups", majors);
 		config.arguments.put("latest", project.getLatest());
+		config.arguments.put("body", project.getLatest() != null || !majors.isEmpty());
 		config.arguments.put("home", project.getHome());
 		config.arguments.put("category", categoryName);
 		config.arguments.put("project", projectName);

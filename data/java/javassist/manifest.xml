@@ -1,0 +1,16 @@
+<project>
+	<home>http://jboss-javassist.github.io/javassist/</home>
+	<description>
+		Javassist (Java Programming Assistant) makes Java bytecode manipulation simple. It is a class library for editing bytecodes in Java; it enables Java programs to define a new class at runtime and to modify a class file when the JVM loads it. 
+	</description>
+	<tags>
+		<tag>class</tag>
+	</tags>
+	<majors>
+		<latest name="5.3.1.final" document="http://jboss-javassist.github.io/javassist/html/index.html?overview-summary.html"></latest>
+		<major name="3.22">
+			<version name="3.22.0.ga"></version>
+		</major>
+	</majors>
+</project>
+
