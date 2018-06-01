@@ -1,0 +1,20 @@
+header{
+	background-color: #27ae60;
+}
+#tags{
+	text-align:	left;
+	font-size:	12px;
+}
+#menu{
+	text-align:	center;
+}
+.home, .home:hover, .home:focus{
+	color:	#2cc36b;
+	text-decoration: none;
+}
+.home:hover{
+	color:	#295;
+}
+.no-link{
+	color:	gray;
+}

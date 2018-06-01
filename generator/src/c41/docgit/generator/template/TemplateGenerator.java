@@ -51,6 +51,8 @@ public class TemplateGenerator {
 		HashMap<String, Object> maps = new HashMap<>();
 		maps.put("title", config.title);
 		maps.put("body", body);
+		maps.put("importCss", config.importCss);
+		maps.put("importJs", config.importJs);
 		
 		if(config.cssFile != null) {
 			String text = FileUtils.readFileToString(config.cssFile, "utf-8");

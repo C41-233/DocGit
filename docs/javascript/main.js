@@ -1,3 +1,8 @@
+if(!String.prototype.contains){
+	String.prototype.contains = function(s){
+		return this.indexOf(s) >= 0
+	}
+}
 $(function(){
 	$("[data-url]").each(function(){
 		var url = $(this).data("url")

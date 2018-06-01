@@ -111,6 +111,7 @@ public class CategoryGenerator {
 		config.arguments.put("description", project.getDescription());
 		config.arguments.put("tags", project.getTags());
 		config.title = projectName;
+		config.importCss.add("project.css");
 		
 		File indexFile = new File(outputFolder, "index.html");
 		TemplateGenerator.getInstance().generateHtml(TemplateFile.PROJECT_INDEX_HTML, indexFile, config);
@@ -121,6 +122,8 @@ public class CategoryGenerator {
 		
 		HtmlConfig htmlConfig = new HtmlConfig();
 		htmlConfig.title = "docgit for " + categoryName;
+		htmlConfig.importCss.add("category.css");
+		htmlConfig.importJs.add("category.js");
 		htmlConfig.arguments.put("category", categoryName);
 		htmlConfig.arguments.put("projects", projects);
 		

@@ -6,52 +6,15 @@
 	<title>docgit for java</title>
 	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/DocGit/css/main.css" rel="stylesheet">
+		<link href="/DocGit/css/category.css" rel="stylesheet">
 	<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="/DocGit/javascript/main.js"></script>
+		<script src="/DocGit/javascript/category.js"></script>
 </head>
 
 <body>
-	<style type="text/css">
-	header{
-		background-color: #0099cc;
-	}
-	.row{
-		border:	1px solid #ecf0f1;
-		margin-left: 0;
-		margin-right: 0;
-	}
-	.project-name{
-		font-weight:	bold;
-		padding-top:    2px;
-		padding-bottom: 2px;
-	}
-	.project-text{
-		color: #777;
-		font-family:	consolas;
-		padding-top:    2px;
-		padding-bottom: 2px;
-	}
-	#body{
-		margin-top:	30px;
-		margin-bottom:	15px;
-	}
-	@media(min-width: 1200px){
-		.project-name{
-			padding-left: 30px;
-			padding-right: 30px;
-		}
-		.project-name, .project-text{
-			padding-top:	5px;
-			padding-bottom: 5px;
-		}
-	}
-	@media(max-width: 768px){
-		.project-name{
-			font-size:	1.2em;
-		}
-	}
-</style>
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 <header>
 	<div class="container">
@@ -64,6 +27,15 @@
 	  <li><a href="javascript:void(0)">docgit</a></li>
 	  <li class="active">java</li>
 	</ol>
+	<div class="row">
+		<div class="col-lg-3"></div>
+		<div class="col-lg-6 form-group">
+			<input type="text" class="form-control" id="search"/>
+			<i class="fa fa-search" id="search-icon"></i>
+		</div>
+		<div class="col-lg-3"></div>
+	</div>
+	<div id="table-projects">
 		<div class="row" data-url="7-zip-jbinding">
 			<div class="project-name col-lg-3">7-zip-jbinding</div>
 			<div class="project-text col-lg-9">
@@ -155,6 +127,14 @@
 				<div class="text-right"><span class="badge">java</span></div>
 			</div>
 		</div>
+		<div class="row" data-url="jface">
+			<div class="project-name col-lg-3">jface</div>
+			<div class="project-text col-lg-9">
+				<div>JFace是建立在SWT之上的UI部件，是Eclipse组织为了开发Eclipse IDE环境所编写的一组底层图形界面API,其底层实现为SWT。它扩展了SWT并能与SWT交互操作。JFace工具箱提供了一组功能强大的用户界面组件，开发人员可以轻松地在独立应用程序中利用这些组件，以简化常见的UI编程任务。</div>
+				<div class="text-right"><span class="badge">ui</span></div>
+			</div>
+		</div>
+	</div>
 </div>
 </body>
 

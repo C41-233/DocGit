@@ -1,0 +1,52 @@
+header{
+	background-color: #0099cc;
+}
+#table-projects{
+	margin-top:	20px;
+}
+#table-projects .row{
+	border:	1px solid #ecf0f1;
+	margin-left: 0;
+	margin-right: 0;
+}
+.project-name{
+	font-weight:	bold;
+	padding-top:    2px;
+	padding-bottom: 2px;
+}
+.project-text{
+	color: #777;
+	font-family:	consolas;
+	padding-top:    2px;
+	padding-bottom: 2px;
+}
+#body{
+	margin-top:	30px;
+	margin-bottom:	15px;
+}
+#search{
+	padding-left: 25px;
+	padding-right: 25px;
+	text-align:	center;
+}
+#search-icon{
+	position: absolute;
+	right: 25px;
+	top: 10px;
+	cursor:pointer;
+}
+@media(min-width: 1200px){
+	.project-name{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.project-name, .project-text{
+		padding-top:	5px;
+		padding-bottom: 5px;
+	}
+}
+@media(max-width: 768px){
+	.project-name{
+		font-size:	1.2em;
+	}
+}
