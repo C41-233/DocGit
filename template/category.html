@@ -17,7 +17,21 @@
 			<input type="text" class="form-control" id="search"/>
 			<i class="fa fa-search" id="search-icon"></i>
 		</div>
-		<div class="col-lg-3"></div>
+		<div class="col-lg-2">
+			<div class="dropdown">
+				<button type="button" class="dropdown-toggle btn btn-default" data-toggle="dropdown">
+					<span id="tag-search">所有标签</span>
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li id="tag-all"><a href="javascript:void(0)">所有标签</a></li>
+					<#list tags as tag>
+						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">${tag.name}</span><span class="pull-right">(${tag.count})</span></a></li>
+					</#list>
+				</ul>
+			</div>
+		</div>
+		<div class="col-lg-1"></div>
 	</div>
 	<div id="table-projects">
 	<#list projects as project>

@@ -5,6 +5,7 @@
 	</description>
 	<tags>
 		<tag>build</tag>
+		<tag>utility</tag>
 	</tags>
 	<majors>
 		<latest document="http://ant.apache.org/manual/api/index.html"></latest>

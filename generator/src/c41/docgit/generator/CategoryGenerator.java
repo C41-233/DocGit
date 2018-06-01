@@ -3,6 +3,8 @@ package c41.docgit.generator;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import org.dom4j.Document;
@@ -15,6 +17,7 @@ import c41.docgit.generator.template.TemplateFile;
 import c41.docgit.generator.template.TemplateGenerator;
 import c41.docgit.generator.vo.MajorGroup;
 import c41.docgit.generator.vo.Project;
+import c41.docgit.generator.vo.Tag;
 import c41.docgit.generator.vo.Version;
 import freemarker.template.TemplateException;
 
@@ -59,7 +62,8 @@ public class CategoryGenerator {
 		Element tagsElement = rootElement.element("tags");
 		for(Object tagObject : tagsElement.elements("tag")) {
 			Element tagElement = (Element) tagObject;
-			project.addTag(tagElement.getTextTrim());
+			String tag = tagElement.getTextTrim();
+			project.addTag(tag);
 		}
 		
 		Element descriptionElement = rootElement.element("description");
@@ -102,6 +106,9 @@ public class CategoryGenerator {
 		}
 		
 		HtmlConfig config = new HtmlConfig();
+		config.title = projectName;
+		config.importCss.add("project.css");
+
 		config.arguments.put("groups", majors);
 		config.arguments.put("latest", project.getLatest());
 		config.arguments.put("body", project.getLatest() != null || !majors.isEmpty());
@@ -109,10 +116,7 @@ public class CategoryGenerator {
 		config.arguments.put("category", categoryName);
 		config.arguments.put("project", projectName);
 		config.arguments.put("description", project.getDescription());
-		config.arguments.put("tags", project.getTags());
-		config.title = projectName;
-		config.importCss.add("project.css");
-		
+		config.arguments.put("tags", project.getTags());		
 		File indexFile = new File(outputFolder, "index.html");
 		TemplateGenerator.getInstance().generateHtml(TemplateFile.PROJECT_INDEX_HTML, indexFile, config);
  	}
@@ -126,6 +130,28 @@ public class CategoryGenerator {
 		htmlConfig.importJs.add("category.js");
 		htmlConfig.arguments.put("category", categoryName);
 		htmlConfig.arguments.put("projects", projects);
+		
+		HashMap<String, Tag> tagsSet = new HashMap<>();
+		for(Project project : projects) {
+			for (String name : project.getTags()) {
+				Tag tag;
+				if(tagsSet.containsKey(name)) {
+					tag = tagsSet.get(name);
+				}
+				else {
+					tag = new Tag();
+					tag.setName(name);
+					tagsSet.put(name, tag);
+				}
+				tag.addCount();
+			}
+		}
+		List<Tag> tagsList = new ArrayList<>();
+		for (Tag tag : tagsSet.values()) {
+			tagsList.add(tag);
+		}
+		tagsList.sort((t1, t2) -> t1.getName().compareTo(t2.getName()));
+		htmlConfig.arguments.put("tags", tagsList);
 		
 		TemplateGenerator.getInstance().generateHtml(TemplateFile.CATEGORY_INDEX_HTML, outputIndexHtml, htmlConfig);
 	}

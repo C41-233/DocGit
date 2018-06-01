@@ -9,6 +9,9 @@ header{
 	margin-left: 0;
 	margin-right: 0;
 }
+#table-projects .badge+.badge{
+	margin-left:	5px;
+}
 .project-name{
 	font-weight:	bold;
 	padding-top:    2px;
