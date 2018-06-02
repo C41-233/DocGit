@@ -9,7 +9,7 @@
 	</tags>
 	<majors>
 		<latest document="http://jogamp.org/deployment/jogamp-next/javadoc/joal/javadoc/"></latest>
-		<major name="2.3">
+		<major name="2">
 			<version name="2.3.2"></version>
 		</major>
 	</majors>

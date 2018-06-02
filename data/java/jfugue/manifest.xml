@@ -8,8 +8,8 @@
 	</tags>
 	<majors>
 		<latest document="http://www.jfugue.org/doc/index.html"></latest>
-		<major name="5.0"></major>
-		<major name="4.0">
+		<major name="5"></major>
+		<major name="4">
 			<version name="4.0.3">
 				<cache-document/>
 			</version>

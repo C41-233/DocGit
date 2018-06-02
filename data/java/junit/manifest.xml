@@ -1,0 +1,19 @@
+<project>
+	<home>https://junit.org/</home>
+	<description>
+		Java单元测试框架。
+	</description>
+	<tags>
+		<tag>test</tag>
+	</tags>
+	<majors>
+		<latest document="https://junit.org/junit5/docs/current/api/overview-summary.html"></latest>
+		<major name="5">
+			<version name="5.2.0"></version>
+		</major>
+		<major name="4">
+			<version name="4.12" document="https://junit.org/junit4/javadoc/latest/index.html"></version>
+		</major>
+	</majors>
+</project>
+

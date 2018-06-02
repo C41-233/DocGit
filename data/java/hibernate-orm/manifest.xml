@@ -7,22 +7,14 @@
 		<tag>orm</tag>
 	</tags>
 	<majors>
-		<major name="5.3">
+		<major name="5">
 			<version name="5.3.1.final" document="http://docs.jboss.org/hibernate/orm/5.3/javadocs/"></version>
-		</major>
-		<major name="5.2">
 			<version name="5.2.17.final" document="http://docs.jboss.org/hibernate/orm/5.2/javadocs/"></version>
-		</major>
-		<major name="5.1">
 			<version name="5.1.14.final" document="http://docs.jboss.org/hibernate/orm/5.1/javadocs/"></version>
-		</major>
-		<major name="5.0">
 			<version name="5.0.12.final" document="http://docs.jboss.org/hibernate/orm/5.0/javadocs/"></version>
 		</major>
-		<major name="4.3">
+		<major name="4">
 			<version name="4.3.11.final" document="http://docs.jboss.org/hibernate/orm/4.3/javadocs/"></version>
-		</major>
-		<major name="4.2">
 			<version name="4.2.21.final" document="http://docs.jboss.org/hibernate/orm/4.2/javadocs/"></version>
 		</major>
 	</majors>

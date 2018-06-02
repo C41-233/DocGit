@@ -9,7 +9,9 @@
 	</tags>
 	<majors>
 		<latest document="http://sevenzipjbind.sourceforge.net/javadoc/index.html"></latest>
-		<major name="9.20"></major>
+		<major name="9">
+			<version name="9.20"></version>
+		</major>
 	</majors>
 </project>
 

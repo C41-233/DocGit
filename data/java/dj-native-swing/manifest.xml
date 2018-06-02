@@ -8,7 +8,7 @@
 	</tags>
 	<majors>
 		<latest document="http://djproject.sourceforge.net/ns/documentation/javadoc/index.html"></latest>
-		<major name="1.0">
+		<major name="1">
 			<version name="1.0.3"></version>
 			<version name="1.0.2"></version>
 		</major>

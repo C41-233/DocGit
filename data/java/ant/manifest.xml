@@ -9,10 +9,10 @@
 	</tags>
 	<majors>
 		<latest document="http://ant.apache.org/manual/api/index.html"></latest>
-		<major name="1.10">
+		<major name="1">
 			<version name="1.10.3"></version>
-		</major>
-		<major name="1.9" document="http://ant.apache.org/manual-1.9.x/api/index.html">
+			<version name="1.9" document="http://ant.apache.org/manual-1.9.x/api/index.html">
+			</version>
 		</major>
 	</majors>
 </project>

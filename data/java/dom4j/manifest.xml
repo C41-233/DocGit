@@ -7,13 +7,11 @@
 		<tag>xml</tag>
 	</tags>
 	<majors>
-		<major name="2.1">
+		<major name="2">
 			<version name="2.1.0" document="https://dom4j.github.io/javadoc/2.1.0/"></version>
-		</major>
-		<major name="2.0">
 			<version name="2.0.2" document="https://dom4j.github.io/javadoc/2.0.2/"></version>
 		</major>
-		<major name="1.6">
+		<major name="1">
 			<version name="1.6.1" document="https://dom4j.github.io/javadoc/1.6.1/"></version>
 		</major>
 	</majors>
