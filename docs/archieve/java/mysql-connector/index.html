@@ -1,0 +1,166 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>mysql-connector</title>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/DocGit/css/main.css" rel="stylesheet">
+		<link href="/DocGit/css/project.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/DocGit/javascript/main.js"></script>
+</head>
+
+<body>
+	<header>
+	<div class="container">
+		<h1>mysql-connector</h1>
+		<p>MySQL Connector/J is the official JDBC driver for MySQL.</p>
+		<p id="tags"><span class="badge">database</span><span class="badge">jdbc</span></p>
+	</div>
+</header>
+<div class="container" id="menu">
+	<ul class="list-inline">
+		<li><span class="glyphicon glyphicon-home"></span> <a href="https://dev.mysql.com/downloads/connector/j/" target="_blank" class="home">项目主页</a></li>
+	</ul>
+</div>
+<div class="container" id="body">
+	<ol class="breadcrumb">
+	  <li><a href="javascript:void(0)">docgit</a></li>
+	  <li><a href="/DocGit/archieve/java">java</a></li>
+	  <li class="active">mysql-connector</li>
+	</ol>
+		<h3>Documentation</h3>
+		<table class="table table-bordered">
+			<tr>
+					<th colspan="2" data-url="https://dev.mysql.com/doc/dev/connector-j/8.0/" data-target="_blank">8</th>
+			</tr>
+			<tr>
+						<th rowspan="2" class="no-link">5</th>
+			</tr>
+				<tr>
+						<td class="no-link">5.1.30</td>
+				</tr>
+		</table>
+		<div class="appender">
+			<p><strong>URL格式：</strong><code>jdbc:mysql://&lt;ip&gt;:&lt;port&gt;/&lt;database&gt;</code></p>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>参数</th>
+			<th>类型</th>
+			<th>描述</th>
+			<th>默认值</th>
+		</tr>
+	</thead>
+	<tr>
+		<th>autoReconnect</th>
+		<td>boolean</td>
+		<td>自动重连</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<th>autoReconnectForPools</th>
+		<td>boolean</td>
+		<td>针对数据库连接池的重连策略</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<th>capitalizeTypeNames</th>
+		<td>boolean</td>
+		<td>数据定义名称以大写表示</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>characterEncoding</th>
+		<td>string</td>
+		<td>字符集</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>connectTimeout</th>
+		<td>int</td>
+		<td>建立连接的超时时间（毫秒）</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<th>failOverReadOnly</th>
+		<td>boolean</td>
+		<td>自动重连后设置为只读</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<th>initialTimeout</th>
+		<td>int</td>
+		<td>尝试重连时间间隔（秒）</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<th>interactiveClient</th>
+		<td>boolean</td>
+		<td>设置CLIENT_INTERACTIVE标志，根据INTERACTIVE_TIMEOUT而不是WAIT_TIMEOUT向MySQL通报超时连接。</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<th>maxReconnect</th>
+		<td>boolean</td>
+		<td>尝试重连次数</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<th>maxRows</th>
+		<td>int</td>
+		<td>结果集最大行数</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>password</th>
+		<td>string</td>
+		<td>密码</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>relaxAutocommit</th>
+		<td>boolean</td>
+		<td>自动提交</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>socketFactory</th>
+		<td>string</td>
+		<td>驱动程序用于创建与服务器套接字连接的类的名称，该类必须实现了接口com.mysql.jdbc.SocketFactory</td>
+		<td>com.mysql.jdbc.StandardSocketFactory</td>
+	</tr>
+	<tr>
+		<th>socketTimeout</th>
+		<td>int</td>
+		<td>套接字读写超时时间（毫秒）</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<th>useConfigs</th>
+		<td>boolean</td>
+		<td>使用配置属性列表</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<th>useUnicode</th>
+		<td>boolean</td>
+		<td>UNICODE编码</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<th>user</th>
+		<td>string</td>
+		<td>用户名</td>
+		<td></td>
+	</tr>
+</table>
+
+		</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<project>
+	<home>https://dev.mysql.com/downloads/connector/j/</home>
+	<description>
+		MySQL Connector/J is the official JDBC driver for MySQL.
+	</description>
+	<tags>
+		<tag>database</tag>
+		<tag>jdbc</tag>
+	</tags>
+	<majors>
+		<major name="8" document="https://dev.mysql.com/doc/dev/connector-j/8.0/">
+		</major>
+		<major name="5">
+			<version name="5.1.30"></version>
+		</major>
+	</majors>
+	<body>
+		<import src="options.html"/>
+	</body>
+</project>
+
