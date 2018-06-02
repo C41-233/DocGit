@@ -1,0 +1,300 @@
+<style type="text/css">
+	#log4j-properties h1{
+		font-size:	24px;
+	}
+	#log4j-properties h2{
+		font-size:	18px;
+	}
+	#log4j-properties h3{
+		font-size:	14px;
+		font-style:	italic;
+	}
+	#log4j-properties table th,
+	#log4j-properties table td{
+		font-size:	12px;
+		padding:	4px;
+	}
+</style>
+
+<div id="log4j-properties">
+	<h1>log4j.properties</h1>
+	<hr/>
+
+	<h2>Logger</h2>
+	<p><code>log4j.rootLooger=&lt;level&gt;, &lt;appender-name&gt;, &lt;appender-name&gt;...</code></p>
+	<p><code>log4j.logger.&lt;logger-name&gt;=&lt;level&gt;, &lt;appender-name&gt;, &lt;appender-name&gt;...</code></p>
+	<p>&lt;level&gt;包括OFF、TRACE、DEBUGE、INFO、WARN、ERROR、FATAL、ALL。</p>
+
+	<h2>Appender</h2>
+	<p><code>log4j.appender.&lt;appender-name&gt;=&lt;class&gt;</code></p>
+	<p><code>log4j.appender.&lt;appender-name&gt;.&lt;option&gt;=&lt;value&gt;</code></p>
+	<p>内置的Appender包括以下五种：</p>
+	<table class="table table-bordered">
+		<tr><th>org.apache.log4j.ConsoleAppender</th><td>控制台</td><tr>
+		<tr><th>org.apache.log4j.FileAppender</th><td>文件</td><tr>
+		<tr><th>org.apache.log4j.DailyRollingFileAppender</th><td>每天产生一个日志文件</td><tr>
+		<tr><th>org.apache.log4j.RollingFileAppender</th><td>文件大小到达指定尺寸的时候产生一个新的文件</td><tr>
+		<tr><th>org.apache.log4j.WriterAppender</th><td>将日志信息以流格式发送到任意指定的地方</td><tr>
+	</table>
+	<h3>org.apache.log4j.ConsoleAppender</h3>
+	<table class="table table-bordered">
+		<tr>
+			<th>ImmediateFlush</th>
+			<td>立即输出日志，默认为true</td>
+		</tr>
+		<tr>
+			<th>Target</th>
+			<td>输出目标，System.out、System.err</td>
+		</tr>
+		<tr>
+			<th>Threshold</th>
+			<td>消息输出的最低级别</td>
+		</tr>
+	</table>
+
+	<h3>org.apache.log4j.FileAppender</h3>
+	<table class="table table-bordered">
+		<tr>
+			<th>Append</th>
+			<td>是否在末尾追写，默认为true</td>
+		</tr>
+		<tr>
+			<th>Encoding</th>
+			<td>指定文件编码格式</td>
+		</tr>
+		<tr>
+			<th>File</th>
+			<td>目标文件</td>
+		</tr>
+		<tr>
+			<th>ImmediateFlush</th>
+			<td>立即输出日志，默认为true</td>
+		</tr>
+		<tr>
+			<th>Threshold</th>
+			<td>消息输出的最低级别</td>
+		</tr>
+	</table>
+
+	<h3>org.apache.log4j.DailyRollingFileAppender</h3>
+	<table class="table table-bordered">
+		<tr>
+			<th>Append</th>
+			<td>是否在末尾追写，默认为true</td>
+		</tr>
+		<tr>
+			<th>DatePattern</th>
+			<td>'.'yyyy-MM：每月
+			<br/>'.'yyyy-ww：每周
+			<br/>'.'yyyy-MM-dd：每天
+			<br/>'.'yyyy-MM-dd-a：每半天
+			<br/>'.'yyyy-MM-dd-HH：每小时
+			<br/>'.'yyyy-MM-dd-HH-mm：每分钟
+			</td>
+		</tr>
+		<tr>
+			<th>Encoding</th>
+			<td>指定文件编码格式</td>
+		</tr>
+		<tr>
+			<th>File</th>
+			<td>目标文件</td>
+		</tr>
+		<tr>
+			<th>ImmediateFlush</th>
+			<td>立即输出日志，默认为true</td>
+		</tr>
+		<tr>
+			<th>Threshold</th>
+			<td>消息输出的最低级别</td>
+		</tr>
+	</table>
+
+	<h3>org.apache.log4j.RollingFileAppender</h3>
+	<table class="table table-bordered">
+		<tr>
+			<th>Append</th>
+			<td>是否在末尾追写，默认为true</td>
+		</tr>
+		<tr>
+			<th>Encoding</th>
+			<td>指定文件编码格式</td>
+		</tr>
+		<tr>
+			<th>File</th>
+			<td>目标文件</td>
+		</tr>
+		<tr>
+			<th>ImmediateFlush</th>
+			<td>立即输出日志，默认为true</td>
+		</tr>
+		<tr>
+			<th>MaxBackIndex</th>
+			<td>指定产生文件的最大数量</td>
+		</tr>
+		<tr>
+			<th>MaxFileSize</th>
+			<td>日志文件达到该大小时自动滚动，后缀为KB、MB、GB</td>
+		</tr>
+		<tr>
+			<th>Threshold</th>
+			<td>消息输出的最低级别</td>
+		</tr>
+	</table>
+
+	<h3>org.apache.log4j.net.SMTPAppender</h3>
+	<table class="table table-bordered">
+		<tr>
+			<th>SMTPDebug</th>
+			<td>FALSE</td>
+		</tr>
+		<tr>
+			<th>SMTPHost</th>
+			<td>smtp.163.com</td>
+		</tr>
+		<tr>
+			<th>SMTPUsername</th>
+			<td>username</td>
+		</tr>
+		<tr>
+			<th>SMTPPassword</th>
+			<td>password</td>
+		</tr>
+		<tr>
+			<th>SMTPAuth</th>
+			<td>TRUE</td>
+		</tr>
+		<tr>
+			<th>From</th>
+			<td>xxx@163.com</td>
+		</tr>
+		<tr>
+			<th>To</th>
+			<td>zzz@163.com</td>
+		</tr>
+		<tr>
+			<th>Cc</th>
+			<td>ccc@163.com</td>
+		</tr>
+		<tr>
+			<th>Bcc</th>
+			<td>bbb@163.com</td>
+		</tr>
+		<tr>
+			<th>Subject</th>
+			<td>subject</td>
+		</tr>
+		<tr>
+			<th>BufferSize</th>
+			<td>1024</td>
+		</tr>
+		<tr>
+			<th>Threshold</th>
+			<td>消息输出的最低级别</td>
+		</tr>
+	</table>
+
+	<h3>org.apache.log4j.jdbc.JDBCAppender</h3>
+	<table class="table table-bordered">
+		<tr>
+			<th>Driver</th>
+			<td>com.mysql.jdbc.Driver</td>
+		</tr>
+		<tr>
+			<th>URL</th>
+			<td>jdbc:mysql://127.0.0.1:3306/app</td>
+		</tr>
+		<tr>
+			<th>User</th>
+			<td>root</td>
+		</tr>
+		<tr>
+			<th>Password</th>
+			<td>123456</td>
+		</tr>
+		<tr>
+			<th>Sql</th>
+			<td></td>
+		</tr>
+	</table>
+
+	<h2>Layout</h2>
+	<p><code>log4j.appender.&lt;appender-name&gt;.layout=&lt;class&gt;</code></p>
+	<p><code>log4j.appender.&lt;appender-name&gt;.layout.&lt;option&gt;=&lt;value&gt;</code></p>
+	<p>内置的Layout包括以下四种：</p>
+	<table class="table table-bordered">
+		<tr><th>org.apache.log4j.HTMLLayout</th><td>以HTML表格形式布局</td><tr>
+		<tr><th>org.apache.log4j.PatternLayout</th><td>正则指定布局模式</td><tr>
+		<tr><th>org.apache.log4j.SimpleLayout</th><td>包含日志信息的级别和信息字符串</td><tr>
+		<tr><th>org.apache.log4j.TTCCLayout</th><td>包含日志产生的时间、线程、类别等等信息</td><tr>
+		<tr><th>org.apache.log4j.xml.XMLLayout</th><td>以XML形式布局</td><tr>
+	</table>
+
+	<h3>org.apache.log4j.PatternLayout</h3>
+	<table class="table table-bordered">
+		<tr>
+			<th>ConversionPattern</th>
+			<td>
+				<p>格式化字符串</p>
+				<table class="table table-bordered">
+					<tr><th>%%</th><td>输%字符</td><tr>
+					<tr><th>%m</th><td>代码中指定的消息</td><tr>
+					<tr><th>%p</th><td>优先级</td><tr>
+					<tr><th>%r</th><td>自应用启动到输出该log信息耗费的毫秒数</td><tr>
+					<tr><th>%c</th><td>日志名称</td><tr>
+					<tr><th>%t</th><td>产生该日志事件的线程名</td><tr>
+					<tr><th>%n</th><td>一个回车换行符，Windows平台为“\r\n”，Unix平台为“\n”</td><tr>
+					<tr><th>%d</th><td>日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d{yyy MMM dd HH:mm:ss, SSS}</td><tr>
+					<tr><th>%l</th><td>日志事件的发生堆栈，包括类名、线程、行数</td><tr>
+					<tr><th>%F</th><td>文件名</td><tr>
+					<tr><th>%L</th><td>行号</td><tr>
+					<tr><th>%x</th><td>输出和当前线程相关联的NDC（嵌套诊断环境）</td><tr>
+				</table>
+				<p>可以在%与模式字符之间加上修饰符控制对齐。</p>
+				<table class="table table-bordered">
+					<tr><th>%nc</th><td>最小宽度为n，右对齐</td><tr>
+					<tr><th>%-nc</th><td>最小宽度为n，左对齐</td><tr>
+					<tr><th>%.nc</th><td>最大宽度为n，左侧多出的字符截断</td><tr>
+					<tr><th>%n.mc</th><td>最小宽度n，最大宽度m</td><tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<h3>org.apache.log4j.HTMLLayout</h3>
+	<table class="table table-bordered">
+		<tr>
+			<th>LocationInfo</th>
+			<td>输出java文件名称和行号，默认为false</td>
+		</tr>
+		<tr>
+			<th>Title</th>
+			<td>默认为Log4JLog Messages</td>
+		</tr>
+	</table>
+	<h3>org.apache.log4j.XMLLayout</h3>
+	<table class="table table-bordered">
+		<tr>
+			<th>LocationInfo</th>
+			<td>输出java文件名称和行号，默认为false</td>
+		</tr>
+	</table>
+
+	<h2>Filter</h2>
+	<p><code>log4j.appender.&lt;appender-name&gt;.filter.&lt;filter-name&gt;=&lt;class&gt;</code></p>
+	<p><code>log4j.appender.&lt;appender-name&gt;.filter.&lt;filter-name&gt;.&lt;option&gt;=&lt;value&gt;</code></p>
+
+	<h3>org.apache.log4j.varia.LevelRangeFilter</h3>
+	<table class="table table-bordered">
+		<tr>
+			<th>LevelMin</th>
+			<td>最小日志等级</td>
+		</tr>
+		<tr>
+			<th>LevelMax</th>
+			<td>最大日志等级</td>
+		</tr>
+	</table>
+
+	<h2>其它</h2>
+	<p>日志会继承，通过<code>log4j.additivity.&lt;logger-name&gt;=false</code>来取消继承。</p>
+</div>

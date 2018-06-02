@@ -16,7 +16,7 @@
 	  <li><a href="${path('/archieve/',category)}">${category}</a></li>
 	  <li class="active">${project}</li>
 	</ol>
-	<#if body>
+	<#if hasBody>
 		<h3>Documentation</h3>
 		<table class="table table-bordered">
 		<#if latest??>
@@ -52,4 +52,9 @@
 		</#list>
 		</table>
 	</#if>
+	<#list bodies as body>
+		<div class="appender">
+			${body}
+		</div>
+	</#list>
 </div>

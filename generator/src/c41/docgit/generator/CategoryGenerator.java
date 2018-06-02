@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -110,12 +111,25 @@ public class CategoryGenerator {
 
 		config.arguments.put("groups", majors);
 		config.arguments.put("latest", project.getLatest());
-		config.arguments.put("body", project.getLatest() != null || !majors.isEmpty());
+		config.arguments.put("hasBody", project.getLatest() != null || !majors.isEmpty());
 		config.arguments.put("home", project.getHome());
 		config.arguments.put("category", categoryName);
 		config.arguments.put("project", projectName);
 		config.arguments.put("description", project.getDescription());
-		config.arguments.put("tags", project.getTags());		
+		config.arguments.put("tags", project.getTags());
+		
+		List<String> bodies = new ArrayList<>();
+		config.arguments.put("bodies", bodies);
+		Element bodyElement = rootElement.element("body");
+		if(bodyElement != null) {
+			for(Object importObject : bodyElement.elements("import")) {
+				Element importElement = (Element)importObject;
+				String src = importElement.attributeValue("src");
+				File srcFile = new File(inputFoler, src);
+				bodies.add(FileUtils.readFileToString(srcFile, "utf-8"));
+			}
+		}
+		
 		File indexFile = new File(outputFolder, "index.html");
 		TemplateGenerator.getInstance().generateHtml(TemplateFile.PROJECT_INDEX_HTML, indexFile, config);
  	}

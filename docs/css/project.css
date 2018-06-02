@@ -1,6 +1,9 @@
 header{
 	background-color: #27ae60;
 }
+#body{
+	margin-bottom:	10px;
+}
 #tags{
 	text-align:	left;
 	font-size:	12px;
@@ -20,4 +23,10 @@ header{
 }
 #tags .badge+.badge{
 	margin-left:	5px;
+}
+.appender{
+	border: 1px solid black;
+	border-radius: 16px;
+	padding-left:	15px;
+	padding-right:	15px;
 }
