@@ -4,7 +4,8 @@
 		Native (JNI) cross-platform library to extract (password protected, multi-part) 7z Zip Rar Tar Split Lzma Iso HFS GZip Cpio BZip2 Z Arj Chm Lhz Cab Nsis Deb Rpm Wim Udf archives and create 7z, Zip, Tar, GZip &amp; BZip2 from Java.
 	</description>
 	<tags>
-		<tag>7zip</tag>
+		<tag>7z</tag>
+		<tag>compress</tag>
 	</tags>
 	<majors>
 		<latest document="http://sevenzipjbind.sourceforge.net/javadoc/index.html"></latest>

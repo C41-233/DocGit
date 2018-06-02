@@ -1,0 +1,17 @@
+<project>
+	<home>http://jogamp.org/jogl/www/</home>
+	<description>
+		The JOGL project hosts the development version of the Java™ Binding for the OpenGL® API, and is designed to provide hardware-supported 3D graphics to applications written in Java.
+	</description>
+	<tags>
+		<tag>graphic</tag>
+		<tag>opengl</tag>
+	</tags>
+	<majors>
+		<latest document="http://jogamp.org/deployment/jogamp-next/javadoc/jogl/javadoc/"></latest>
+		<major name="2.3">
+			<version name="2.3.2"></version>
+		</major>
+	</majors>
+</project>
+

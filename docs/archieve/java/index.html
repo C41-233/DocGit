@@ -41,16 +41,22 @@
 				</button>
 				<ul class="dropdown-menu">
 					<li id="tag-all"><a href="javascript:void(0)">所有标签</a></li>
-						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">7zip</span><span class="pull-right">(1)</span></a></li>
+						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">7z</span><span class="pull-right">(1)</span></a></li>
 						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">build</span><span class="pull-right">(1)</span></a></li>
 						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">class</span><span class="pull-right">(3)</span></a></li>
+						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">compress</span><span class="pull-right">(1)</span></a></li>
+						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">graphic</span><span class="pull-right">(1)</span></a></li>
 						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">gui</span><span class="pull-right">(1)</span></a></li>
-						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">java</span><span class="pull-right">(1)</span></a></li>
+						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">jdk</span><span class="pull-right">(1)</span></a></li>
 						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">log</span><span class="pull-right">(1)</span></a></li>
-						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">midi</span><span class="pull-right">(1)</span></a></li>
 						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">office</span><span class="pull-right">(1)</span></a></li>
+						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">openal</span><span class="pull-right">(1)</span></a></li>
+						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">opencl</span><span class="pull-right">(1)</span></a></li>
+						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">opengl</span><span class="pull-right">(1)</span></a></li>
 						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">orm</span><span class="pull-right">(1)</span></a></li>
+						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">parallel</span><span class="pull-right">(1)</span></a></li>
 						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">parse</span><span class="pull-right">(1)</span></a></li>
+						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">sound</span><span class="pull-right">(2)</span></a></li>
 						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">ui</span><span class="pull-right">(1)</span></a></li>
 						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">utility</span><span class="pull-right">(1)</span></a></li>
 						<li><a href="javascript:void(0)" class="tag"><span class="tag-name">web</span><span class="pull-right">(1)</span></a></li>
@@ -64,7 +70,7 @@
 			<div class="project-name col-lg-3">7-zip-jbinding</div>
 			<div class="project-text col-lg-9">
 				<div>Native (JNI) cross-platform library to extract (password protected, multi-part) 7z Zip Rar Tar Split Lzma Iso HFS GZip Cpio BZip2 Z Arj Chm Lhz Cab Nsis Deb Rpm Wim Udf archives and create 7z, Zip, Tar, GZip & BZip2 from Java.</div>
-				<div class="text-right"><span class="badge">7zip</span></div>
+				<div class="text-right"><span class="badge">7z</span><span class="badge">compress</span></div>
 			</div>
 		</div>
 		<div class="row" data-url="ant">
@@ -148,7 +154,7 @@
 			<div class="project-name col-lg-3">jdk</div>
 			<div class="project-text col-lg-9">
 				<div>Java标准库。</div>
-				<div class="text-right"><span class="badge">java</span></div>
+				<div class="text-right"><span class="badge">jdk</span></div>
 			</div>
 		</div>
 		<div class="row" data-url="jface">
@@ -162,7 +168,28 @@
 			<div class="project-name col-lg-3">jfugue</div>
 			<div class="project-text col-lg-9">
 				<div>JFugue一个用于音乐制作的Java API。利用JFugue来制作音乐不需要涉及复杂的MIDI。音乐在运行期播放或保存到MIDI文件中。</div>
-				<div class="text-right"><span class="badge">midi</span></div>
+				<div class="text-right"><span class="badge">sound</span></div>
+			</div>
+		</div>
+		<div class="row" data-url="joal">
+			<div class="project-name col-lg-3">joal</div>
+			<div class="project-text col-lg-9">
+				<div>The JOAL Project hosts a reference implementation of the Java bindings for OpenAL API, and is designed to provide hardware-supported 3D spatialized audio for games written in Java.</div>
+				<div class="text-right"><span class="badge">sound</span><span class="badge">openal</span></div>
+			</div>
+		</div>
+		<div class="row" data-url="jocl">
+			<div class="project-name col-lg-3">jocl</div>
+			<div class="project-text col-lg-9">
+				<div>Project JOCL provides an easy to use Java binding for the OpenCL API.</div>
+				<div class="text-right"><span class="badge">parallel</span><span class="badge">opencl</span></div>
+			</div>
+		</div>
+		<div class="row" data-url="jogl">
+			<div class="project-name col-lg-3">jogl</div>
+			<div class="project-text col-lg-9">
+				<div>The JOGL project hosts the development version of the Java™ Binding for the OpenGL® API, and is designed to provide hardware-supported 3D graphics to applications written in Java.</div>
+				<div class="text-right"><span class="badge">graphic</span><span class="badge">opengl</span></div>
 			</div>
 		</div>
 	</div>

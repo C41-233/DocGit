@@ -7,7 +7,7 @@
 		<tag>class</tag>
 	</tags>
 	<majors>
-		<latest name="5.3.1.final" document="http://jboss-javassist.github.io/javassist/html/index.html?overview-summary.html"></latest>
+		<latest document="http://jboss-javassist.github.io/javassist/html/index.html?overview-summary.html"></latest>
 		<major name="3.22">
 			<version name="3.22.0.ga"></version>
 		</major>

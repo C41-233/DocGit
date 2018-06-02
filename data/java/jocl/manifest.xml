@@ -1,0 +1,17 @@
+<project>
+	<home>http://jogamp.org/jocl/www/</home>
+	<description>
+		Project JOCL provides an easy to use Java binding for the OpenCL API. 
+	</description>
+	<tags>
+		<tag>parallel</tag>
+		<tag>opencl</tag>
+	</tags>
+	<majors>
+		<latest document="http://jogamp.org/deployment/jogamp-next/javadoc/jocl/javadoc/"></latest>
+		<major name="2.3">
+			<version name="2.3.2"></version>
+		</major>
+	</majors>
+</project>
+

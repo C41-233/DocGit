@@ -4,7 +4,7 @@
 		Java标准库。
 	</description>
 	<tags>
-		<tag>java</tag>
+		<tag>jdk</tag>
 	</tags>
 	<majors>
 		<major name="9" document="https://docs.oracle.com/javase/9/docs/api/index.html?overview-summary.html">

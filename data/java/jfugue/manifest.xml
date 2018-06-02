@@ -4,7 +4,7 @@
 		JFugue一个用于音乐制作的Java API。利用JFugue来制作音乐不需要涉及复杂的MIDI。音乐在运行期播放或保存到MIDI文件中。
 	</description>
 	<tags>
-		<tag>midi</tag>
+		<tag>sound</tag>
 	</tags>
 	<majors>
 		<latest document="http://www.jfugue.org/doc/index.html"></latest>
