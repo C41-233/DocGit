@@ -37,4 +37,13 @@ public class MajorGroup {
 		this.url = url;
 	}
 	
+	public boolean isActiveVersion() {
+		for(Version v : versions) {
+			if(v.getUrl() != null) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 }

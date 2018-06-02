@@ -27,7 +27,11 @@
 		<#list groups as group>
 			<tr>
 				<#if group.versionCount gt 0>
-					<th rowspan="${group.versionCount+1}">${group.name}</th>
+					<#if group.activeVersion>
+						<th rowspan="${group.versionCount+1}">${group.name}</th>
+					<#else>
+						<th rowspan="${group.versionCount+1}" class="no-link">${group.name}</th>
+					</#if>
 				<#else>
 					<#if group.url??>
 					<th colspan="2" data-url="${group.url}" data-target="_blank">${group.name}</th>
