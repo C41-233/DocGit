@@ -1,0 +1,16 @@
+<project>
+	<home>http://pinyin4j.sourceforge.net/</home>
+	<description>
+		pinyin4j是一个支持将简体和繁体中文转换到成拼音的Java开源类库。
+	</description>
+	<tags>
+		<tag>pinyin</tag>
+	</tags>
+	<majors>
+		<latest document="http://pinyin4j.sourceforge.net/pinyin4j-doc/"></latest>
+		<major name="2">
+			<version name="2.5.0"></version>
+		</major>
+	</majors>
+</project>
+

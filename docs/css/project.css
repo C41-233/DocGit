@@ -12,8 +12,11 @@ header{
 	text-align:	center;
 }
 .home, .home:hover, .home:focus{
-	color:	#2cc36b;
 	text-decoration: none;
+	font-weight:	bold;
+}
+.home{
+	color:	#50b4a2;
 }
 .home:hover{
 	color:	#295;

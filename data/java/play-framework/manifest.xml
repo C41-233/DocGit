@@ -1,0 +1,40 @@
+<project>
+	<home>https://www.playframework.com/</home>
+	<description>
+		lay Framework makes it easy to build web applications with Java &amp; Scala.
+	</description>
+	<tags>
+		<tag>web</tag>
+	</tags>
+	<majors>
+		<major name="2">
+			<version name="2.6.x" document="https://www.playframework.com/documentation/2.6.x/api/java/index.html"></version>
+			<version name="2.6.15" document="https://www.playframework.com/documentation/2.6.15/api/java/index.html"></version>
+			<version name="2.6.13" document="https://www.playframework.com/documentation/2.6.13/api/java/index.html"></version>
+			<version name="2.6.12" document="https://www.playframework.com/documentation/2.6.12/api/java/index.html"></version>
+			<version name="2.6.11" document="https://www.playframework.com/documentation/2.6.11/api/java/index.html"></version>
+			<version name="2.6.10" document="https://www.playframework.com/documentation/2.6.10/api/java/index.html"></version>
+			<version name="2.6.9" document="https://www.playframework.com/documentation/2.6.9/api/java/index.html"></version>
+			<version name="2.6.7" document="https://www.playframework.com/documentation/2.6.7/api/java/index.html"></version>
+			<version name="2.6.6" document="https://www.playframework.com/documentation/2.6.6/api/java/index.html"></version>
+			<version name="2.6.5" document="https://www.playframework.com/documentation/2.6.5/api/java/index.html"></version>
+			<version name="2.6.3" document="https://www.playframework.com/documentation/2.6.3/api/java/index.html"></version>
+			<version name="2.6.1" document="https://www.playframework.com/documentation/2.6.1/api/java/index.html"></version>
+			<version name="2.6.0" document="https://www.playframework.com/documentation/2.6.0/api/java/index.html"></version>
+			<version name="2.5" document="https://www.playframework.com/documentation/2.5.x/api/java/index.html"></version>
+			<version name="2.4" document="https://www.playframework.com/documentation/2.4.x/api/java/index.html"></version>
+			<version name="2.3" document="https://www.playframework.com/documentation/2.3.x/api/java/index.html"></version>
+			<version name="2.2" document="https://www.playframework.com/documentation/2.2.x/api/java/index.html"></version>
+			<version name="2.1" document="https://www.playframework.com/documentation/2.1.x/api/java/index.html"></version>
+			<version name="2.0" document="https://www.playframework.com/documentation/2.0.x/api/java/index.html"></version>
+		</major>
+		<major name="1">
+			<version name="1.4.1" document="https://www.playframework.com/documentation/1.4.x/api/index.html"></version>
+			<version name="1.3.3" document="https://www.playframework.com/documentation/1.3.x/api/index.html"></version>
+			<version name="1.2.7.2" document="https://www.playframework.com/documentation/1.2.x/api/index.html"></version>
+			<version name="1.1.1" document="https://www.playframework.com/documentation/1.1.1/api/index.html"></version>
+			<version name="1.0.3.2" document="https://www.playframework.com/documentation/1.0.3.2/api/index.html"></version>
+		</major>
+	</majors>
+</project>
+
