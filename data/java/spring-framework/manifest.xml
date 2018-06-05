@@ -1,0 +1,24 @@
+<project>
+	<home>https://spring.io/projects/spring-framework</home>
+	<description>
+		The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.
+	</description>
+	<tags>
+		<tag>framework</tag>
+	</tags>
+	<majors>
+		<major name="5">
+			<version name="5.1.0" document="https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/javadoc-api/"></version>
+			<version name="5.0.7" document="https://docs.spring.io/spring/docs/5.0.7.BUILD-SNAPSHOT/javadoc-api/"></version>
+			<version name="5.0.6" document="https://docs.spring.io/spring/docs/5.0.6.RELEASE/javadoc-api/"></version>
+		</major>
+		<major name="4">
+			<version name="4.3.18" document="https://docs.spring.io/spring/docs/4.3.18.BUILD-SNAPSHOT/javadoc-api/"></version>
+			<version name="4.3.17" document="https://docs.spring.io/spring/docs/4.3.17.RELEASE/javadoc-api/"></version>
+		</major>
+		<major name="3">
+			<version name="3.2.18" document="hhttps://docs.spring.io/spring/docs/3.2.18.RELEASE/javadoc-api/"></version>
+		</major>
+	</majors>
+</project>
+

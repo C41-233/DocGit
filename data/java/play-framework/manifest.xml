@@ -1,7 +1,7 @@
 <project>
 	<home>https://www.playframework.com/</home>
 	<description>
-		lay Framework makes it easy to build web applications with Java &amp; Scala.
+		Play Framework makes it easy to build web applications with Java &amp; Scala.
 	</description>
 	<tags>
 		<tag>web</tag>

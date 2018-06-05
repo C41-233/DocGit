@@ -1,0 +1,25 @@
+<project>
+	<home>http://www.sqlite.org/index.html</home>
+	<description>
+		SQLite is a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine.
+	</description>
+	<tags>
+		<tag>database</tag>
+		<tag>jdbc</tag>
+	</tags>
+	<majors>
+		<major name="5">
+			<version name="5.1.0" document="https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/javadoc-api/"></version>
+			<version name="5.0.7" document="https://docs.spring.io/spring/docs/5.0.7.BUILD-SNAPSHOT/javadoc-api/"></version>
+			<version name="5.0.6" document="https://docs.spring.io/spring/docs/5.0.6.RELEASE/javadoc-api/"></version>
+		</major>
+		<major name="4">
+			<version name="4.3.18" document="https://docs.spring.io/spring/docs/4.3.18.BUILD-SNAPSHOT/javadoc-api/"></version>
+			<version name="4.3.17" document="https://docs.spring.io/spring/docs/4.3.17.RELEASE/javadoc-api/"></version>
+		</major>
+		<major name="3">
+			<version name="3.2.18" document="hhttps://docs.spring.io/spring/docs/3.2.18.RELEASE/javadoc-api/"></version>
+		</major>
+	</majors>
+</project>
+

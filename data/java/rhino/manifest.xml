@@ -1,0 +1,13 @@
+<project>
+	<home>https://developer.mozilla.org/zh-CN/docs/Mozilla/Projects/Rhino</home>
+	<description>
+		Rhino是用纯Java写成的JavaScript的开放源代码实现。它最常被用于嵌入Java应用程序，以便为终端用户提供脚本的能力。
+	</description>
+	<tags>
+		<tag>javascript</tag>
+	</tags>
+	<majors>
+		<latest document="http://mozilla.github.io/rhino/javadoc/index.html"></latest>
+	</majors>
+</project>
+
