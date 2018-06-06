@@ -1,0 +1,10 @@
+<project>
+	<home>https://code.google.com/archive/p/java-zhconverter/</home>
+	<description>
+		Based on the character map found in MediaWiki to convert Java String between traditional and simplified Chinese characters.
+	</description>
+	<tags>
+		<tag>chinese</tag>
+	</tags>
+</project>
+
