@@ -1,0 +1,14 @@
+<project>
+	<home>http://www.eclipse.org/swt/</home>
+	<description>
+		SWT is an open source widget toolkit for Java designed to provide efficient, portable access to the user-interface facilities of the operating systems on which it is implemented.
+	</description>
+	<tags>
+		<tag>gui</tag>
+	</tags>
+	<majors>
+		<latest document="http://www.eclipse.org/swt/javadoc.php">
+		</latest>
+	</majors>
+</project>
+
