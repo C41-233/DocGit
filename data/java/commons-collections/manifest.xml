@@ -1,0 +1,27 @@
+<project>
+	<home>http://commons.apache.org/proper/commons-collections/</home>
+	<description>
+		Commons-Collections seek to build upon the JDK classes by providing new interfaces, implementations and utilities.
+	</description>
+	<tags>
+		<tag>utility</tag>
+	</tags>
+	<majors>
+		<latest document="http://commons.apache.org/proper/commons-collections/javadocs/api-release/index.html"></latest>
+		<major name="4">
+			<version name="4.1">
+			</version>
+			<version name="4.0" document="http://commons.apache.org/proper/commons-collections/javadocs/api-4.0/index.html">
+			</version>
+		</major>
+		<major name="3">
+			<version name="3.2.2" document="http://commons.apache.org/proper/commons-collections/javadocs/api-3.2.2/index.html">
+			</version>
+		</major>
+		<major name="2">
+			<version name="2.1.1" document="http://commons.apache.org/proper/commons-collections/javadocs/api-2.1.1/index.html">
+			</version>
+		</major>
+	</majors>
+</project>
+

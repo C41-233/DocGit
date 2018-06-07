@@ -1,0 +1,10 @@
+<project>
+	<home>https://wiki.pentaho.com/display/Reporting/JFreeReport+0.9</home>
+	<description>
+		JFreeReport is a successful embedded reporting engine. By providing a high degree of flexibility and minimal requirements for the execution environment, JFreeReport can be integrated into most programs with little effort.
+	</description>
+	<tags>
+		<tag>report</tag>
+	</tags>
+</project>
+

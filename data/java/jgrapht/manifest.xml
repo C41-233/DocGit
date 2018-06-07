@@ -1,0 +1,17 @@
+<project>
+	<home>https://jgrapht.org/</home>
+	<description>
+		JGraphT is a free Java graph library that provides mathematical graph-theory objects and algorithms. 
+	</description>
+	<tags>
+		<tag>graph</tag>
+		<tag>utility</tag>
+	</tags>
+	<majors>
+		<latest document="https://jgrapht.org/javadoc/"></latest>
+		<major name="1">
+			<version name="1.2.0"></version>
+		</major>
+	</majors>
+</project>
+

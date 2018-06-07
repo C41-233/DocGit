@@ -1,0 +1,13 @@
+<project>
+	<home>http://www.jfree.org/jfreechart/</home>
+	<description>
+		JFreeChart is a free 100% Java chart library that makes it easy for developers to display professional quality charts in their applications.
+	</description>
+	<tags>
+		<tag>chart</tag>
+	</tags>
+	<majors>
+		<latest document="http://www.jfree.org/jfreechart/api/javadoc/index.html"></latest>
+	</majors>
+</project>
+
