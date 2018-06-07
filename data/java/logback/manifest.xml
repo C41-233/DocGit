@@ -1,0 +1,13 @@
+<project>
+	<home>https://logback.qos.ch/</home>
+	<description>
+		Logback is intended as a successor to the popular log4j project, picking up where log4j leaves off. Logback's architecture is sufficiently generic so as to apply under different circumstances. At present time, logback is divided into three modules, logback-core, logback-classic and logback-access.
+	</description>
+	<tags>
+		<tag>log</tag>
+	</tags>
+	<majors>
+		<latest document="https://logback.qos.ch/apidocs/index.html"></latest>
+	</majors>
+</project>
+
