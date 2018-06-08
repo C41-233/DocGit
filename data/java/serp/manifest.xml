@@ -1,0 +1,13 @@
+<project>
+	<home>http://serp.sourceforge.net/</home>
+	<description>
+		Serp is an open source framework for manipulating Java bytecode.
+	</description>
+	<tags>
+		<tag>class</tag>
+	</tags>
+	<majors>
+		<latest document="http://serp.sourceforge.net/site/apidocs/index.html"></latest>
+	</majors>
+</project>
+

@@ -1,0 +1,20 @@
+<project>
+	<home>http://commons.apache.org/proper/commons-codec/</home>
+	<description>
+		Apache Commons Codec (TM) software provides implementations of common encoders and decoders such as Base64, Hex, Phonetic and URLs.
+	</description>
+	<tags>
+		<tag>utility</tag>
+	</tags>
+	<majors>
+		<latest document="http://commons.apache.org/proper/commons-codec/apidocs/index.html"></latest>
+		<major name="1">
+			<version name="1.11" document="http://commons.apache.org/proper/commons-codec/archives/1.11/apidocs/index.html"></version>
+			<version name="1.10" document="http://commons.apache.org/proper/commons-codec/archives/1.10/apidocs/index.html"></version>
+			<version name="1.9" document="http://commons.apache.org/proper/commons-codec/archives/1.9/apidocs/index.html"></version>
+			<version name="1.8" document="http://commons.apache.org/proper/commons-codec/archives/1.8/apidocs/index.html"></version>
+			<version name="1.7" document="http://commons.apache.org/proper/commons-codec/archives/1.7/apidocs/index.html"></version>
+		</major>
+	</majors>
+</project>
+

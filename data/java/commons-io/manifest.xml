@@ -1,0 +1,23 @@
+<project>
+	<home>http://commons.apache.org/proper/commons-io/</home>
+	<description>
+		Commons IO is a library of utilities to assist with developing IO functionality.
+	</description>
+	<tags>
+		<tag>utility</tag>
+	</tags>
+	<majors>
+		<latest document="http://commons.apache.org/proper/commons-io/javadocs/api-release/index.html"></latest>
+		<major name="2">
+			<version name="2.6"></version>
+			<version name="2.5" document="http://commons.apache.org/proper/commons-io/javadocs/api-2.5/index.html"></version>
+			<version name="2.4" document="http://commons.apache.org/proper/commons-io/javadocs/api-2.4/index.html"></version>
+			<version name="2.3" document="http://commons.apache.org/proper/commons-io/javadocs/api-2.3/index.html"></version>
+			<version name="2.2" document="http://commons.apache.org/proper/commons-io/javadocs/api-2.2/index.html"></version>
+		</major>
+		<major name="1">
+			<version name="1.4" document="http://commons.apache.org/proper/commons-io/javadocs/api-1.4/index.html"></version>
+		</major>
+	</majors>
+</project>
+
