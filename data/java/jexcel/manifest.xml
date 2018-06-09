@@ -1,0 +1,16 @@
+<project>
+	<home>https://www.teamdev.com/jexcel</home>
+	<description>
+		JExcel gives all the power of Microsoft Excel: workbooks, formulas, full spreadsheet control. Easy to mix Java logic and Excel capabilities.
+	</description>
+	<tags>
+		<tag>office</tag>
+	</tags>
+	<majors>
+		<latest document="https://www.teamdev.com/downloads/jexcel/javadoc/index.html"></latest>
+		<major name="1">
+			<version name="1.8"></version>
+		</major>
+	</majors>
+</project>
+

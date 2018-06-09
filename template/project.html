@@ -52,6 +52,21 @@
 		</#list>
 		</table>
 	</#if>
+	<#if hasMaven>
+		<h3>Maven</h3>
+		<table class="table table-bordered" id="table-mvn">
+		<#list groups as group>
+			<#list group.versions as version>
+				<#if version.maven??>
+					<tr>
+						<th>${version.name}</th>
+						<td><pre>${version.maven?html}</pre></td>
+					</tr>
+				</#if>
+			</#list>
+		</#list>
+		</table>
+	</#if>
 	<#list bodies as body>
 		<div class="appender">
 			${body}

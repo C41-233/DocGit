@@ -15,6 +15,7 @@ import org.dom4j.io.SAXReader;
 import c41.docgit.generator.template.HtmlConfig;
 import c41.docgit.generator.template.TemplateFile;
 import c41.docgit.generator.template.TemplateGenerator;
+import c41.docgit.generator.template.XMLHelper;
 import c41.docgit.generator.vo.MajorGroup;
 import c41.docgit.generator.vo.Project;
 import c41.docgit.generator.vo.Tag;
@@ -51,6 +52,8 @@ public class CategoryGenerator {
 		Project project = new Project();
 		project.setName(projectName);
 		
+		boolean hasMaven = false;
+		
 		File manifest = new File(inputFoler, "manifest.xml");
 		SAXReader reader = new SAXReader();
 		Document document = reader.read(manifest);
@@ -75,18 +78,16 @@ public class CategoryGenerator {
 		
 		Element majorsElement = rootElement.element("majors");
 		if(majorsElement != null) {
-			for(Object majorObject : majorsElement.elements("major")) {
-				MajorGroup group = new MajorGroup();
-				Element majorElement = (Element) majorObject;
+			for(Element majorElement : XMLHelper.elements(majorsElement, "major")) {
+				MajorGroup majorGroup = new MajorGroup();
 				String name = majorElement.attributeValue("name");
-				group.setName(name);
+				majorGroup.setName(name);
 				String majorDocument = majorElement.attributeValue("document");
 				if(majorDocument != null) {
-					group.setUrl(majorDocument);
+					majorGroup.setUrl(majorDocument);
 				}
 				
-				for(Object minorObject : majorElement.elements("version")) {
-					Element minorElement = (Element) minorObject;
+				for(Element minorElement : XMLHelper.elements(majorElement, "version")) {
 					Version version = new Version();
 					version.setName(minorElement.attributeValue("name"));
 					version.setUrl(minorElement.attributeValue("document"));
@@ -94,10 +95,17 @@ public class CategoryGenerator {
 						version.setUrl("/DocGit/doc/" + categoryName + "/" + projectName + "/" + version.getName());
 					}
 					
-					group.addVersion(version);
+					Element mavenElement = minorElement.element("maven");
+					if(mavenElement != null) {
+						String cdata = mavenElement.getStringValue().trim().replace("\t", "    ");
+						version.setMaven(cdata);
+						hasMaven = true;
+					}
+					
+					majorGroup.addVersion(version);
 				}
 				
-				majors.add(group);
+				majors.add(majorGroup);
 			}
 			Element latestElement = majorsElement.element("latest");
 			if(latestElement != null) {
@@ -112,6 +120,7 @@ public class CategoryGenerator {
 		config.arguments.put("groups", majors);
 		config.arguments.put("latest", project.getLatest());
 		config.arguments.put("hasBody", project.getLatest() != null || !majors.isEmpty());
+		config.arguments.put("hasMaven", hasMaven);
 		config.arguments.put("home", project.getHome());
 		config.arguments.put("category", categoryName);
 		config.arguments.put("project", projectName);

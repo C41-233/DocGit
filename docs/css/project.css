@@ -35,3 +35,14 @@ header{
 	padding-top:	5px;
 	padding-bottom:	5px;
 }
+
+#table-mvn.table tr>th{
+	border-right: none;
+}
+#table-mvn.table tr>td{
+	padding: 0;
+	border: none;
+}
+#table-mvn.table tr>td>pre{
+	margin: 0;
+}

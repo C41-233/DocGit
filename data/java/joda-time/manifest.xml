@@ -1,0 +1,26 @@
+<project>
+	<home>http://www.joda.org/joda-time/</home>
+	<description>
+		Joda-Time provides a quality replacement for the Java date and time classes.
+	</description>
+	<tags>
+		<tag>datetime</tag>
+	</tags>
+	<majors>
+		<latest document="http://www.joda.org/joda-time/apidocs/index.html"></latest>
+		<major name="2">
+			<version name="2.10">
+				<maven>
+					<![CDATA[
+<dependency>
+	<groupId>joda-time</groupId>
+	<artifactId>joda-time</artifactId>
+	<version>2.10</version>
+</dependency>
+					]]>
+				</maven>
+			</version>
+		</major>
+	</majors>
+</project>
+

@@ -9,7 +9,28 @@
 	<majors>
 		<latest document="http://asm.ow2.io/javadoc/overview-summary.html"></latest>
 		<major name="6">
-			<version name="6.1.1"></version>
+			<version name="6.2">
+				<maven>
+					<![CDATA[
+<dependency>
+    <groupId>org.ow2.asm</groupId>
+    <artifactId>asm</artifactId>
+    <version>6.2</version>
+</dependency>
+					]]>
+				</maven>
+			</version>
+			<version name="6.1.1">
+				<maven>
+					<![CDATA[
+<dependency>
+    <groupId>org.ow2.asm</groupId>
+    <artifactId>asm</artifactId>
+    <version>6.1.1</version>
+</dependency>
+					]]>
+				</maven>
+			</version>
 		</major>
 		<major name="5">
 			<version name="5.0.alpha">

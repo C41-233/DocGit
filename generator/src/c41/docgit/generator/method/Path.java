@@ -7,6 +7,7 @@ import freemarker.template.TemplateModelException;
 
 public class Path implements TemplateMethodModelEx{
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public Object exec(List args) throws TemplateModelException {
 		StringBuilder sb = new StringBuilder();
