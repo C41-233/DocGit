@@ -1,0 +1,13 @@
+<project>
+	<home>https://github.com/stleary/JSON-java</home>
+	<description>
+		A reference implementation of a JSON package in Java. 
+	</description>
+	<tags>
+		<tag>json</tag>
+	</tags>
+	<majors>
+		<latest document="http://stleary.github.io/JSON-java/index.html"></latest>
+	</majors>
+</project>
+

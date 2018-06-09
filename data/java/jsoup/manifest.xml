@@ -1,0 +1,16 @@
+<project>
+	<home>https://jsoup.org/</home>
+	<description>
+		jsoup is a Java library for working with real-world HTML. It provides a very convenient API for extracting and manipulating data, using the best of DOM, CSS, and jquery-like methods.
+	</description>
+	<tags>
+		<tag>html</tag>
+	</tags>
+	<majors>
+		<latest document="https://jsoup.org/apidocs/overview-summary.html"></latest>
+		<major name="1">
+			<version name="1.11.3"></version>
+		</major>
+	</majors>
+</project>
+

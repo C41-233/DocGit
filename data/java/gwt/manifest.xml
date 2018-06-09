@@ -1,0 +1,13 @@
+<project>
+	<home>http://www.gwtproject.org/</home>
+	<description>
+		GWT is a development toolkit for building and optimizing complex browser-based applications. Its goal is to enable productive development of high-performance web applications without the developer having to be an expert in browser quirks, XMLHttpRequest, and JavaScript.
+	</description>
+	<tags>
+		<tag>web</tag>
+	</tags>
+	<majors>
+		<latest document="http://www.gwtproject.org/javadoc/latest/index.html"></latest>
+	</majors>
+</project>
+

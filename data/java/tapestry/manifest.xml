@@ -1,0 +1,17 @@
+<project>
+	<home>http://tapestry.apache.org/</home>
+	<description>
+		Tapestry框架是一个位于java servlet容器和Tapestry应用程序之间的层。Tapestry不是一个独立运行的服务器；它是一个servlet的扩展，它运行于servlet容器（例如Tomcat）或包含servlet容器的应用服务器中（如Jboss,Websphere，或者WebLogic）. Tapestry应用其实是由一系列页面组成，而每个页面是由可以复用的组件构成。
+	</description>
+	<tags>
+		<tag>web</tag>
+	</tags>
+	<majors>
+		<latest document="http://tapestry.apache.org/current/apidocs/index.html"></latest>
+		<major name="5">
+			<version name="5.4"></version>
+			<version name="5.3.7" document="http://tapestry.apache.org/5.3.7/apidocs/"></version>
+		</major>
+	</majors>
+</project>
+

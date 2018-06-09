@@ -1,0 +1,16 @@
+<project>
+	<home>https://github.com/cping/LGame</home>
+	<description>
+		国产Java游戏引擎。
+	</description>
+	<tags>
+		<tag>game</tag>
+	</tags>
+	<majors>
+		<major name="0">
+			<version name="0.5"></version>
+			<version name="0.3.2"></version>
+		</major>
+	</majors>
+</project>
+

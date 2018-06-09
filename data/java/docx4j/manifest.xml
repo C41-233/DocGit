@@ -1,0 +1,15 @@
+<project>
+	<home>https://www.docx4java.org/trac/docx4j</home>
+	<description>
+		docx4j is an open source (ASLv2) Java library for creating and manipulating Microsoft Open XML (Word docx, Powerpoint pptx, and Excel xlsx) files.
+	</description>
+	<tags>
+		<tag>office</tag>
+	</tags>
+	<majors>
+		<major name="3">
+			<version name="3.3.7"></version>
+		</major>
+	</majors>
+</project>
+

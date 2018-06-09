@@ -1,0 +1,15 @@
+<project>
+	<home>https://github.com/google/gson</home>
+	<description>
+		Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.
+	</description>
+	<tags>
+		<tag>json</tag>
+	</tags>
+	<majors>
+		<major name="2">
+			<version name="2.8.5" document="http://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5"></version>
+		</major>
+	</majors>
+</project>
+
