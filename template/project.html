@@ -1,3 +1,7 @@
+<#if category=="java">
+	<#assign docname = "javadoc">
+</#if>
+
 <header>
 	<div class="container">
 		<h1>${project}</h1>
@@ -17,55 +21,52 @@
 	  <li class="active">${project}</li>
 	</ol>
 	<#if hasBody>
-		<h3>Documentation</h3>
-		<table class="table table-bordered">
 		<#if latest??>
-			<tr>
-				<th colspan="2" data-url="${latest}" data-target="_blank" class="text-center">Latest</th>
-			</tr>
+			<h4>Latest</h4>
+			<table class="table table-bordered">
+				<tr><td data-target="_blank" data-url="${latest}">${docname}</td></tr>
+			</table>
 		</#if>
 		<#list groups as group>
-			<tr>
-				<#if group.versionCount gt 0>
-					<#if group.activeVersion>
-						<th rowspan="${group.versionCount+1}">${group.name}</th>
-					<#else>
-						<th rowspan="${group.versionCount+1}" class="no-link">${group.name}</th>
-					</#if>
-				<#else>
-					<#if group.url??>
-					<th colspan="2" data-url="${group.url}" data-target="_blank">${group.name}</th>
-					<#else>
-					<th colspan="2" class="no-link">${group.name}</th>
-					</#if>
-				</#if>
-			</tr>
+			<hr/>
+			<h4>${group.name}.x</h4>
+			<table class="table table-bordered table-version">
 			<#list group.versions as version>
 				<tr>
-					<#if version.url??>
-						<td data-url="${version.url}" data-target="_blank">${version.name}</td>
+					<th>${version.name}</th>
+					<td 
+						<#if version.url??>
+							data-target="_blank" data-url="${version.url}"
+						<#else>
+							class="no-link"
+						</#if>
+					>
+						${docname}
+					</td>
+					<#if group.maven??>
+						<#assign artifact = group.maven.artifactId+'-'+version.name+'.jar'>
+						<td 
+							data-target="_blank" data-url="http://central.maven.org/maven2/${group.maven.groupId?replace('.', '/')}/${group.maven.artifactId}/${version.name}/${artifact}">
+							${artifact}
+						</td>
 					<#else>
-						<td class="no-link">${version.name}</td>
+						<td></td>
 					</#if>
 				</tr>
 			</#list>
+			</table>
+			<#if group.maven??>
+				<div>
+					<span class="glyphicon glyphicon-folder-open"></span> 
+					<a target="_blank" href="http://mvnrepository.com/artifact/${group.maven.groupId}/${group.maven.artifactId}">Maven</a>
+				</div>
+				<pre>&lt;dependency&gt;
+    &lt;groupId&gt;${group.maven.groupId}&lt;/groupId&gt;
+    &lt;artifactId&gt;${group.maven.artifactId}&lt;/artifactId&gt;
+    &lt;version&gt;${group.versions[0].name}&lt;/version&gt;
+&lt;/dependency&gt;</pre>
+			</#if>
 		</#list>
-		</table>
-	</#if>
-	<#if hasMaven>
-		<h3>Maven</h3>
-		<table class="table table-bordered" id="table-mvn">
-		<#list groups as group>
-			<#list group.versions as version>
-				<#if version.maven??>
-					<tr>
-						<th>${version.name}</th>
-						<td><pre>${version.maven?html}</pre></td>
-					</tr>
-				</#if>
-			</#list>
-		</#list>
-		</table>
 	</#if>
 	<#list bodies as body>
 		<div class="appender">

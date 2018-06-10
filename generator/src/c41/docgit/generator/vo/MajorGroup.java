@@ -7,7 +7,7 @@ public class MajorGroup {
 
 	private String name;
 	private List<Version> versions = new ArrayList<>();
-	private String url;
+	private Maven maven;
 	
 	public String getName() {
 		return name;
@@ -29,21 +29,12 @@ public class MajorGroup {
 		return versions.size();
 	}
 
-	public String getUrl() {
-		return url;
+	public Maven getMaven() {
+		return maven;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
-	
-	public boolean isActiveVersion() {
-		for(Version v : versions) {
-			if(v.getUrl() != null) {
-				return true;
-			}
-		}
-		return false;
+	public void setMaven(Maven maven) {
+		this.maven = maven;
 	}
 	
 }

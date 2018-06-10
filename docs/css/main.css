@@ -8,6 +8,10 @@ th{
 	white-space:	nowrap;
 }
 
+a, a:hover, a:focus{
+	text-decoration: none;
+}
+
 header{
 	text-align: center;
 	color:	white;

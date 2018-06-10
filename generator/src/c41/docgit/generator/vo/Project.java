@@ -50,5 +50,5 @@ public class Project {
 	public void setLatest(String latest) {
 		this.latest = latest;
 	}
-	
+
 }

@@ -12,7 +12,6 @@ header{
 	text-align:	center;
 }
 .home, .home:hover, .home:focus{
-	text-decoration: none;
 	font-weight:	bold;
 }
 .home{
@@ -35,14 +34,9 @@ header{
 	padding-top:	5px;
 	padding-bottom:	5px;
 }
-
-#table-mvn.table tr>th{
-	border-right: none;
+.table-version th{
+	width:	20%;
 }
-#table-mvn.table tr>td{
-	padding: 0;
-	border: none;
-}
-#table-mvn.table tr>td>pre{
-	margin: 0;
+.table-version td:nth-child(2){
+	width:	40%;
 }

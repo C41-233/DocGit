@@ -17,6 +17,7 @@ import c41.docgit.generator.template.TemplateFile;
 import c41.docgit.generator.template.TemplateGenerator;
 import c41.docgit.generator.template.XMLHelper;
 import c41.docgit.generator.vo.MajorGroup;
+import c41.docgit.generator.vo.Maven;
 import c41.docgit.generator.vo.Project;
 import c41.docgit.generator.vo.Tag;
 import c41.docgit.generator.vo.Version;
@@ -52,8 +53,6 @@ public class CategoryGenerator {
 		Project project = new Project();
 		project.setName(projectName);
 		
-		boolean hasMaven = false;
-		
 		File manifest = new File(inputFoler, "manifest.xml");
 		SAXReader reader = new SAXReader();
 		Document document = reader.read(manifest);
@@ -82,29 +81,26 @@ public class CategoryGenerator {
 				MajorGroup majorGroup = new MajorGroup();
 				String name = majorElement.attributeValue("name");
 				majorGroup.setName(name);
-				String majorDocument = majorElement.attributeValue("document");
-				if(majorDocument != null) {
-					majorGroup.setUrl(majorDocument);
-				}
 				
-				for(Element minorElement : XMLHelper.elements(majorElement, "version")) {
+				for(Element versionElement : XMLHelper.elements(majorElement, "version")) {
 					Version version = new Version();
-					version.setName(minorElement.attributeValue("name"));
-					version.setUrl(minorElement.attributeValue("document"));
-					if(minorElement.element("cache-document") != null) {
+					version.setName(versionElement.attributeValue("name"));
+					version.setUrl(versionElement.attributeValue("document"));
+					if(versionElement.element("cache-document") != null) {
 						version.setUrl("/DocGit/doc/" + categoryName + "/" + projectName + "/" + version.getName());
-					}
-					
-					Element mavenElement = minorElement.element("maven");
-					if(mavenElement != null) {
-						String cdata = mavenElement.getStringValue().trim().replace("\t", "    ");
-						version.setMaven(cdata);
-						hasMaven = true;
 					}
 					
 					majorGroup.addVersion(version);
 				}
 				
+				Element mavenElement = majorElement.element("maven");
+				if(mavenElement != null) {
+					Maven maven = new Maven();
+					maven.setGroupId(mavenElement.element("groupId").getTextTrim());
+					maven.setArtifactId(mavenElement.element("artifactId").getTextTrim());
+					majorGroup.setMaven(maven);
+				}
+
 				majors.add(majorGroup);
 			}
 			Element latestElement = majorsElement.element("latest");
@@ -112,6 +108,7 @@ public class CategoryGenerator {
 				project.setLatest(latestElement.attributeValue("document"));
 			}
 		}
+
 		
 		HtmlConfig config = new HtmlConfig();
 		config.title = projectName;
@@ -120,7 +117,6 @@ public class CategoryGenerator {
 		config.arguments.put("groups", majors);
 		config.arguments.put("latest", project.getLatest());
 		config.arguments.put("hasBody", project.getLatest() != null || !majors.isEmpty());
-		config.arguments.put("hasMaven", hasMaven);
 		config.arguments.put("home", project.getHome());
 		config.arguments.put("category", categoryName);
 		config.arguments.put("project", projectName);

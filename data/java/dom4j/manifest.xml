@@ -8,21 +8,19 @@
 	</tags>
 	<majors>
 		<major name="2">
+			<maven>
+				<groupId>org.dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+			</maven>
 			<version name="2.1.0" document="https://dom4j.github.io/javadoc/2.1.0/"></version>
 			<version name="2.0.2" document="https://dom4j.github.io/javadoc/2.0.2/"></version>
 		</major>
 		<major name="1">
-			<version name="1.6.1" document="https://dom4j.github.io/javadoc/1.6.1/">
-				<maven>
-					<![CDATA[
-<dependency>
-    <groupId>dom4j</groupId>
-    <artifactId>dom4j</artifactId>
-    <version>1.6.1</version>
-</dependency>
-					]]>
-				</maven>
-			</version>
+			<maven>
+				<groupId>dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+			</maven>
+			<version name="1.6.1" document="https://dom4j.github.io/javadoc/1.6.1/">			</version>
 		</major>
 	</majors>
 </project>
