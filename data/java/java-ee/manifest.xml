@@ -7,7 +7,8 @@
 		<tag>web</tag>
 	</tags>
 	<majors>
-		<major name="8" document="https://docs.oracle.com/javaee/8/api/">
+		<latest document="https://javaee.github.io/javaee-spec/javadocs/"></latest>
+		<major name="8">
 		</major>
 		<major name="7" document="https://docs.oracle.com/javaee/7/api/">
 		</major>

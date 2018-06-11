@@ -24,13 +24,24 @@
 		<#if latest??>
 			<h4>Latest</h4>
 			<table class="table table-bordered">
-				<tr><td data-target="_blank" data-url="${latest}">${docname}</td></tr>
+				<tr><td data-target="_blank" data-url="${latest}"><span class="glyphicon glyphicon-file"></span> ${docname}</td></tr>
 			</table>
 		</#if>
 		<#list majors as major>
 			<hr/>
 			<h4>${major.name}.x</h4>
 			<table class="table table-bordered table-version">
+			<#if major.document??>
+				<tr>
+					<td 
+						data-target="_blank" 
+						data-url="${major.document}"
+						colspan="3"
+					>
+						<span class="glyphicon glyphicon-file"></span> ${docname}
+					</td>
+				</tr>
+			</#if>
 			<#list major.versions as version>
 				<tr>
 					<th>${version.name}</th>
@@ -45,7 +56,7 @@
 							class="no-link"
 						</#if>
 					>
-						${docname}
+						<span class="glyphicon glyphicon-file"></span> ${docname}
 					</td>
 					<#if version.artifactName??>
 						<td 
@@ -54,7 +65,7 @@
 							data-url="${version.artifactUrl}"
 							</#if>
 						>
-							${version.artifactName}
+							<span class="glyphicon glyphicon-download-alt"></span> ${version.artifactName}
 						</td>
 					<#else>
 						<td></td>

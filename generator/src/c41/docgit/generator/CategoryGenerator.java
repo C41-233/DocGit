@@ -9,10 +9,7 @@ import java.util.List;
 import javax.xml.bind.JAXBException;
 
 import org.apache.commons.io.FileUtils;
-import org.dom4j.Document;
 import org.dom4j.DocumentException;
-import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
 
 import c41.docgit.generator.template.HtmlConfig;
 import c41.docgit.generator.template.TemplateFile;
@@ -23,8 +20,8 @@ import c41.docgit.generator.vo.Project;
 import c41.docgit.generator.vo.Tag;
 import c41.docgit.generator.vo.Version;
 import c41.docgit.generator.xml.ProjectXML;
+import c41.docgit.generator.xml.ProjectXML.BodyXML.ImportXML;
 import c41.docgit.generator.xml.ProjectXML.MajorsXML.MajorXML;
-import c41.docgit.generator.xml.ProjectXML.MajorsXML.MajorXML.MavenXML;
 import c41.docgit.generator.xml.ProjectXML.MajorsXML.MajorXML.VersionXML;
 import c41.docgit.generator.xml.XMLHelper;
 import freemarker.template.TemplateException;
@@ -64,10 +61,6 @@ public class CategoryGenerator {
 		File manifest = new File(inputFoler, "manifest.xml");
 		ProjectXML projectXML = XMLHelper.read(manifest, ProjectXML.class);
 		
-		SAXReader reader = new SAXReader();
-		Document document = reader.read(manifest);
-		Element rootElement = document.getRootElement();
-		
 		project.setName(projectName);
 		project.setHome(projectXML.home);	
 		project.setDescription(projectXML.description);
@@ -85,6 +78,7 @@ public class CategoryGenerator {
 					majors.add(majorGroup);
 					
 					majorGroup.setName(majorElement.name);
+					majorGroup.setDocument(majorElement.document);
 					
 					if(majorElement.versions != null) {
 						for(VersionXML versionElement : majorElement.versions) {
@@ -144,12 +138,9 @@ public class CategoryGenerator {
 		
 		List<String> bodies = new ArrayList<>();
 		config.arguments.put("bodies", bodies);
-		Element bodyElement = rootElement.element("body");
-		if(bodyElement != null) {
-			for(Object importObject : bodyElement.elements("import")) {
-				Element importElement = (Element)importObject;
-				String src = importElement.attributeValue("src");
-				File srcFile = new File(inputFoler, src);
+		if(projectXML.body != null) {
+			for(ImportXML importXML : projectXML.body.imports) {
+				File srcFile = new File(inputFoler, importXML.src);
 				bodies.add(FileUtils.readFileToString(srcFile, "utf-8"));
 			}
 		}

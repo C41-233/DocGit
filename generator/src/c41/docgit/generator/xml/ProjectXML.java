@@ -19,6 +19,8 @@ public class ProjectXML {
 
 	public MajorsXML majors;
 	
+	public BodyXML body;
+	
 	public static class MajorsXML{
 		
 		public LatestXML latest;
@@ -41,6 +43,9 @@ public class ProjectXML {
 			@XmlElement(name = "version")
 			public List<VersionXML> versions;
 
+			@XmlAttribute
+			public String document;
+			
 			public MavenXML maven;
 			
 			public static class VersionXML{
@@ -69,6 +74,20 @@ public class ProjectXML {
 			
 		}
 
+	}
+
+	public static class BodyXML{
+		
+		@XmlElement(name = "import")
+		public List<ImportXML> imports;
+		
+		public static class ImportXML{
+			
+			@XmlAttribute
+			public String src;
+		
+		}
+		
 	}
 	
 }

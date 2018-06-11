@@ -8,6 +8,7 @@ public class MajorGroup {
 	private String name;
 	private List<Version> versions = new ArrayList<>();
 	private Maven maven;
+	private String document;
 	
 	public String getName() {
 		return name;
@@ -35,6 +36,14 @@ public class MajorGroup {
 
 	public void setMaven(Maven maven) {
 		this.maven = maven;
+	}
+
+	public String getDocument() {
+		return document;
+	}
+
+	public void setDocument(String document) {
+		this.document = document;
 	}
 	
 }
