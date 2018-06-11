@@ -8,6 +8,24 @@
 	</tags>
 	<majors>
 		<latest document="http://commons.apache.org/proper/commons-bcel/apidocs/index.html"></latest>
+		<major name="6">
+			<maven>
+				<groupId>org.apache.bcel</groupId>
+				<artifactId>bcel</artifactId>
+				<repository>http://central.maven.org/maven2</repository>
+			</maven>
+			<version name="6.2"></version>
+			<version name="6.1"></version>
+			<version name="6.0"></version>
+		</major>
+		<major name="5">
+			<maven>
+				<groupId>org.apache.bcel</groupId>
+				<artifactId>bcel</artifactId>
+				<repository>http://central.maven.org/maven2</repository>
+			</maven>
+			<version name="5.2"></version>
+		</major>
 	</majors>
 </project>
 

@@ -58,12 +58,16 @@ public class ProjectXML {
 				
 				@XmlElement(name = "cache-document")
 				public CacheDocument cacheDocument;
-			}
 
-			public static class CacheDocument{
+				@XmlAttribute
+				public String download;
+				
+				public static class CacheDocument{
+					
+				}
 				
 			}
-			
+
 			public static class MavenXML{
 				
 				public String groupId;

@@ -11,6 +11,9 @@ import javax.xml.bind.JAXBException;
 import org.apache.commons.io.FileUtils;
 import org.dom4j.DocumentException;
 
+import com.sun.jmx.snmp.SnmpStringFixed;
+import com.sun.org.apache.bcel.internal.generic.I2F;
+
 import c41.docgit.generator.template.HtmlConfig;
 import c41.docgit.generator.template.TemplateFile;
 import c41.docgit.generator.template.TemplateGenerator;
@@ -90,6 +93,12 @@ public class CategoryGenerator {
 							
 							if(versionElement.cacheDocument != null) {
 								version.setCacheDocument(true);
+							}
+							
+							if(versionElement.download != null) {
+								if(versionElement.download.equals("false")) {
+									version.setDownload(false);
+								}
 							}
 						}
 					}

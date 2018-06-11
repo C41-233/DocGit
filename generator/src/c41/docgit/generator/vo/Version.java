@@ -8,6 +8,8 @@ public class Version {
 	private String artifactName;
 	private String artifactUrl;
 	
+	private boolean download = true;
+	
 	private boolean cacheDocument;
 	
 	public String getName() {
@@ -52,6 +54,14 @@ public class Version {
 
 	public void setCacheDocument(boolean cacheDocument) {
 		this.cacheDocument = cacheDocument;
+	}
+
+	public boolean isDownload() {
+		return download;
+	}
+
+	public void setDownload(boolean download) {
+		this.download = download;
 	}
 
 }

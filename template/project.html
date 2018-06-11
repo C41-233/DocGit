@@ -60,9 +60,11 @@
 					</td>
 					<#if version.artifactName??>
 						<td 
-							<#if version.artifactUrl??>
-							data-target="_blank" 
-							data-url="${version.artifactUrl}"
+							<#if version.artifactUrl?? && version.download>
+								data-target="_blank" 
+								data-url="${version.artifactUrl}"
+							<#else>
+								class="no-link"
 							</#if>
 						>
 							<span class="glyphicon glyphicon-download-alt"></span> ${version.artifactName}
