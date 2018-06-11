@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.xml.bind.JAXBException;
+
 import org.apache.commons.io.FileUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -15,12 +17,16 @@ import org.dom4j.io.SAXReader;
 import c41.docgit.generator.template.HtmlConfig;
 import c41.docgit.generator.template.TemplateFile;
 import c41.docgit.generator.template.TemplateGenerator;
-import c41.docgit.generator.template.XMLHelper;
 import c41.docgit.generator.vo.MajorGroup;
 import c41.docgit.generator.vo.Maven;
 import c41.docgit.generator.vo.Project;
 import c41.docgit.generator.vo.Tag;
 import c41.docgit.generator.vo.Version;
+import c41.docgit.generator.xml.ProjectXML;
+import c41.docgit.generator.xml.ProjectXML.MajorsXML.MajorXML;
+import c41.docgit.generator.xml.ProjectXML.MajorsXML.MajorXML.MavenXML;
+import c41.docgit.generator.xml.ProjectXML.MajorsXML.MajorXML.VersionXML;
+import c41.docgit.generator.xml.XMLHelper;
 import freemarker.template.TemplateException;
 
 public class CategoryGenerator {
@@ -37,7 +43,7 @@ public class CategoryGenerator {
 		this.categoryOutputFolder = outputFolder;
 	}
 	
-	public void Run() throws IOException, TemplateException, DocumentException {
+	public void Run() throws IOException, TemplateException, DocumentException, JAXBException {
 		for(File projectFolder : categoryInputFolder.listFiles(f -> f.isDirectory())) {
 			String projectName = projectFolder.getName();
 			System.out.println("generate project: " + this.categoryName + "/" + projectName);
@@ -49,79 +55,92 @@ public class CategoryGenerator {
 		generateIndexHtml();
 	}
 
-	private void generateProject(String projectName, File inputFoler, File outputFolder) throws DocumentException, IOException, TemplateException {
+	private void generateProject(String projectName, File inputFoler, File outputFolder) throws DocumentException, IOException, TemplateException, JAXBException {
 		Project project = new Project();
-		project.setName(projectName);
-		
-		File manifest = new File(inputFoler, "manifest.xml");
-		SAXReader reader = new SAXReader();
-		Document document = reader.read(manifest);
-		Element rootElement = document.getRootElement();
-		
-		Element homeElement = rootElement.element("home");
-		project.setHome(homeElement.getTextTrim());
-		
-		Element tagsElement = rootElement.element("tags");
-		for(Object tagObject : tagsElement.elements("tag")) {
-			Element tagElement = (Element) tagObject;
-			String tag = tagElement.getTextTrim();
-			project.addTag(tag);
-		}
-		
-		Element descriptionElement = rootElement.element("description");
-		project.setDescription(descriptionElement.getTextTrim());
-		
 		projects.add(project);
 
 		List<MajorGroup> majors = new ArrayList<>();
 		
-		Element majorsElement = rootElement.element("majors");
-		if(majorsElement != null) {
-			for(Element majorElement : XMLHelper.elements(majorsElement, "major")) {
-				MajorGroup majorGroup = new MajorGroup();
-				String name = majorElement.attributeValue("name");
-				majorGroup.setName(name);
-				
-				for(Element versionElement : XMLHelper.elements(majorElement, "version")) {
-					Version version = new Version();
-					version.setName(versionElement.attributeValue("name"));
-					version.setUrl(versionElement.attributeValue("document"));
-					if(versionElement.element("cache-document") != null) {
-						version.setUrl("/DocGit/doc/" + categoryName + "/" + projectName + "/" + version.getName());
+		File manifest = new File(inputFoler, "manifest.xml");
+		ProjectXML projectXML = XMLHelper.read(manifest, ProjectXML.class);
+		
+		SAXReader reader = new SAXReader();
+		Document document = reader.read(manifest);
+		Element rootElement = document.getRootElement();
+		
+		project.setName(projectName);
+		project.setHome(projectXML.home);	
+		project.setDescription(projectXML.description);
+		
+		for(String tag : projectXML.tags) {
+			project.addTag(tag);
+		}
+		
+		String latest = null;
+		
+		if(projectXML.majors != null) {
+			if(projectXML.majors.majorList != null) {
+				for(MajorXML majorElement : projectXML.majors.majorList) {
+					MajorGroup majorGroup = new MajorGroup();
+					majors.add(majorGroup);
+					
+					majorGroup.setName(majorElement.name);
+					
+					if(majorElement.versions != null) {
+						for(VersionXML versionElement : majorElement.versions) {
+							Version version = new Version();
+							majorGroup.addVersion(version);
+							
+							version.setName(versionElement.name);
+							version.setDocument(versionElement.document);
+							
+							if(versionElement.cacheDocument != null) {
+								version.setCacheDocument(true);
+							}
+						}
 					}
 					
-					majorGroup.addVersion(version);
+					if(majorElement.maven != null) {
+						Maven maven = new Maven();
+						majorGroup.setMaven(maven);
+						
+						maven.setGroupId(majorElement.maven.groupId);
+						maven.setArtifactId(majorElement.maven.artifactId);
+						
+						if(majorElement.maven.repository == null) {
+							throw new NullPointerException();
+						}
+						
+						for(Version version : majorGroup.getVersions()) {
+							if(!version.HasArtifact()) {
+								String name = maven.getArtifactId() + "-" + version.getName() + ".jar";
+								String url = majorElement.maven.repository + "/" 
+										+ maven.getGroupId().replace('.', '/') + "/" 
+										+ maven.getArtifactId() + "/" 
+										+ version.getName() + "/" 
+										+ name;
+								version.setArtifactName(name);
+								version.setArtifactUrl(url);
+							}
+						}
+					}
 				}
-				
-				Element mavenElement = majorElement.element("maven");
-				if(mavenElement != null) {
-					Maven maven = new Maven();
-					maven.setGroupId(mavenElement.element("groupId").getTextTrim());
-					maven.setArtifactId(mavenElement.element("artifactId").getTextTrim());
-					majorGroup.setMaven(maven);
-				}
-
-				majors.add(majorGroup);
 			}
-			Element latestElement = majorsElement.element("latest");
-			if(latestElement != null) {
-				project.setLatest(latestElement.attributeValue("document"));
+			if(projectXML.majors.latest != null) {
+				latest = projectXML.majors.latest.document;
 			}
 		}
-
 		
 		HtmlConfig config = new HtmlConfig();
 		config.title = projectName;
 		config.importCss.add("project.css");
 
-		config.arguments.put("groups", majors);
-		config.arguments.put("latest", project.getLatest());
-		config.arguments.put("hasBody", project.getLatest() != null || !majors.isEmpty());
-		config.arguments.put("home", project.getHome());
+		config.arguments.put("project", project);
 		config.arguments.put("category", categoryName);
-		config.arguments.put("project", projectName);
-		config.arguments.put("description", project.getDescription());
-		config.arguments.put("tags", project.getTags());
+		config.arguments.put("majors", majors);
+		config.arguments.put("latest", latest);
+		
+		config.arguments.put("hasMajors", latest != null || !majors.isEmpty());
 		
 		List<String> bodies = new ArrayList<>();
 		config.arguments.put("bodies", bodies);

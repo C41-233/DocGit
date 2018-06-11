@@ -4,50 +4,57 @@
 
 <header>
 	<div class="container">
-		<h1>${project}</h1>
-		<p>${description}</p>
-		<p id="tags"><#list tags as tag><span class="badge">${tag}</span></#list></p>
+		<h1>${project.name}</h1>
+		<p>${project.description}</p>
+		<p id="tags"><#list project.tags as tag><span class="badge">${tag}</span></#list></p>
 	</div>
 </header>
 <div class="container" id="menu">
 	<ul class="list-inline">
-		<li><span class="glyphicon glyphicon-home"></span> <a href="${home}" target="_blank" class="home">项目主页</a></li>
+		<li><span class="glyphicon glyphicon-home"></span> <a href="${project.home}" target="_blank" class="home">项目主页</a></li>
 	</ul>
 </div>
 <div class="container" id="body">
 	<ol class="breadcrumb">
 	  <li><a href="javascript:void(0)">docgit</a></li>
 	  <li><a href="${path('/archieve/',category)}">${category}</a></li>
-	  <li class="active">${project}</li>
+	  <li class="active">${project.name}</li>
 	</ol>
-	<#if hasBody>
+	<#if hasMajors>
 		<#if latest??>
 			<h4>Latest</h4>
 			<table class="table table-bordered">
 				<tr><td data-target="_blank" data-url="${latest}">${docname}</td></tr>
 			</table>
 		</#if>
-		<#list groups as group>
+		<#list majors as major>
 			<hr/>
-			<h4>${group.name}.x</h4>
+			<h4>${major.name}.x</h4>
 			<table class="table table-bordered table-version">
-			<#list group.versions as version>
+			<#list major.versions as version>
 				<tr>
 					<th>${version.name}</th>
 					<td 
-						<#if version.url??>
-							data-target="_blank" data-url="${version.url}"
+						<#if version.document??>
+							data-target="_blank" 
+							data-url="${version.document}"
+						<#elseif version.cacheDocument>
+							data-target="_blank" 
+							data-url="${path('/doc/' + category + '/' + project.name + '/' + version.name)}"
 						<#else>
 							class="no-link"
 						</#if>
 					>
 						${docname}
 					</td>
-					<#if group.maven??>
-						<#assign artifact = group.maven.artifactId+'-'+version.name+'.jar'>
+					<#if version.artifactName??>
 						<td 
-							data-target="_blank" data-url="http://central.maven.org/maven2/${group.maven.groupId?replace('.', '/')}/${group.maven.artifactId}/${version.name}/${artifact}">
-							${artifact}
+							<#if version.artifactUrl??>
+							data-target="_blank" 
+							data-url="${version.artifactUrl}"
+							</#if>
+						>
+							${version.artifactName}
 						</td>
 					<#else>
 						<td></td>
@@ -55,15 +62,15 @@
 				</tr>
 			</#list>
 			</table>
-			<#if group.maven??>
+			<#if major.maven??>
 				<div>
 					<span class="glyphicon glyphicon-folder-open"></span> 
-					<a target="_blank" href="http://mvnrepository.com/artifact/${group.maven.groupId}/${group.maven.artifactId}">Maven</a>
+					<a target="_blank" href="http://mvnrepository.com/artifact/${major.maven.groupId}/${major.maven.artifactId}">Maven</a>
 				</div>
 				<pre>&lt;dependency&gt;
-    &lt;groupId&gt;${group.maven.groupId}&lt;/groupId&gt;
-    &lt;artifactId&gt;${group.maven.artifactId}&lt;/artifactId&gt;
-    &lt;version&gt;${group.versions[0].name}&lt;/version&gt;
+    &lt;groupId&gt;${major.maven.groupId}&lt;/groupId&gt;
+    &lt;artifactId&gt;${major.maven.artifactId}&lt;/artifactId&gt;
+    &lt;version&gt;${major.versions[0].name}&lt;/version&gt;
 &lt;/dependency&gt;</pre>
 			</#if>
 		</#list>

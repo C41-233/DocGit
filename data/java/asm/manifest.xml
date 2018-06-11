@@ -12,6 +12,7 @@
 			<maven>
 				<groupId>org.ow2.asm</groupId>
 				<artifactId>asm</artifactId>
+				<repository>http://central.maven.org/maven2</repository>
 			</maven>
 			<version name="6.2"></version>
 			<version name="6.1.1"></version>
@@ -20,6 +21,7 @@
 			<maven>
 				<groupId>org.ow2.asm</groupId>
 				<artifactId>asm</artifactId>
+				<repository>http://central.maven.org/maven2</repository>
 			</maven>
 			<version name="5.0_ALPHA">
 				<cache-document/>

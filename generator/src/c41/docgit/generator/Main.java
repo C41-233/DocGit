@@ -3,6 +3,8 @@ package c41.docgit.generator;
 import java.io.File;
 import java.io.IOException;
 
+import javax.xml.bind.JAXBException;
+
 import org.apache.commons.io.FileUtils;
 import org.dom4j.DocumentException;
 
@@ -11,7 +13,7 @@ import freemarker.template.TemplateException;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException, TemplateException, DocumentException {
+	public static void main(String[] args) throws IOException, TemplateException, DocumentException, JAXBException {
 		if(args.length < 3) {
 			System.err.println("usage: <jar> <template-folder> <output-folder> <data-folder>");
 			return;
@@ -44,7 +46,7 @@ public class Main {
 		TemplateFile.PROJECT_INDEX_HTML = new File(TemplateFile.TEMPLATE_FOLDER, "project.html");
 	}
 	
-	private static void generate(File templateFolder, File outputFolder, File dataFolder) throws IOException, TemplateException, DocumentException {
+	private static void generate(File templateFolder, File outputFolder, File dataFolder) throws IOException, TemplateException, DocumentException, JAXBException {
 		for(File categoryFolder : dataFolder.listFiles(File::isDirectory)) {
 			String category = categoryFolder.getName();
 			System.out.println("generate category: " + category);

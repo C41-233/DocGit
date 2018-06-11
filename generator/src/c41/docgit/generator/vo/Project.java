@@ -8,7 +8,6 @@ public class Project {
 	private String name;
 	private String home;
 	private String description;
-	private String latest;
 	private List<String> tags = new ArrayList<>();
 	
 	public void setName(String name) {
@@ -41,14 +40,6 @@ public class Project {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public String getLatest() {
-		return latest;
-	}
-
-	public void setLatest(String latest) {
-		this.latest = latest;
 	}
 
 }

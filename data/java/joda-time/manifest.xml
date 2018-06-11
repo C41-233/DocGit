@@ -12,6 +12,7 @@
 			<maven>
 				<groupId>joda-time</groupId>
 				<artifactId>joda-time</artifactId>
+				<repository>http://central.maven.org/maven2</repository>
 			</maven>
 			<version name="2.10">
 			</version>

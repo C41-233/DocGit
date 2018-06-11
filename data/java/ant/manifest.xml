@@ -12,10 +12,10 @@
 			<maven>
 				<groupId>org.apache.ant</groupId>
 				<artifactId>ant</artifactId>
+				<repository>http://central.maven.org/maven2</repository>
 			</maven>
 			<version name="1.10.3"></version>
-			<version name="1.9.11" document="http://ant.apache.org/manual-1.9.x/api/index.html">
-			</version>
+			<version name="1.9.11" document="http://ant.apache.org/manual-1.9.x/api/index.html"></version>
 		</major>
 	</majors>
 </project>

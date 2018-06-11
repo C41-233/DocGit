@@ -8,8 +8,16 @@
 	</tags>
 	<majors>
 		<latest document="http://www.jfugue.org/doc/index.html"></latest>
-		<major name="5"></major>
+		<major name="5">
+			<version name="5.0.9">
+			</version>
+		</major>
 		<major name="4">
+			<maven>
+				<groupId>org.clojars.jmeeks</groupId>
+				<artifactId>jfugue-with-musicxml</artifactId>
+				<repository>http://clojars.org/repo</repository>
+			</maven>
 			<version name="4.0.3">
 				<cache-document/>
 			</version>
