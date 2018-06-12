@@ -1,0 +1,27 @@
+<project>
+	<home>http://www.eclipse.org/eclipselink/</home>
+	<description>
+		Comprehensive open-source Java persistence solution addressing relational, XML, and database web services.
+	</description>
+	<tags>
+		<tag>jpa</tag>
+		<tag>orm</tag>
+	</tags>
+	<majors>
+		<major name="2">
+			<maven>
+				<groupId>org.eclipse.persistence</groupId>
+				<artifactId>org.eclipse.persistence.jpa</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="2.7.1"></version>
+			<version name="2.7.0" document="https://www.eclipse.org/eclipselink/api/2.7/index.html"></version>
+			<version name="2.6.5"></version>
+			<version name="2.6.0" document="https://www.eclipse.org/eclipselink/api/2.6/index.html"></version>
+			<version name="2.5.3-RC1"></version>
+			<version name="2.5.0" document="https://www.eclipse.org/eclipselink/api/2.5/index.html"></version>
+			<version name="2.4.2" document="https://www.eclipse.org/eclipselink/api/2.4/index.html"></version>
+		</major>
+	</majors>
+</project>
+
