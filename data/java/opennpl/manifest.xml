@@ -1,0 +1,13 @@
+<project>
+	<home>http://opennlp.apache.org/</home>
+	<description>
+		The Apache OpenNLP library is a machine learning based toolkit for the processing of natural language text.
+	</description>
+	<tags>
+		<tag>machine-learning</tag>
+	</tags>
+	<majors>
+		<latest document="http://opennlp.apache.org/docs/"></latest>
+	</majors>
+</project>
+

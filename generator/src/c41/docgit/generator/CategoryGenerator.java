@@ -14,6 +14,7 @@ import org.dom4j.DocumentException;
 import com.sun.jmx.snmp.SnmpStringFixed;
 import com.sun.org.apache.bcel.internal.generic.I2F;
 
+import c41.docgit.config.MavenRepository;
 import c41.docgit.generator.template.HtmlConfig;
 import c41.docgit.generator.template.TemplateFile;
 import c41.docgit.generator.template.TemplateGenerator;
@@ -110,14 +111,12 @@ public class CategoryGenerator {
 						maven.setGroupId(majorElement.maven.groupId);
 						maven.setArtifactId(majorElement.maven.artifactId);
 						
-						if(majorElement.maven.repository == null) {
-							throw new NullPointerException();
-						}
+						String repository = MavenRepository.valueOf(majorElement.maven.repository).getUrl();
 						
 						for(Version version : majorGroup.getVersions()) {
 							if(!version.HasArtifact()) {
 								String name = maven.getArtifactId() + "-" + version.getName() + ".jar";
-								String url = majorElement.maven.repository + "/" 
+								String url = repository + "/" 
 										+ maven.getGroupId().replace('.', '/') + "/" 
 										+ maven.getArtifactId() + "/" 
 										+ version.getName() + "/" 

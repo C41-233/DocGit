@@ -16,7 +16,7 @@
 			<maven>
 				<groupId>org.clojars.jmeeks</groupId>
 				<artifactId>jfugue-with-musicxml</artifactId>
-				<repository>http://clojars.org/repo</repository>
+				<repository>clojars</repository>
 			</maven>
 			<version name="4.0.3">
 				<cache-document/>

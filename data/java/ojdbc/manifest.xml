@@ -1,0 +1,16 @@
+<project>
+	<home>http://www.oracle.com/technetwork/database/application-development/jdbc/overview/index.html</home>
+	<description>
+		Oracle Database JDBC.
+	</description>
+	<tags>
+		<tag>database</tag>
+		<tag>jdbc</tag>
+	</tags>
+	<majors>
+		<major name="12">
+			<version name="12.2" document="https://docs.oracle.com/en/database/oracle/oracle-database/12.2/jajdb/index.html"></version>
+		</major>
+	</majors>
+</project>
+

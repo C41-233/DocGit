@@ -11,7 +11,7 @@
 			<maven>
 				<groupId>cglib</groupId>
 				<artifactId>cglib</artifactId>
-				<repository>http://central.maven.org/maven2</repository>
+				<repository>central</repository>
 			</maven>
 			<version name="3.2.6"></version>
 		</major>
@@ -19,7 +19,7 @@
 			<maven>
 				<groupId>cglib</groupId>
 				<artifactId>cglib</artifactId>
-				<repository>http://central.maven.org/maven2</repository>
+				<repository>central</repository>
 			</maven>
 			<version name="2.2.2"></version>
 			<version name="2.0beta2" document="http://cglib.sourceforge.net/apidocs/index.html" download="false"></version>

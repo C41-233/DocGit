@@ -9,8 +9,28 @@
 	</tags>
 	<majors>
 		<major name="8" document="https://dev.mysql.com/doc/dev/connector-j/8.0/">
+			<maven>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="8.0.11"></version>
+		</major>
+		<major name="6">
+			<maven>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="6.0.6"></version>
 		</major>
 		<major name="5">
+			<maven>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="5.1.46"></version>
 			<version name="5.1.30"></version>
 		</major>
 	</majors>

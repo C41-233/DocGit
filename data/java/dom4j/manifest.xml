@@ -11,7 +11,7 @@
 			<maven>
 				<groupId>org.dom4j</groupId>
 				<artifactId>dom4j</artifactId>
-				<repository>http://central.maven.org/maven2</repository>
+				<repository>central</repository>
 			</maven>
 			<version name="2.1.0" document="https://dom4j.github.io/javadoc/2.1.0/"></version>
 			<version name="2.0.2" document="https://dom4j.github.io/javadoc/2.0.2/"></version>
@@ -20,7 +20,7 @@
 			<maven>
 				<groupId>dom4j</groupId>
 				<artifactId>dom4j</artifactId>
-				<repository>http://central.maven.org/maven2</repository>
+				<repository>central</repository>
 			</maven>
 			<version name="1.6.1" document="https://dom4j.github.io/javadoc/1.6.1/"></version>
 		</major>
