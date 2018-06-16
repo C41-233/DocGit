@@ -1,0 +1,19 @@
+<project>
+	<home>http://undertow.io/</home>
+	<description>
+		Undertow is a flexible performant web server written in java, providing both blocking and non-blocking API’s based on NIO.
+	</description>
+	<tags>
+		<tag>server</tag>
+	</tags>
+	<majors>
+		<major name="2">
+			<version name="2.0.1" document="http://undertow.io/javadoc/2.0.x/index.html"></version>
+		</major>
+		<major name="1">
+			<version name="1.4.13" document="http://undertow.io/javadoc/1.4.x/index.html"></version>
+			<version name="1.3.0" document="http://undertow.io/javadoc/1.3.x/index.html"></version>
+		</major>
+	</majors>
+</project>
+
