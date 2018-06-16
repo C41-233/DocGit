@@ -1,0 +1,27 @@
+<project>
+	<home>http://openjpa.apache.org/</home>
+	<description>
+		Apache OpenJPA is a Java persistence project at The Apache Software Foundation that can be used as a stand-alone POJO persistence layer or integrated into any Java EE compliant container and many other lightweight frameworks, such as Tomcat and Spring.
+	</description>
+	<tags>
+		<tag>jpa</tag>
+		<tag>orm</tag>
+	</tags>
+	<majors>
+		<major name="3">
+			<version name="3.0.0" document="http://openjpa.apache.org/builds/3.0.0/apidocs/index.html"></version>
+		</major>
+		<major name="2">
+			<version name="2.4.3" document="http://openjpa.apache.org/builds/2.4.3/apidocs/index.html"></version>
+			<version name="2.4.2" document="http://openjpa.apache.org/builds/2.4.2/apidocs/index.html"></version>
+			<version name="2.4.1" document="http://openjpa.apache.org/builds/2.4.1/apidocs/index.html"></version>
+			<version name="2.4.0" document="http://openjpa.apache.org/builds/2.4.0/apidocs/index.html"></version>
+			<version name="2.3.0" document="http://openjpa.apache.org/builds/2.3.0/apidocs/index.html"></version>
+		</major>
+		<major name="1">
+			<version name="1.2.3" document="http://openjpa.apache.org/builds/1.2.3/apidocs/index.html"></version>
+			<version name="1.1.0" document="http://openjpa.apache.org/builds/1.1.0/apache-openjpa-1.1.0/docs/javadoc/index.html"></version>
+		</major>
+	</majors>
+</project>
+

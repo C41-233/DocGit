@@ -1,0 +1,10 @@
+<project>
+	<home>http://ibatis.apache.org/</home>
+	<description>
+		基于SQL映射的持久层框架。
+	</description>
+	<tags>
+		<tag>orm</tag>
+	</tags>
+</project>
+

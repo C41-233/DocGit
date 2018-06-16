@@ -1,0 +1,10 @@
+<project>
+	<home>http://hbase.apache.org/</home>
+	<description>
+		Apache HBase™ is the Hadoop database, a distributed, scalable, big data store.
+	</description>
+	<tags>
+		<tag>datastore</tag>
+	</tags>
+</project>
+

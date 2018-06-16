@@ -1,0 +1,38 @@
+<project>
+	<home>http://mongodb.github.io/mongo-java-driver/</home>
+	<description>
+		MongoDB 是一个基于分布式文件存储的数据库。
+	</description>
+	<tags>
+		<tag>jdbc</tag>
+		<tag>database</tag>
+	</tags>
+	<majors>
+		<major name="3">
+			<maven>
+				<groupId>org.mongodb</groupId>
+				<artifactId>mongodb-java-driver</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="3.8.0-beta3" document="http://mongodb.github.io/mongo-java-driver/3.8/javadoc/index.html?overview-summary.html"></version>
+			<version name="3.7.1" document="http://mongodb.github.io/mongo-java-driver/3.7/javadoc/index.html?overview-summary.html"></version>
+			<version name="3.6.4" document="http://mongodb.github.io/mongo-java-driver/3.6/javadoc/index.html?overview-summary.html"></version>
+			<version name="3.5.0" document="http://mongodb.github.io/mongo-java-driver/3.5/javadoc/index.html?overview-summary.html"></version>
+			<version name="3.4.3" document="http://mongodb.github.io/mongo-java-driver/3.4/javadoc/"></version>
+			<version name="3.3.0" document="http://api.mongodb.com/java/3.3/"></version>
+			<version name="3.2.2" document="http://api.mongodb.com/java/3.2/"></version>
+			<version name="3.1.1" document="http://api.mongodb.com/java/3.1/"></version>
+			<version name="3.0.4" document="http://api.mongodb.com/java/3.0/"></version>
+		</major>
+		<major name="2">
+			<maven>
+				<groupId>org.mongodb</groupId>
+				<artifactId>mongodb-java-driver</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="2.14.2" document="http://api.mongodb.com/java/2.14/"></version>
+			<version name="2.13.3" document="http://api.mongodb.com/java/2.13/"></version>
+		</major>
+	</majors>
+</project>
+
