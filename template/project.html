@@ -83,11 +83,11 @@
 			<#if major.mavens?size gt 0>
 				<#list major.mavens as maven>
 				<div>
-					<span class="glyphicon glyphicon-folder-open"></span> 
-					<a target="_blank" href="http://mvnrepository.com/artifact/${maven.groupId}/${maven.artifactId}">Maven</a>
-					<span>${maven.artifactId}</span>
+					<a target="_blank" href="http://mvnrepository.com/artifact/${maven.groupId}/${maven.artifactId}">
+						<span class="maven">Maven</span><span class="maven-artifact">${maven.artifactId}</span>
+					</a>
 				</div>
-				<pre>&lt;dependency&gt;
+				<pre class="maven-code">&lt;dependency&gt;
     &lt;groupId&gt;${maven.groupId}&lt;/groupId&gt;
     &lt;artifactId&gt;${maven.artifactId}&lt;/artifactId&gt;
     &lt;version&gt;${major.versions[0].name}&lt;/version&gt;

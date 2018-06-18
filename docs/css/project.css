@@ -26,6 +26,21 @@ header{
 #tags .badge+.badge{
 	margin-left:	5px;
 }
+.maven, .maven:hover{
+	background-color:	#5285c5;
+	color:		white;
+	padding: 2px 4px;
+	margin-right:	0;
+}
+.maven-artifact, .maven-artifact:hover{
+	background-color:	green;
+	color:		white;
+	padding: 2px 4px;
+	margin-left:	0;
+}
+.maven-code{
+	margin-top:	3px;
+}
 .appender{
 	border: 1px solid black;
 	border-radius: 16px;
