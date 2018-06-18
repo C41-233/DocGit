@@ -23,6 +23,7 @@ import c41.docgit.generator.vo.Version;
 import c41.docgit.generator.xml.ProjectXML;
 import c41.docgit.generator.xml.ProjectXML.BodyXML.ImportXML;
 import c41.docgit.generator.xml.ProjectXML.MajorsXML.MajorXML;
+import c41.docgit.generator.xml.ProjectXML.MajorsXML.MajorXML.MavenXML;
 import c41.docgit.generator.xml.ProjectXML.MajorsXML.MajorXML.VersionXML;
 import c41.docgit.generator.xml.XMLHelper;
 import freemarker.template.TemplateException;
@@ -101,25 +102,26 @@ public class CategoryGenerator {
 						}
 					}
 					
-					if(majorElement.maven != null) {
-						Maven maven = new Maven();
-						majorGroup.setMaven(maven);
-						
-						maven.setGroupId(majorElement.maven.groupId);
-						maven.setArtifactId(majorElement.maven.artifactId);
-						
-						String repository = MavenRepository.valueOf(majorElement.maven.repository).getUrl();
-						
-						for(Version version : majorGroup.getVersions()) {
-							if(!version.HasArtifact()) {
-								String name = maven.getArtifactId() + "-" + version.getName() + ".jar";
-								String url = repository + "/" 
-										+ maven.getGroupId().replace('.', '/') + "/" 
-										+ maven.getArtifactId() + "/" 
-										+ version.getName() + "/" 
-										+ name;
-								version.setArtifactName(name);
-								version.setArtifactUrl(url);
+					if(majorElement.mavens != null) {
+						for(MavenXML mavenElement : majorElement.mavens) {
+							Maven maven = new Maven();
+							majorGroup.addMaven(maven);
+							
+							maven.setGroupId(mavenElement.groupId);
+							maven.setArtifactId(mavenElement.artifactId);
+							
+							String repository = MavenRepository.valueOf(mavenElement.repository).getUrl();
+							
+							for(Version version : majorGroup.getVersions()) {
+								if(version.isDownload()) {
+									String name = maven.getArtifactId() + "-" + version.getName() + ".jar";
+									String url = repository + "/" 
+											+ maven.getGroupId().replace('.', '/') + "/" 
+											+ maven.getArtifactId() + "/" 
+											+ version.getName() + "/" 
+											+ name;
+									version.addArtifact(name, url);
+								}
 							}
 						}
 					}

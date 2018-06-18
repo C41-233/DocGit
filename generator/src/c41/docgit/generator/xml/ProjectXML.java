@@ -46,7 +46,8 @@ public class ProjectXML {
 			@XmlAttribute
 			public String document;
 			
-			public MavenXML maven;
+			@XmlElement(name = "maven")
+			public List<MavenXML> mavens;
 			
 			public static class VersionXML{
 

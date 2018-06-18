@@ -58,33 +58,41 @@
 					>
 						<span class="glyphicon glyphicon-file"></span> ${docname}
 					</td>
-					<#if version.artifactName??>
-						<td 
-							<#if version.artifactUrl?? && version.download>
+					<#if version.artifacts?size == 1>
+						<td class="artifacts"
 								data-target="_blank" 
-								data-url="${version.artifactUrl}"
-							<#else>
-								class="no-link"
-							</#if>
+								data-url="${version.artifacts[0].url}"
 						>
-							<span class="glyphicon glyphicon-download-alt"></span> ${version.artifactName}
+							<span class="glyphicon glyphicon-download-alt"></span> ${version.artifacts[0].name}
 						</td>
 					<#else>
-						<td></td>
+					<td class="artifacts">
+						<#list version.artifacts as artifact>
+						<div 
+							data-target="_blank" 
+							data-url="${artifact.url}"
+						>
+							<span class="glyphicon glyphicon-download-alt"></span> ${artifact.name}
+						</div>
+						</#list>
+					</td>
 					</#if>
 				</tr>
 			</#list>
 			</table>
-			<#if major.maven??>
+			<#if major.mavens?size gt 0>
+				<#list major.mavens as maven>
 				<div>
 					<span class="glyphicon glyphicon-folder-open"></span> 
-					<a target="_blank" href="http://mvnrepository.com/artifact/${major.maven.groupId}/${major.maven.artifactId}">Maven</a>
+					<a target="_blank" href="http://mvnrepository.com/artifact/${maven.groupId}/${maven.artifactId}">Maven</a>
+					<span>${maven.artifactId}</span>
 				</div>
 				<pre>&lt;dependency&gt;
-    &lt;groupId&gt;${major.maven.groupId}&lt;/groupId&gt;
-    &lt;artifactId&gt;${major.maven.artifactId}&lt;/artifactId&gt;
+    &lt;groupId&gt;${maven.groupId}&lt;/groupId&gt;
+    &lt;artifactId&gt;${maven.artifactId}&lt;/artifactId&gt;
     &lt;version&gt;${major.versions[0].name}&lt;/version&gt;
 &lt;/dependency&gt;</pre>
+				</#list>
 			</#if>
 		</#list>
 	</#if>

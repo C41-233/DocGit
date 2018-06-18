@@ -1,0 +1,25 @@
+<project>
+	<home>https://github.com/java-native-access/jna</home>
+	<description>
+		JNA provides Java programs easy access to native shared libraries without writing anything but Java code - no JNI or native code is required. This functionality is comparable to Windows' Platform/Invoke and Python's ctypes.
+	</description>
+	<tags>
+		<tag>jni</tag>
+	</tags>
+	<majors>
+		<major name="4">
+			<maven>
+				<groupId>net.java.dev.jna</groupId>
+				<artifactId>jna</artifactId>
+				<repository>central</repository>
+			</maven>
+			<maven>
+				<groupId>net.java.dev.jna</groupId>
+				<artifactId>jna-platform</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="4.5.1" document="http://java-native-access.github.io/jna/4.5.1/javadoc/"></version>
+		</major>
+	</majors>
+</project>
+

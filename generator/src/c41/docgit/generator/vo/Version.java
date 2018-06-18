@@ -1,12 +1,14 @@
 package c41.docgit.generator.vo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Version {
 
 	private String name;
 	private String document;
-	
-	private String artifactName;
-	private String artifactUrl;
+
+	private List<Artifact> artifacts = new ArrayList<>();
 	
 	private boolean download = true;
 	
@@ -28,26 +30,21 @@ public class Version {
 		this.document = url;
 	}
 
-	public boolean HasArtifact() {
-		return artifactName != null;
+	public boolean hasArtifact() {
+		return artifacts.size() > 0;
+	}
+
+	public void addArtifact(String name, String url) {
+		Artifact artifact = new Artifact();
+		artifact.setName(name);
+		artifact.setUrl(url);
+		this.artifacts.add(artifact);
+	}
+
+	public List<Artifact> getArtifacts(){
+		return this.artifacts;
 	}
 	
-	public String getArtifactName() {
-		return artifactName;
-	}
-
-	public void setArtifactName(String artifactName) {
-		this.artifactName = artifactName;
-	}
-
-	public String getArtifactUrl() {
-		return artifactUrl;
-	}
-
-	public void setArtifactUrl(String artifactUrl) {
-		this.artifactUrl = artifactUrl;
-	}
-
 	public boolean isCacheDocument() {
 		return cacheDocument;
 	}
