@@ -10,7 +10,7 @@
 		<major name="3">
 			<maven>
 				<groupId>cglib</groupId>
-				<artifactId>cglib</artifactId>
+				<artifactId>cglib-nodep</artifactId>
 				<repository>central</repository>
 			</maven>
 			<version name="3.2.6"></version>
@@ -18,7 +18,7 @@
 		<major name="2">
 			<maven>
 				<groupId>cglib</groupId>
-				<artifactId>cglib</artifactId>
+				<artifactId>cglib-nodep</artifactId>
 				<repository>central</repository>
 			</maven>
 			<version name="2.2.2"></version>

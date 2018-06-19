@@ -1,0 +1,24 @@
+<project>
+	<home>https://www.mchange.com/projects/c3p0/</home>
+	<description>
+		c3p0 is an easy-to-use library for making traditional JDBC drivers "enterprise-ready" by augmenting them with functionality defined by the jdbc3 spec and the optional extensions to jdbc2.
+	</description>
+	<tags>
+		<tag>jdbc</tag>
+		<tag>database</tag>
+	</tags>
+	<majors>
+		<latest document="https://www.mchange.com/projects/c3p0/apidocs/index.html"></latest>
+		<major name="0">
+			<maven>
+				<groupId>com.mchange</groupId>
+				<artifactId>c3p0</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="0.9.5.2"></version>
+			<version name="0.9.5.1"></version>
+			<version name="0.9.5"></version>
+		</major>
+	</majors>
+</project>
+
