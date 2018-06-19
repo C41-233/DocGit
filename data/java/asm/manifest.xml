@@ -23,9 +23,7 @@
 				<artifactId>asm</artifactId>
 				<repository>central</repository>
 			</maven>
-			<version name="5.0_ALPHA">
-				<cache-document/>
-			</version>
+			<version name="5.0_ALPHA"></version>
 		</major>
 	</majors>
 </project>
