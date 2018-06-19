@@ -8,8 +8,19 @@
 	</tags>
 	<majors>
 		<major name="2" document="https://logging.apache.org/log4j/2.x/javadoc.html">
+			<maven>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="2.11.0"></version>
 		</major>
 		<major name="1">
+			<maven>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<repository>central</repository>
+			</maven>
 			<version name="1.2.17" document="http://logging.apache.org/log4j/1.2/apidocs/index.html"></version>
 		</major>
 	</majors>

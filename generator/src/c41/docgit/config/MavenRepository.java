@@ -4,6 +4,7 @@ public enum MavenRepository {
 
 	central("http://central.maven.org/maven2"),
 	clojars("http://clojars.org/repo"),
+	jspresso("http://repository.jspresso.org/maven2/"),
 	;
 	
 	private String url;

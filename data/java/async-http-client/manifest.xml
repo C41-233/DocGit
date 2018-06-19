@@ -1,0 +1,28 @@
+<project>
+	<home>https://github.com/AsyncHttpClient/async-http-client</home>
+	<description>
+		Async Http Client library purpose is to allow Java applications to easily execute HTTP requests and asynchronously process the HTTP responses.
+	</description>
+	<tags>
+		<tag>http</tag>
+	</tags>
+	<majors>
+		<major name="2">
+			<maven>
+				<groupId>org.asynchttpclient</groupId>
+				<artifactId>async-http-client</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="2.4.9"></version>
+		</major>
+		<major name="1">
+			<maven>
+				<groupId>com.ning</groupId>
+				<artifactId>async-http-client</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="1.9.40"></version>
+		</major>
+	</majors>
+</project>
+

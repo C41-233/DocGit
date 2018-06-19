@@ -14,7 +14,7 @@
 				<artifactId>ant</artifactId>
 				<repository>central</repository>
 			</maven>
-			<version name="1.10.3"></version>
+			<version name="1.10.3" document="http://www.javadoc.io/doc/org.apache.ant/ant/1.10.3"></version>
 			<version name="1.9.11" document="http://ant.apache.org/manual-1.9.x/api/index.html"></version>
 		</major>
 	</majors>

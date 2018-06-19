@@ -8,6 +8,11 @@
 	</tags>
 	<majors>
 		<major name="3">
+			<maven>
+				<groupId>org.docx4j</groupId>
+				<artifactId>docx4j</artifactId>
+				<repository>central</repository>
+			</maven>
 			<version name="3.3.7"></version>
 		</major>
 	</majors>

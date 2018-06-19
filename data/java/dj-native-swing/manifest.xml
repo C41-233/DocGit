@@ -9,8 +9,21 @@
 	<majors>
 		<latest document="http://djproject.sourceforge.net/ns/documentation/javadoc/index.html"></latest>
 		<major name="1">
-			<version name="1.0.3"></version>
-			<version name="1.0.2"></version>
+			<maven>
+				<groupId>chrriis</groupId>
+				<artifactId>dj-nativeswing</artifactId>
+				<repository>jspresso</repository>
+			</maven>
+			<version name="1.0.3" download="false" document="false"></version>
+			<version name="1.0.2.20120308" document="false"></version>
+		</major>
+		<major name="0">
+			<maven>
+				<groupId>chrriis</groupId>
+				<artifactId>dj-nativeswing</artifactId>
+				<repository>jspresso</repository>
+			</maven>
+			<version name="0.9.8" document="false"></version>
 		</major>
 	</majors>
 </project>

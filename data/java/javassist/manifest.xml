@@ -9,7 +9,12 @@
 	<majors>
 		<latest document="http://jboss-javassist.github.io/javassist/html/index.html?overview-summary.html"></latest>
 		<major name="3">
-			<version name="3.22.0.ga"></version>
+			<maven>
+				<groupId>org.javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="3.22.0-GA"></version>
 		</major>
 	</majors>
 </project>

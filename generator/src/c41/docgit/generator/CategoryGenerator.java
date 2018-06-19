@@ -88,10 +88,16 @@ public class CategoryGenerator {
 							majorGroup.addVersion(version);
 							
 							version.setName(versionElement.name);
-							version.setDocument(versionElement.document);
-							
 							if(versionElement.cacheDocument != null) {
 								version.setCacheDocument(true);
+							}
+							else if(versionElement.document != null){
+								if(!versionElement.document.equals("false")) {
+									version.setDocument(versionElement.document);
+								}
+								else {
+									version.setDocument(false);
+								}
 							}
 							
 							if(versionElement.download != null) {
@@ -121,6 +127,9 @@ public class CategoryGenerator {
 											+ version.getName() + "/" 
 											+ name;
 									version.addArtifact(name, url);
+								}
+								if(!version.hasDocument() && version.needDocument()) {
+									version.setDocument("http://www.javadoc.io/doc/" + mavenElement.groupId +"/" + mavenElement.artifactId + "/" + version.getName());
 								}
 							}
 						}

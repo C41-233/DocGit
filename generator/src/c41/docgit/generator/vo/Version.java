@@ -7,6 +7,7 @@ public class Version {
 
 	private String name;
 	private String document;
+	private boolean needDocument = true;
 
 	private List<Artifact> artifacts = new ArrayList<>();
 	
@@ -28,6 +29,18 @@ public class Version {
 
 	public void setDocument(String url) {
 		this.document = url;
+	}
+
+	public void setDocument(boolean b) {
+		this.needDocument = b;
+	}
+
+	public boolean needDocument() {
+		return needDocument;
+	}
+	
+	public boolean hasDocument() {
+		return document != null || cacheDocument;
 	}
 
 	public boolean hasArtifact() {

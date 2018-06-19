@@ -9,6 +9,11 @@
 	<majors>
 		<latest document="http://commons.apache.org/proper/commons-codec/apidocs/index.html"></latest>
 		<major name="1">
+			<maven>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<repository>central</repository>
+			</maven>
 			<version name="1.11" document="http://commons.apache.org/proper/commons-codec/archives/1.11/apidocs/index.html"></version>
 			<version name="1.10" document="http://commons.apache.org/proper/commons-codec/archives/1.10/apidocs/index.html"></version>
 			<version name="1.9" document="http://commons.apache.org/proper/commons-codec/archives/1.9/apidocs/index.html"></version>
