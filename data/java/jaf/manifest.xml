@@ -1,0 +1,22 @@
+<project>
+	<home>http://www.oracle.com/technetwork/java/jaf11-139815.html</home>
+	<description>
+		JavaBeans(TM) Activation Framework是一个专用的数据处理框架，它用于封装数据，并为应用程序提供访问和操作数据的接口。JAF的主要作用在于让java应用程序知道如何对一个数据源进行查看、编辑和打印等操作。
+	</description>
+	<tags>
+		<tag>data-process</tag>
+	</tags>
+	<majors>
+		<major name="1">
+			<maven>
+				<groupId>javax.activation</groupId>
+				<artifactId>activation</artifactId>
+				<repository>clojars</repository>
+			</maven>
+			<version name="1.1.1">
+				<cache-document/>
+			</version>
+		</major>
+	</majors>
+</project>
+
