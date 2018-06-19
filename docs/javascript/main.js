@@ -7,6 +7,9 @@ $(function(){
 	$("[data-url]").each(function(){
 		var url = $(this).data("url")
 		if(url){
+			if($(this).data("title")){
+				$(this).attr("title", url)
+			}
 			var a = $('<a></a>')
 			a.attr("href", url)
 			var target = $(this).data("target")

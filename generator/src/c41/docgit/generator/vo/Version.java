@@ -3,17 +3,16 @@ package c41.docgit.generator.vo;
 import java.util.ArrayList;
 import java.util.List;
 
+import c41.docgit.generator.vo.Document.DocumentType;
+
 public class Version {
 
 	private String name;
-	private String document;
-	private boolean needDocument = true;
+	private List<Document> documents = new ArrayList<>();
 
 	private List<Artifact> artifacts = new ArrayList<>();
 	
 	private boolean download = true;
-	
-	private boolean cacheDocument;
 	
 	public String getName() {
 		return name;
@@ -23,24 +22,24 @@ public class Version {
 		this.name = name;
 	}
 
-	public String getDocument() {
-		return document;
+	public List<Document> getDocuments() {
+		return documents;
 	}
 
-	public void setDocument(String url) {
-		this.document = url;
-	}
-
-	public void setDocument(boolean b) {
-		this.needDocument = b;
-	}
-
-	public boolean needDocument() {
-		return needDocument;
-	}
+	private boolean noDefaultDocument;
+	private boolean hasForceDocument;
 	
-	public boolean hasDocument() {
-		return document != null || cacheDocument;
+	public void addDocument(String url, DocumentType type) {
+		if(noDefaultDocument && type == DocumentType.Default) {
+			return;
+		}
+		if(hasForceDocument && type == DocumentType.Default) {
+			return;
+		}
+		if(type == DocumentType.Force) {
+			hasForceDocument = true;
+		}
+		this.documents.add(new Document(url, type));
 	}
 
 	public boolean hasArtifact() {
@@ -58,20 +57,16 @@ public class Version {
 		return this.artifacts;
 	}
 	
-	public boolean isCacheDocument() {
-		return cacheDocument;
-	}
-
-	public void setCacheDocument(boolean cacheDocument) {
-		this.cacheDocument = cacheDocument;
-	}
-
 	public boolean isDownload() {
 		return download;
 	}
 
 	public void setDownload(boolean download) {
 		this.download = download;
+	}
+
+	public void setNoDefaultDocument(boolean v) {
+		noDefaultDocument = true;
 	}
 
 }

@@ -1,0 +1,25 @@
+<project>
+	<home>http://www.bouncycastle.org/</home>
+	<description>
+		The Bouncy Castle Crypto package is a Java implementation of cryptographic algorithms.
+	</description>
+	<tags>
+		<tag>encrypt</tag>
+	</tags>
+	<majors>
+		<major name="1">
+			<maven>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcprov-jdk16</artifactId>
+				<repository>central</repository>
+			</maven>
+			<maven>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcprov-jdk15</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="1.46"></version>
+		</major>
+	</majors>
+</project>
+

@@ -18,4 +18,8 @@ public class Path implements TemplateMethodModelEx{
 		return sb.toString();
 	}
 
+	public static String path(String url) {
+		return "/DocGit/" + url;
+	}
+	
 }

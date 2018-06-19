@@ -12,9 +12,11 @@ import org.apache.commons.io.FileUtils;
 import org.dom4j.DocumentException;
 
 import c41.docgit.config.MavenRepository;
+import c41.docgit.generator.method.Path;
 import c41.docgit.generator.template.HtmlConfig;
 import c41.docgit.generator.template.TemplateFile;
 import c41.docgit.generator.template.TemplateGenerator;
+import c41.docgit.generator.vo.Document.DocumentType;
 import c41.docgit.generator.vo.MajorGroup;
 import c41.docgit.generator.vo.Maven;
 import c41.docgit.generator.vo.Project;
@@ -89,14 +91,17 @@ public class CategoryGenerator {
 							
 							version.setName(versionElement.name);
 							if(versionElement.cacheDocument != null) {
-								version.setCacheDocument(true);
+								version.addDocument(
+									Path.path("/doc/" + categoryName + '/' + project.getName() + '/' + version.getName()),
+									DocumentType.Cache
+								);
 							}
 							else if(versionElement.document != null){
 								if(!versionElement.document.equals("false")) {
-									version.setDocument(versionElement.document);
+									version.addDocument(versionElement.document, DocumentType.Force);
 								}
 								else {
-									version.setDocument(false);
+									version.setNoDefaultDocument(true);
 								}
 							}
 							
@@ -128,9 +133,10 @@ public class CategoryGenerator {
 											+ name;
 									version.addArtifact(name, url);
 								}
-								if(!version.hasDocument() && version.needDocument()) {
-									version.setDocument("http://www.javadoc.io/doc/" + mavenElement.groupId +"/" + mavenElement.artifactId + "/" + version.getName());
-								}
+								version.addDocument(
+									"http://www.javadoc.io/doc/" + mavenElement.groupId +"/" + mavenElement.artifactId + "/" + version.getName(),
+									DocumentType.Default
+								);
 							}
 						}
 					}

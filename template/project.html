@@ -45,23 +45,36 @@
 			<#list major.versions as version>
 				<tr>
 					<th>${version.name}</th>
-					<td 
-						<#if version.document??>
+					<#if version.documents?size == 1>
+						<td 
 							data-target="_blank" 
-							data-url="${version.document}"
-						<#elseif version.cacheDocument>
-							data-target="_blank" 
-							data-url="${path('/doc/' + category + '/' + project.name + '/' + version.name)}"
-						<#else>
-							class="no-link"
-						</#if>
-					>
-						<span class="glyphicon glyphicon-file"></span> ${docname}
-					</td>
+							data-url="${version.documents[0]}"
+							data-title="true"
+						>
+							<span class="glyphicon glyphicon-file"></span> ${docname}
+						</td>
+					<#elseif version.documents?size gt 0>
+						<td>
+							<#list version.documents as document>
+							<div
+								data-target="_blank" 
+								data-url="${document}"
+							data-title="true"
+							>
+								<span class="glyphicon glyphicon-file"></span> ${docname}
+							</div>
+							</#list>
+						</td>
+					<#else>
+						<td	class="no-link">
+							<span class="glyphicon glyphicon-file"></span> ${docname}
+						</td>
+					</#if>
 					<#if version.artifacts?size == 1>
 						<td class="artifacts"
-								data-target="_blank" 
-								data-url="${version.artifacts[0].url}"
+							data-target="_blank" 
+							data-url="${version.artifacts[0].url}"
+							data-title="true"
 						>
 							<span class="glyphicon glyphicon-download-alt"></span> ${version.artifacts[0].name}
 						</td>
@@ -71,6 +84,7 @@
 						<div 
 							data-target="_blank" 
 							data-url="${artifact.url}"
+							data-title="true"
 						>
 							<span class="glyphicon glyphicon-download-alt"></span> ${artifact.name}
 						</div>
