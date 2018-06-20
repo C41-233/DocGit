@@ -1,0 +1,13 @@
+<project>
+	<home>http://commons.apache.org/sandbox/commons-javaflow/</home>
+	<description>
+		Sometimes it is usefull if we can capture the state of the application, its stack of function calls, which includes local variables, the global variables and the program counter, and save them into an object. If this object would give us the ability to restart the processing from the point stored in it.
+	</description>
+	<tags>
+		<tag>diagnostic</tag>
+	</tags>
+	<majors>
+		<latest document="http://commons.apache.org/sandbox/commons-javaflow/apidocs/index.html"></latest>
+	</majors>
+</project>
+
