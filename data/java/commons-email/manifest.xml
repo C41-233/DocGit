@@ -1,0 +1,24 @@
+<project>
+	<home>http://commons.apache.org/proper/commons-email/</home>
+	<description>
+		Commons Email aims to provide a API for sending email. It is built on top of the Java Mail API, which it aims to simplify.
+	</description>
+	<tags>
+		<tag>email</tag>
+	</tags>
+	<majors>
+		<latest document="http://commons.apache.org/proper/commons-email/apidocs/index.html"></latest>
+		<major name="1">
+			<maven>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-email</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="1.5"></version>
+			<version name="1.4" document="http://commons.apache.org/proper/commons-email/javadocs/api-1.4/index.html"></version>
+			<version name="1.3.3" document="http://commons.apache.org/proper/commons-email/javadocs/api-1.3.3/index.html"></version>
+			<version name="1.2" document="http://commons.apache.org/proper/commons-email/javadocs/api-1.2/index.html"></version>
+		</major>
+	</majors>
+</project>
+

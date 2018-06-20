@@ -1,0 +1,22 @@
+<project>
+	<home>http://commons.apache.org/proper/commons-beanutils/index.html</home>
+	<description>
+		The Java language provides Reflection and Introspection APIs.
+	</description>
+	<tags>
+		<tag>javabean</tag>
+	</tags>
+	<majors>
+		<major name="1">
+			<maven>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="1.9.3" document="http://commons.apache.org/proper/commons-beanutils/javadocs/v1.9.3/apidocs/index.html"></version>
+			<version name="1.9.2" document="http://commons.apache.org/proper/commons-beanutils/javadocs/v1.9.2/apidocs/index.html"></version>
+			<version name="1.8.3" document="http://commons.apache.org/proper/commons-beanutils/javadocs/v1.8.3/apidocs/index.html"></version>
+		</major>
+	</majors>
+</project>
+
