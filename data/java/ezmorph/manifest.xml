@@ -1,0 +1,28 @@
+<project>
+	<home>http://ezmorph.sourceforge.net/</home>
+	<description>
+		EZMorph is simple java library for transforming an Object to another Object.
+	</description>
+	<tags>
+		<tag>utiliy</tag>
+	</tags>
+	<majors>
+		<major name="3">
+			<maven>
+				<groupId>net.sf.ezmorph</groupId>
+				<artifactId>ezmorph</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="1.0.6">
+				<cache-document/>
+			</version>
+			<version name="1.0.5"></version>
+			<version name="1.0.4"></version>
+			<version name="1.0.3"></version>
+			<version name="1.0.2"></version>
+			<version name="1.0.1"></version>
+			<version name="1.0"></version>
+		</major>
+	</majors>
+</project>
+

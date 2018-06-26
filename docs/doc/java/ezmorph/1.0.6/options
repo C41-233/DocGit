@@ -1,0 +1,27 @@
+-classpath '/home/aalmiray/eclipse/workspace/ezmorph/target/classes:/usr/dev/m2/repository/commons-lang/commons-lang/2.3/commons-lang-2.3.jar:/usr/dev/m2/repository/commons-logging/commons-logging/1.1/commons-logging-1.1.jar:/usr/dev/m2/repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar:/usr/dev/m2/repository/junit/junit/3.8.2/junit-3.8.2.jar'
+ -encoding
+'ISO-8859-1'
+-protected
+-sourcepath
+'/home/aalmiray/eclipse/workspace/ezmorph/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2006-2008. All Rights Reserved.'
+-charset
+'ISO-8859-1'
+-d
+'/home/aalmiray/eclipse/workspace/ezmorph/target/apidocs'
+-doctitle
+'ezmorph 1.0.6 API'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-link
+'http://www.junit.org/junit/javadoc'
+-link
+'http://jakarta.apache.org/commons/beanutils/commons-beanutils-1.7.0/docs/api'
+-link
+'http://jakarta.apache.org/commons/lang/api-2.2'
+-use
+-version
+-windowtitle
+'ezmorph 1.0.6 API'

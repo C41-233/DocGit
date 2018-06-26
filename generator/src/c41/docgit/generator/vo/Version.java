@@ -27,17 +27,13 @@ public class Version {
 	}
 
 	private boolean noDefaultDocument;
-	private boolean hasForceDocument;
 	
 	public void addDocument(String url, DocumentType type) {
 		if(noDefaultDocument && type == DocumentType.Default) {
 			return;
 		}
-		if(hasForceDocument && type == DocumentType.Default) {
-			return;
-		}
-		if(type == DocumentType.Force) {
-			hasForceDocument = true;
+		if(type == DocumentType.Force || type == DocumentType.Cache) {
+			noDefaultDocument = true;
 		}
 		this.documents.add(new Document(url, type));
 	}

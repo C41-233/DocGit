@@ -1,0 +1,30 @@
+<project>
+	<home>http://www.ehcache.org/</home>
+	<description>
+		EhCache 是一个纯Java的进程内缓存框架，具有快速、精干等特点。
+	</description>
+	<tags>
+		<tag>cache</tag>
+	</tags>
+	<majors>
+		<major name="3">
+			<maven>
+				<groupId>org.ehcache</groupId>
+				<artifactId>ehcache</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="3.4.0" document="http://www.ehcache.org/apidocs/3.4.0/index.html"></version>
+			<version name="3.3.2" document="http://www.ehcache.org/apidocs/3.3.2/index.html"></version>
+			<version name="3.2.3" document="http://www.ehcache.org/apidocs/3.2.3/index.html"></version>
+		</major>
+		<major name="2">
+			<maven>
+				<groupId>net.sf.ehcache</groupId>
+				<artifactId>ehcache</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="2.4.4" document="http://www.ehcache.org/apidocs/2.4.4/index.html"></version>
+		</major>
+	</majors>
+</project>
+
