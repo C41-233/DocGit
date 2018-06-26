@@ -8,7 +8,21 @@
 	</tags>
 	<majors>
 		<major name="2">
-			<version name="2.8.5" document="http://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5"></version>
+			<maven>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="2.8.5"></version>
+			<version name="2.2"></version>
+		</major>
+		<major name="1">
+			<maven>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="1.7.2"></version>
 		</major>
 	</majors>
 </project>
