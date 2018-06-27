@@ -7,7 +7,7 @@
 		<tag>jpa</tag>
 		<tag>orm</tag>
 	</tags>
-	<majors>
+	<majors name="hibernate-core">
 		<major name="5">
 			<maven>
 				<groupId>org.hibernate</groupId>
@@ -27,6 +27,106 @@
 			</maven>
 			<version name="4.3.11.Final" document="http://docs.jboss.org/hibernate/orm/4.3/javadocs/"></version>
 			<version name="4.2.21.Final" document="http://docs.jboss.org/hibernate/orm/4.2/javadocs/"></version>
+		</major>
+		<major name="3">
+			<maven>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="3.5.6-Final" document="http://docs.jboss.org/hibernate/orm/3.5/javadocs/"></version>
+		</major>
+	</majors>
+	<majors name="hibernate">
+		<major name="3">
+			<maven>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="3.5.4-Final"></version>
+		</major>
+	</majors>
+	<majors name="hibernate-annotations">
+		<major name="3">
+			<maven>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-annotations</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="3.5.6-Final"></version>
+		</major>
+	</majors>
+	<majors name="hibernate-commons-annotations">
+		<major name="5">
+			<maven>
+				<groupId>org.hibernate.common</groupId>
+				<artifactId>hibernate-commons-annotations</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="5.0.4.Final"></version>
+		</major>
+		<major name="3">
+			<maven>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-commons-annotations</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="3.2.0.Final"></version>
+		</major>
+	</majors>
+	<majors name="hibernate-entitymanager">
+		<major name="5">
+			<maven>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="5.3.1.Final"></version>
+		</major>
+		<major name="3">
+			<maven>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="3.6.10.Final"></version>
+		</major>
+	</majors>
+	<majors name="hibernate-validator">
+		<major name="6">
+			<maven>
+				<groupId>org.hibernate.validator</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="6.0.10.Final"></version>
+		</major>
+		<major name="4">
+			<maven>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="4.1.0.Final"></version>
+		</major>
+	</majors>
+	<majors name="hibernate-jpa">
+		<major name="2.1-1">
+			<maven>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.1-api</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="1.0.2.Final"></version>
+		</major>
+		<major name="2.0-1">
+			<maven>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.0-api</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="1.0.1.Final"></version>
 		</major>
 	</majors>
 </project>

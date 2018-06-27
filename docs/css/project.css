@@ -55,3 +55,6 @@ header{
 .table-version td:nth-child(2){
 	width:	20%;
 }
+.title-major{
+	font-size:	24px;
+}

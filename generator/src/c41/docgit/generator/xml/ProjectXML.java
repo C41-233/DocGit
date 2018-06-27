@@ -15,15 +15,19 @@ public class ProjectXML {
 	
 	@XmlElementWrapper(name = "tags")
 	@XmlElement(name = "tag")
-	public String[] tags;
+	public List<String> tags;
 
-	public MajorsXML majors;
+	@XmlElement(name="majors")
+	public List<MajorsXML> majorsList;
 	
 	public BodyXML body;
 	
 	public static class MajorsXML{
 		
 		public LatestXML latest;
+		
+		@XmlAttribute
+		public String name;
 		
 		@XmlElement(name = "major")
 		public List<MajorXML> majorList;

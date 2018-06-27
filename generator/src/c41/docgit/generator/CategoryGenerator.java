@@ -17,13 +17,15 @@ import c41.docgit.generator.template.HtmlConfig;
 import c41.docgit.generator.template.TemplateFile;
 import c41.docgit.generator.template.TemplateGenerator;
 import c41.docgit.generator.vo.Document.DocumentType;
-import c41.docgit.generator.vo.MajorGroup;
+import c41.docgit.generator.vo.Major;
+import c41.docgit.generator.vo.Majors;
 import c41.docgit.generator.vo.Maven;
 import c41.docgit.generator.vo.Project;
 import c41.docgit.generator.vo.Tag;
 import c41.docgit.generator.vo.Version;
 import c41.docgit.generator.xml.ProjectXML;
 import c41.docgit.generator.xml.ProjectXML.BodyXML.ImportXML;
+import c41.docgit.generator.xml.ProjectXML.MajorsXML;
 import c41.docgit.generator.xml.ProjectXML.MajorsXML.MajorXML;
 import c41.docgit.generator.xml.ProjectXML.MajorsXML.MajorXML.MavenXML;
 import c41.docgit.generator.xml.ProjectXML.MajorsXML.MajorXML.VersionXML;
@@ -60,7 +62,7 @@ public class CategoryGenerator {
 		Project project = new Project();
 		projects.add(project);
 
-		List<MajorGroup> majors = new ArrayList<>();
+		List<Majors> majorsList = new ArrayList<>();
 		
 		File manifest = new File(inputFoler, "manifest.xml");
 		ProjectXML projectXML = XMLHelper.read(manifest, ProjectXML.class);
@@ -73,77 +75,90 @@ public class CategoryGenerator {
 			project.addTag(tag);
 		}
 		
-		String latest = null;
-		
-		if(projectXML.majors != null) {
-			if(projectXML.majors.majorList != null) {
-				for(MajorXML majorElement : projectXML.majors.majorList) {
-					MajorGroup majorGroup = new MajorGroup();
-					majors.add(majorGroup);
-					
-					majorGroup.setName(majorElement.name);
-					majorGroup.setDocument(majorElement.document);
-					
-					if(majorElement.versions != null) {
-						for(VersionXML versionElement : majorElement.versions) {
-							Version version = new Version();
-							majorGroup.addVersion(version);
-							
-							version.setName(versionElement.name);
-							if(versionElement.cacheDocument != null) {
-								version.addDocument(
-									Path.path("/doc/" + categoryName + '/' + project.getName() + '/' + version.getName()),
-									DocumentType.Cache
-								);
-							}
-							else if(versionElement.document != null){
-								if(!versionElement.document.equals("false")) {
-									version.addDocument(versionElement.document, DocumentType.Force);
+		if(projectXML.majorsList != null) {
+			for(MajorsXML majorsXML : projectXML.majorsList) {
+				Majors majors = new Majors();
+				majorsList.add(majors);
+				
+				majors.setName(majorsXML.name);
+				
+				if(majorsXML.majorList != null) {
+					for(MajorXML majorElement : majorsXML.majorList) {
+						Major majorGroup = new Major();
+						majors.addMajor(majorGroup);
+						
+						majorGroup.setName(majorElement.name);
+						majorGroup.setDocument(majorElement.document);
+						
+						if(majorElement.versions != null) {
+							for(VersionXML versionElement : majorElement.versions) {
+								Version version = new Version();
+								majorGroup.addVersion(version);
+								
+								version.setName(versionElement.name);
+								if(versionElement.cacheDocument != null) {
+									version.addDocument(
+										Path.path("/doc/" + categoryName + '/' + project.getName() + '/' + version.getName()),
+										DocumentType.Cache
+									);
 								}
-								else {
-									version.setNoDefaultDocument(true);
+								else if(versionElement.document != null){
+									if(!versionElement.document.equals("false")) {
+										version.addDocument(versionElement.document, DocumentType.Force);
+									}
+									else {
+										version.setNoDefaultDocument(true);
+									}
+								}
+								
+								if(versionElement.download != null) {
+									if(versionElement.download.equals("false")) {
+										version.setDownload(false);
+									}
 								}
 							}
-							
-							if(versionElement.download != null) {
-								if(versionElement.download.equals("false")) {
-									version.setDownload(false);
+						}
+						
+						if(majorElement.mavens != null) {
+							for(MavenXML mavenElement : majorElement.mavens) {
+								Maven maven = new Maven();
+								majorGroup.addMaven(maven);
+								
+								maven.setGroupId(mavenElement.groupId);
+								maven.setArtifactId(mavenElement.artifactId);
+								
+								String repository = MavenRepository.valueOf(mavenElement.repository).getUrl();
+								
+								for(Version version : majorGroup.getVersions()) {
+									if(version.isDownload()) {
+										String name = maven.getArtifactId() + "-" + version.getName() + ".jar";
+										String url = repository + "/" 
+												+ maven.getGroupId().replace('.', '/') + "/" 
+												+ maven.getArtifactId() + "/" 
+												+ version.getName() + "/" 
+												+ name;
+										version.addArtifact(name, url);
+									}
+									version.addDocument(
+										"http://www.javadoc.io/doc/" + mavenElement.groupId +"/" + mavenElement.artifactId + "/" + version.getName(),
+										DocumentType.Default
+									);
 								}
 							}
 						}
 					}
-					
-					if(majorElement.mavens != null) {
-						for(MavenXML mavenElement : majorElement.mavens) {
-							Maven maven = new Maven();
-							majorGroup.addMaven(maven);
-							
-							maven.setGroupId(mavenElement.groupId);
-							maven.setArtifactId(mavenElement.artifactId);
-							
-							String repository = MavenRepository.valueOf(mavenElement.repository).getUrl();
-							
-							for(Version version : majorGroup.getVersions()) {
-								if(version.isDownload()) {
-									String name = maven.getArtifactId() + "-" + version.getName() + ".jar";
-									String url = repository + "/" 
-											+ maven.getGroupId().replace('.', '/') + "/" 
-											+ maven.getArtifactId() + "/" 
-											+ version.getName() + "/" 
-											+ name;
-									version.addArtifact(name, url);
-								}
-								version.addDocument(
-									"http://www.javadoc.io/doc/" + mavenElement.groupId +"/" + mavenElement.artifactId + "/" + version.getName(),
-									DocumentType.Default
-								);
-							}
-						}
+					if(majorsXML.latest != null) {
+						majors.setLatest(majorsXML.latest.document);
 					}
+					
 				}
 			}
-			if(projectXML.majors.latest != null) {
-				latest = projectXML.majors.latest.document;
+		}
+
+		if(majorsList.size() == 1) {
+			Majors majors = majorsList.get(0);
+			if(majors.getName() == null) {
+				majors.setName(projectName);
 			}
 		}
 		
@@ -153,10 +168,8 @@ public class CategoryGenerator {
 
 		config.arguments.put("project", project);
 		config.arguments.put("category", categoryName);
-		config.arguments.put("majors", majors);
-		config.arguments.put("latest", latest);
-		
-		config.arguments.put("hasMajors", latest != null || !majors.isEmpty());
+		config.arguments.put("majorsList", majorsList);
+		config.arguments.put("subprojects", majorsList.stream().map(m -> m.getName()).sorted().toArray());
 		
 		List<String> bodies = new ArrayList<>();
 		config.arguments.put("bodies", bodies);

@@ -20,14 +20,32 @@
 	  <li><a href="${path('/archieve/',category)}">${category}</a></li>
 	  <li class="active">${project.name}</li>
 	</ol>
-	<#if hasMajors>
-		<#if latest??>
+	<#if subprojects?size gt 1>
+		<div>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+					sub-projects (${subprojects?size})
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<#list subprojects as p>
+						<li><a href="#${p}">${p}</a></li>
+					</#list>
+				</ul>
+			</div>
+		</div>
+	</#if>
+	<#list majorsList as majors>
+		<#if majorsList?size gt 1>
+		<h1 class="title-major" id="${majors.name}"><span class="glyphicon glyphicon-align-justify"></span> ${majors.name}</h1>
+		</#if>
+		<#if majors.latest??>
 			<h4>Latest</h4>
 			<table class="table table-bordered">
-				<tr><td data-target="_blank" data-url="${latest}"><span class="glyphicon glyphicon-file"></span> ${docname}</td></tr>
+				<tr><td data-target="_blank" data-url="${majors.latest}"><span class="glyphicon glyphicon-file"></span> ${docname}</td></tr>
 			</table>
 		</#if>
-		<#list majors as major>
+		<#list majors.majors as major>
 			<hr/>
 			<h4>${major.name}.x</h4>
 			<table class="table table-bordered table-version">
@@ -109,7 +127,7 @@
 				</#list>
 			</#if>
 		</#list>
-	</#if>
+	</#list>
 	<#list bodies as body>
 		<div class="appender">
 			${body}
