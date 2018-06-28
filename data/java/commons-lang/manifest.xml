@@ -8,6 +8,11 @@
 	</tags>
 	<majors>
 		<major name="3">
+			<maven>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<repository>central</repository>
+			</maven>
 			<version name="3.7" document="https://commons.apache.org/proper/commons-lang/javadocs/api-3.7/index.html"></version>
 			<version name="3.6" document="https://commons.apache.org/proper/commons-lang/javadocs/api-3.6/index.html"></version>
 			<version name="3.5" document="https://commons.apache.org/proper/commons-lang/javadocs/api-3.5/index.html"></version>
@@ -22,6 +27,11 @@
 			<version name="3.0" document="https://commons.apache.org/proper/commons-lang/javadocs/api-3.0/index.html"></version>
 		</major>
 		<major name="2">
+			<maven>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<repository>central</repository>
+			</maven>
 			<version name="2.6" document="https://commons.apache.org/proper/commons-lang/javadocs/api-2.6/index.html"></version>
 			<version name="2.5" document="https://commons.apache.org/proper/commons-lang/javadocs/api-2.5/index.html"></version>
 			<version name="2.4" document="https://commons.apache.org/proper/commons-lang/javadocs/api-2.4/index.html"></version>

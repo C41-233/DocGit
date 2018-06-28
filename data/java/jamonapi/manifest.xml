@@ -1,0 +1,29 @@
+<project>
+	<home>https://github.com/stevensouza/jamonapi</home>
+	<description>
+		The Java Application Monitor (JAMon) is a free, simple, high performance, thread safe, Java API that allows developers to easily monitor production applications.
+	</description>
+	<tags>
+		<tag>performance</tag>
+	</tags>
+	<majors>
+		<major name="2">
+			<maven>
+				<groupId>com.jamonapi</groupId>
+				<artifactId>jamon</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="2.81"></version>
+			<version name="2.79"></version>
+		</major>
+		<major name="2">
+			<maven>
+				<groupId>com.jamonapi</groupId>
+				<artifactId>jamon</artifactId>
+				<repository>jahia</repository>
+			</maven>
+			<version name="2.7"></version>
+		</major>
+	</majors>
+</project>
+

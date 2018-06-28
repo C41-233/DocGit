@@ -119,6 +119,7 @@ public class CategoryGenerator {
 							}
 						}
 						
+						//maven java
 						if(majorElement.mavens != null) {
 							for(MavenXML mavenElement : majorElement.mavens) {
 								Maven maven = new Maven();
@@ -126,6 +127,7 @@ public class CategoryGenerator {
 								
 								maven.setGroupId(mavenElement.groupId);
 								maven.setArtifactId(mavenElement.artifactId);
+								maven.setRepository(mavenElement.repository);
 								
 								String repository = MavenRepository.valueOf(mavenElement.repository).getUrl();
 								

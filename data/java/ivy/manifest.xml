@@ -1,0 +1,23 @@
+<project>
+	<home>https://ant.apache.org/ivy/</home>
+	<description>
+		Apache Ivy™ is a popular dependency manager focusing on flexibility and simplicity.
+	</description>
+	<tags>
+		<tag>dependency-manager</tag>
+	</tags>
+	<majors>
+		<major name="2">
+			<maven>
+				<groupId>org.apache.ivy</groupId>
+				<artifactId>ivy</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="2.5.0-rc1"></version>
+			<version name="2.4.0"></version>
+			<version name="2.3.0"></version>
+			<version name="2.2.0"></version>
+		</major>
+	</majors>
+</project>
+

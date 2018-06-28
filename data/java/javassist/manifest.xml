@@ -16,6 +16,15 @@
 			</maven>
 			<version name="3.22.0-GA"></version>
 		</major>
+		<major name="3">
+			<maven>
+				<groupId>javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="3.12.1.GA"></version>
+			<version name="3.9.0.GA"></version>
+		</major>
 	</majors>
 </project>
 

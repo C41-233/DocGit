@@ -4,7 +4,7 @@
 		Apache FreeMarker™ is a template engine: a Java library to generate text output (HTML web pages, e-mails, configuration files, source code, etc.) based on templates and changing data. 
 	</description>
 	<tags>
-		<tag>template</tag>
+		<tag>template-engine</tag>
 	</tags>
 	<majors>
 		<latest document="https://freemarker.apache.org/docs/api/index.html"></latest>

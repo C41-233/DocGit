@@ -1,0 +1,21 @@
+<project>
+	<home>http://www.jamon.org/</home>
+	<description>
+		Jamon is a text template engine for Java, useful for generating dynamic HTML, XML, or any text-based content. In a typical Model-View-Controller architecture, Jamon clearly is aimed at the View (or presentation) layer.
+	</description>
+	<tags>
+		<tag>template-engine</tag>
+	</tags>
+	<majors>
+		<latest document="http://www.jamon.org/javadoc/index.html"></latest>
+		<major name="2">
+			<maven>
+				<groupId>org.jamon</groupId>
+				<artifactId>jamon-runtime</artifactId>
+				<repository>central</repository>
+			</maven>
+			<version name="2.4.1"></version>
+		</major>
+	</majors>
+</project>
+

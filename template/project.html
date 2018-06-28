@@ -37,7 +37,9 @@
 	</#if>
 	<#list majorsList as majors>
 		<#if majorsList?size gt 1>
-		<h1 class="title-major" id="${majors.name}"><span class="glyphicon glyphicon-align-justify"></span> ${majors.name}</h1>
+		<h1 class="title-major" id="${majors.name}">
+			<span class="glyphicon glyphicon-align-justify"></span> ${majors.name}
+		</h1>
 		</#if>
 		<#if majors.latest??>
 			<h4>Latest</h4>
@@ -115,7 +117,7 @@
 			<#if major.mavens?size gt 0>
 				<#list major.mavens as maven>
 				<div>
-					<a target="_blank" href="http://mvnrepository.com/artifact/${maven.groupId}/${maven.artifactId}">
+					<a target="_blank" href="http://mvnrepository.com/artifact/${maven.groupId}/${maven.artifactId}" title="${maven.repository}">
 						<span class="maven">Maven</span><span class="maven-artifact">${maven.artifactId}</span>
 					</a>
 				</div>
